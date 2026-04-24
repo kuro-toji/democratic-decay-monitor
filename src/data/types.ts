@@ -20,7 +20,7 @@ export interface CountryData {
   readings: CountryIndicator[];
 }
 
-export interface InterventionType =
+export type InterventionType =
   | "constitutional_reform"
   | "judicial_capture"
   | "media_takeover"
@@ -29,7 +29,7 @@ export interface InterventionType =
   | "electoral_manipulation"
   | "coordinated_combined";
 
-export interface InterventionActor =
+export type InterventionActor =
   | "ruling_party"
   | "executive_president"
   | "oligarchic_network"
