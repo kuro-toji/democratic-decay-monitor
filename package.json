@@ -4,7 +4,8 @@
   "version": "1.0.0",
   "type": "module",
   "workspaces": [
-    "server"
+    "server",
+    "scripts"
   ],
   "scripts": {
     "dev": "vite",
@@ -17,7 +18,9 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "db:generate": "bun --cwd server run db:generate",
-    "db:migrate": "bun --cwd server run db:migrate"
+    "db:migrate": "bun --cwd server run db:migrate",
+    "import:data": "bun run scripts/import-data.ts",
+    "import:alerts": "curl -X POST http://localhost:3000/api/alerts/evaluate"
   },
   "dependencies": {
     "react": "^19.2.5",

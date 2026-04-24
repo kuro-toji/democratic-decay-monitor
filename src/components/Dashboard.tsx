@@ -28,6 +28,8 @@ import {
   buildRecoveryOverlayData,
   type RecoveryOverlayData,
 } from "../lib/interventionLibrary";
+import AlertPanel from "./AlertPanel";
+import CountryGrid from "./CountryGrid";
 import "../index.css";
 
 const COUNTRIES = indicatorsData.countries;
@@ -471,6 +473,7 @@ export default function Dashboard() {
   const [showMethodology, setShowMethodology] = useState(false);
   const [calloutBanner, setCalloutBanner] = useState<string | null>(null);
   const [highlightIndicator, setHighlightIndicator] = useState<string | undefined>();
+  const [showAlertPanel, setShowAlertPanel] = useState(false);
 
   const aipPanelRef = useRef<HTMLDivElement>(null);
 
@@ -529,7 +532,6 @@ export default function Dashboard() {
         }
       );
 
-      // Use robust parser that handles truncation, markdown fences, and partial responses
       const result = parseFromStream(fullText);
       if (result) {
         setAipResult(result);
@@ -563,18 +565,6 @@ export default function Dashboard() {
     setSelected("Georgia");
   }, []);
 
-  // Secondary demo: if demo mode is active and user clicks Serbia, show STRESS classification
-  const handleDemoSerbia = useCallback(() => {
-    if (demoMode) {
-      setSelected("Serbia");
-      setAipResult(null);
-      setStreamingText("");
-      setShowOverlay(false);
-      setCalloutBanner(null);
-      setHighlightIndicator(undefined);
-    }
-  }, [demoMode]);
-
   useEffect(() => {
     if (!demoMode || selected !== "Georgia") return;
     const t1 = setTimeout(() => {
@@ -599,6 +589,14 @@ export default function Dashboard() {
         <span className="status-dot" />
         <span className="status-text">SYSTEM ONLINE</span>
         <div className="topbar-spacer" />
+        <button 
+          className={`alert-bell ${showAlertPanel ? 'active' : ''}`} 
+          onClick={() => setShowAlertPanel(!showAlertPanel)}
+          title="Toggle alert panel"
+        >
+          🔔
+          {showAlertPanel && <span className="alert-count-badge">6</span>}
+        </button>
         <button className="demo-btn" onClick={runDemo}>
           DEMO MODE
         </button>
@@ -616,41 +614,28 @@ export default function Dashboard() {
       )}
 
       <div className={`main-grid${aipResult ? " has-library" : ""}`}>
+        {/* Alert Panel - slides in from left */}
+        {showAlertPanel && (
+          <aside className="left-panel">
+            <AlertPanel />
+          </aside>
+        )}
+
+        {/* Country Grid Panel */}
         <aside className="left-panel">
-          <div className="panel-header">SELECT COUNTRY</div>
-          <div className="country-list">
-            {COUNTRIES.map((c) => (
-              <button
-                key={c.country}
-                className={`country-card ${selected === c.country ? "selected" : ""}`}
-                onClick={() => {
-                  setSelected(c.country);
-                  setAipResult(null);
-                  setStreamingText("");
-                  setShowOverlay(false);
-                  setCalloutBanner(null);
-                  setHighlightIndicator(undefined);
-                  setDemoMode(false);
-                  if (demoMode && c.country === "Serbia") {
-                    handleDemoSerbia();
-                  }
-                }}
-              >
-                <span className="country-code">{c.country_code}</span>
-                <span className="country-name">{c.country}</span>
-              </button>
-            ))}
-          </div>
-          {aipResult && (
-            <div className="overlay-toggle-container">
-              <button
-                className={`overlay-toggle-btn ${showOverlay ? "active" : ""}`}
-                onClick={() => setShowOverlay(!showOverlay)}
-              >
-                RECOVERY OVERLAY
-              </button>
-            </div>
-          )}
+          <div className="panel-header">COUNTRIES</div>
+          <CountryGrid 
+            onCountrySelect={(country) => {
+              setSelected(country.country);
+              setAipResult(null);
+              setStreamingText("");
+              setShowOverlay(false);
+              setCalloutBanner(null);
+              setHighlightIndicator(undefined);
+              setDemoMode(false);
+            }}
+            selectedCountryId={COUNTRIES.findIndex(c => c.country === selected) + 1}
+          />
         </aside>
 
         <section className="center-panel">
