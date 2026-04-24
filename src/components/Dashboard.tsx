@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import {
   Radar,
   RadarChart,
@@ -126,17 +126,20 @@ function TypingIndicator() {
 }
 
 function Sparkline({ data, color }: { data: number[]; color: string }) {
-  const max = Math.max(...data, 1);
-  const min = Math.min(...data, 0);
+  if (!data.length) return <div className="sparkline-placeholder" />;
+  const max = Math.max(...data);
+  const min = Math.min(...data);
   const range = max - min || 1;
+  const w = 80;
+  const h = 28;
   const points = data.map((v, i) => {
-    const x = (i / (data.length - 1)) * 80;
-    const y = 24 - ((v - min) / range) * 20;
+    const x = (i / (data.length - 1)) * w;
+    const y = h - ((v - min) / range) * (h - 4) - 2;
     return `${x},${y}`;
   }).join(" ");
 
   return (
-    <svg width="80" height="28" className="sparkline">
+    <svg width={w} height={h} className="sparkline">
       <polyline points={points} fill="none" stroke={color} strokeWidth="1.5" />
     </svg>
   );
@@ -147,11 +150,12 @@ interface AIPPanelProps {
   isRunning: boolean;
   result: AIPResult | null;
   streamingText: string;
+  demoHighlightRef?: React.RefObject<HTMLDivElement | null>;
 }
 
-function AIPPanel({ onRun, isRunning, result, streamingText }: AIPPanelProps) {
+function AIPPanel({ onRun, isRunning, result, streamingText, demoHighlightRef }: AIPPanelProps) {
   return (
-    <aside className="right-panel aip-panel">
+    <aside className="right-panel aip-panel" ref={demoHighlightRef}>
       <div className="panel-header">AIP ANALYSIS</div>
       {isRunning && <TypingIndicator />}
       {!isRunning && !result && (
@@ -186,7 +190,12 @@ function AIPPanel({ onRun, isRunning, result, streamingText }: AIPPanelProps) {
                 </div>
                 <p className="iv-rationale">{iv.rationale}</p>
                 <div className="iv-footer">
-                  <span className="iv-rate" style={{ color: iv.historical_success_rate > 0.6 ? "var(--accent-green)" : "var(--accent-amber)" }}>
+                  <span
+                    className="iv-rate"
+                    style={{
+                      color: iv.historical_success_rate > 0.6 ? "var(--accent-green)" : "var(--accent-amber)",
+                    }}
+                  >
                     SR: {Math.round(iv.historical_success_rate * 100)}%
                   </span>
                 </div>
@@ -260,34 +269,46 @@ interface TimelineChartProps {
   timelineData: ReturnType<typeof buildTimelineData>;
   alertYear: number | null;
   showOverlay: boolean;
-  overlayData: ReturnType<typeof buildRecoveryOverlayData> | null;
+  highlightIndicator?: string;
+  demoMode: boolean;
 }
 
-function TimelineChart({ timelineData, alertYear, showOverlay, overlayData }: TimelineChartProps) {
-  const allData = showOverlay && overlayData
-    ? timelineData.map((d, i) => ({
-        ...d,
-        overlayYear: overlayData.shiftedYears[i] ?? i - 7,
-      }))
-    : timelineData;
-
+function TimelineChart({ timelineData, alertYear, showOverlay, highlightIndicator, demoMode }: TimelineChartProps) {
   return (
     <div className="chart-container timeline-chart">
       <ResponsiveContainer width="100%" height={320}>
-        <LineChart data={allData} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
+        <LineChart data={timelineData} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
           <CartesianGrid strokeDasharray="3 3" stroke="#2e303a" />
-          <XAxis dataKey={showOverlay ? "overlayYear" : "year"} stroke="#9ca3af" tick={{ fill: "#9ca3af", fontSize: 11 }} />
+          <XAxis
+            dataKey={showOverlay ? "overlayYear" : "year"}
+            stroke="#9ca3af"
+            tick={{ fill: "#9ca3af", fontSize: 11 }}
+          />
           <YAxis domain={[0, 100]} stroke="#9ca3af" tick={{ fill: "#9ca3af", fontSize: 11 }} />
           <Tooltip
-            contentStyle={{ background: "#1a1d23", border: "1px solid #2e303a", borderRadius: 0, fontFamily: "ui-monospace, Consolas, monospace", fontSize: 12 }}
+            contentStyle={{
+              background: "#1a1d23",
+              border: "1px solid #2e303a",
+              borderRadius: 0,
+              fontFamily: "ui-monospace, Consolas, monospace",
+              fontSize: 12,
+            }}
             labelStyle={{ color: "#f3f4f6" }}
           />
-          {alertYear && (
+          {alertYear && !showOverlay && (
             <ReferenceLine
-              x={showOverlay ? 0 : alertYear}
+              x={alertYear}
               stroke="#ef4444"
               strokeDasharray="4 4"
               label={{ value: "ALERT TRIGGERED", fill: "#ef4444", fontSize: 10, position: "top" }}
+            />
+          )}
+          {showOverlay && (
+            <ReferenceLine
+              x={0}
+              stroke="#ef4444"
+              strokeDasharray="4 4"
+              label={{ value: "DEGRADATION T=0", fill: "#ef4444", fontSize: 10, position: "top" }}
             />
           )}
           {INDICATOR_KEYS.map((key, i) => (
@@ -296,13 +317,102 @@ function TimelineChart({ timelineData, alertYear, showOverlay, overlayData }: Ti
               type="monotone"
               dataKey={INDICATOR_LABELS[key]}
               stroke={CHART_COLORS[i]}
-              strokeWidth={1.5}
+              strokeWidth={key === highlightIndicator ? 2.5 : 1.5}
+              strokeDasharray={key === highlightIndicator && demoMode ? "4 2" : undefined}
               dot={false}
-              activeDot={{ r: 3 }}
+              activeDot={{ r: key === highlightIndicator ? 5 : 3 }}
+              className={key === highlightIndicator && demoMode ? "pulse-line" : undefined}
             />
           ))}
         </LineChart>
       </ResponsiveContainer>
+    </div>
+  );
+}
+
+interface MethodologyModalProps {
+  onClose: () => void;
+}
+
+function MethodologyModal({ onClose }: MethodologyModalProps) {
+  return (
+    <div className="modal-overlay" onClick={onClose}>
+      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+        <div className="modal-header">
+          <span className="modal-title">METHODOLOGY</span>
+          <button className="modal-close" onClick={onClose}>✕</button>
+        </div>
+        <div className="modal-body">
+          <section className="method-section">
+            <h3 className="method-heading">DATA SOURCES</h3>
+            <ul className="method-list">
+              <li><strong>V-Dem (Varieties of Democracy)</strong> — provides judicial independence, civil society space, and executive constraints indices. Scaled 0–1.</li>
+              <li><strong>Freedom House</strong> — press freedom scores inverted so higher = more free. Mapped to 0–1 scale.</li>
+              <li><strong>World Bank / IDEA</strong> — electoral integrity indicators cross-referenced with V-Dem electoral composite.</li>
+            </ul>
+            <p className="method-note">All indicators normalized to 0–1. Higher values indicate stronger democratic health.</p>
+          </section>
+
+          <section className="method-section">
+            <h3 className="method-heading">TRAJECTORY CLASSIFICATION</h3>
+            <p>The deterministic layer compares two windows:</p>
+            <ul className="method-list">
+              <li><strong>Prior window:</strong> 5 years before the most recent 3-year period</li>
+              <li><strong>Recent window:</strong> the last 3 years of data</li>
+            </ul>
+            <p>For each indicator, compute the rate of change from the prior window mean to the recent window mean. If the rate exceeds <strong>15% decline</strong>, that indicator is flagged.</p>
+            <ul className="method-list">
+              <li><strong>DEGRADING:</strong> 3 or more indicators flagged</li>
+              <li><strong>STRESS:</strong> 1–2 indicators flagged</li>
+              <li><strong>STABLE:</strong> 0 indicators flagged</li>
+            </ul>
+            <p>Additionally, any indicator whose current value falls below the global 1-standard-deviation threshold is marked <strong>CRITICAL</strong>.</p>
+          </section>
+
+          <section className="method-section">
+            <h3 className="method-heading">ANALOGUE MATCHING</h3>
+            <p>Historical cases are represented as binary degradation vectors (5 dimensions, one per indicator). A value of 1 means that indicator degraded in the historical case.</p>
+            <p>Cosine similarity is computed between the current country's degradation vector and each historical case:</p>
+            <p className="method-formula">similarity = (A · B) / (||A|| × ||B||)</p>
+            <p>Top 3 matches by similarity are returned. The closest match informs the AIP prompt context so the model can reason about structurally similar historical precedents.</p>
+          </section>
+
+          <section className="method-section">
+            <h3 className="method-heading">AIP LAYER vs. DETERMINISTIC LAYER</h3>
+            <table className="method-table">
+              <thead>
+                <tr>
+                  <th>Deterministic Layer</th>
+                  <th>AIP Layer</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Rule-based, reproducible</td>
+                  <td>LLM-assisted inference</td>
+                </tr>
+                <tr>
+                  <td>Trajectory classification (STABLE/STRESS/DEGRADING)</td>
+                  <td>Narrative synthesis, risk framing</td>
+                </tr>
+                <tr>
+                  <td>Threshold-based flags (CRITICAL/WARNING)</td>
+                  <td>Intervention recommendations with historical SR</td>
+                </tr>
+                <tr>
+                  <td>Cosine similarity on degradation vectors</td>
+                  <td>Qualitative analogue reasoning</td>
+                </tr>
+                <tr>
+                  <td>No contextual judgment</td>
+                  <td>Context-aware assessment of current situation</td>
+                </tr>
+              </tbody>
+            </table>
+            <p className="method-note">The AIP layer does not override the deterministic layer — it extends it. If the two layers conflict, the deterministic classification takes precedence for alerts.</p>
+          </section>
+        </div>
+      </div>
     </div>
   );
 }
@@ -313,6 +423,12 @@ export default function Dashboard() {
   const [aipResult, setAipResult] = useState<AIPResult | null>(null);
   const [streamingText, setStreamingText] = useState("");
   const [showOverlay, setShowOverlay] = useState(false);
+  const [demoMode, setDemoMode] = useState(false);
+  const [showMethodology, setShowMethodology] = useState(false);
+  const [calloutBanner, setCalloutBanner] = useState<string | null>(null);
+  const [highlightIndicator, setHighlightIndicator] = useState<string | undefined>();
+
+  const aipPanelRef = useRef<HTMLDivElement>(null);
 
   const selectedCountry = COUNTRIES.find((c) => c.country === selected)!;
   const alertLevel = getAlertLevel(selectedCountry);
@@ -321,19 +437,13 @@ export default function Dashboard() {
   const radarData = buildRadarData(selectedCountry);
   const timelineData = buildTimelineData(selectedCountry);
 
-  const overlayData = aipResult
-    ? buildRecoveryOverlayData(
-        { country: "", start_year: 2010, end_year: 2015, indicators_degraded: [], intervention_type: "coordinated_combined", intervention_actor: "ruling_party", outcome: "failure", outcome_score: 0 },
-        selectedCountry.readings,
-        INDICATOR_KEYS
-      )
-    : null;
-
   const runAnalysis = useCallback(async () => {
     setIsRunningAIP(true);
     setAipResult(null);
     setStreamingText("");
     setShowOverlay(false);
+    setCalloutBanner(null);
+    setHighlightIndicator(undefined);
 
     const vector = computeDegradationVector(selectedCountry.readings);
     const trajectory = classifyTrajectory(
@@ -372,7 +482,7 @@ export default function Dashboard() {
       const lastBrace = cleaned.lastIndexOf("}");
       const jsonStr = firstBrace !== -1 && lastBrace !== -1 ? cleaned.slice(firstBrace, lastBrace + 1) : cleaned;
       const parsed = JSON.parse(jsonStr);
-      setAipResult({
+      const result: AIPResult = {
         trajectory_narrative: parsed.trajectory_narrative ?? "",
         primary_risk_factor: parsed.primary_risk_factor ?? "",
         analogue_reasoning: parsed.analogue_reasoning ?? "",
@@ -386,13 +496,48 @@ export default function Dashboard() {
         ),
         confidence: (parsed.confidence ?? "MEDIUM") as AIPResult["confidence"],
         analyst_action: parsed.analyst_action ?? "",
-      });
+      };
+      setAipResult(result);
+
+      if (demoMode && analogues.length > 0) {
+        const topMatch = analogues[0].case;
+        const poland2015 = analoguesData.cases.find(
+          (c) => c.country === "Poland" && c.start_year === 2015
+        );
+        if (topMatch.country === "Poland" || poland2015) {
+          setCalloutBanner(
+            "Pattern match confidence: HIGH — Poland 2015 analogue suggests 18-month window for intervention"
+          );
+        }
+      }
     } catch (err) {
       setStreamingText(`Error: ${err instanceof Error ? err.message : String(err)}`);
     } finally {
       setIsRunningAIP(false);
     }
-  }, [selectedCountry]);
+  }, [selectedCountry, demoMode]);
+
+  const runDemo = useCallback(() => {
+    setDemoMode(true);
+    setSelected("Georgia");
+  }, []);
+
+  useEffect(() => {
+    if (!demoMode || selected !== "Georgia") return;
+    const t1 = setTimeout(() => {
+      runAnalysis();
+      setHighlightIndicator("judicial_independence");
+    }, 1500);
+    return () => clearTimeout(t1);
+  }, [demoMode, selected, runAnalysis]);
+
+  useEffect(() => {
+    if (!demoMode || !aipResult) return;
+    const t2 = setTimeout(() => {
+      aipPanelRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }, 500);
+    return () => clearTimeout(t2);
+  }, [demoMode, aipResult]);
 
   return (
     <div className="dashboard">
@@ -400,7 +545,22 @@ export default function Dashboard() {
         <span className="app-label">DEMOCRATIC DECAY MONITOR</span>
         <span className="status-dot" />
         <span className="status-text">SYSTEM ONLINE</span>
+        <div className="topbar-spacer" />
+        <button className="demo-btn" onClick={runDemo}>
+          DEMO MODE
+        </button>
+        <button className="methodology-btn" onClick={() => setShowMethodology(true)}>
+          ?
+        </button>
       </header>
+
+      {calloutBanner && (
+        <div className="callout-banner">
+          <span className="callout-icon">⚡</span>
+          <span className="callout-text">{calloutBanner}</span>
+          <button className="callout-close" onClick={() => setCalloutBanner(null)}>✕</button>
+        </div>
+      )}
 
       <div className={`main-grid${aipResult ? " has-library" : ""}`}>
         <aside className="left-panel">
@@ -415,6 +575,9 @@ export default function Dashboard() {
                   setAipResult(null);
                   setStreamingText("");
                   setShowOverlay(false);
+                  setCalloutBanner(null);
+                  setHighlightIndicator(undefined);
+                  setDemoMode(false);
                 }}
               >
                 <span className="country-code">{c.country_code}</span>
@@ -445,7 +608,8 @@ export default function Dashboard() {
             timelineData={timelineData}
             alertYear={alertYear}
             showOverlay={showOverlay}
-            overlayData={overlayData}
+            highlightIndicator={highlightIndicator}
+            demoMode={demoMode}
           />
           {showOverlay && aipResult && (
             <div className="overlay-legend">
@@ -462,20 +626,8 @@ export default function Dashboard() {
                 <PolarGrid stroke="#2e303a" />
                 <PolarAngleAxis dataKey="indicator" tick={{ fill: "#9ca3af", fontSize: 10 }} />
                 <PolarRadiusAxis angle={90} domain={[0, 100]} tick={{ fill: "#9ca3af", fontSize: 9 }} />
-                <Radar
-                  name="Country"
-                  dataKey="value"
-                  stroke={radarColor}
-                  fill={radarColor}
-                  fillOpacity={0.3}
-                />
-                <Radar
-                  name="Baseline"
-                  dataKey="baseline"
-                  stroke="#6b7280"
-                  fill="none"
-                  strokeDasharray="4 4"
-                />
+                <Radar name="Country" dataKey="value" stroke={radarColor} fill={radarColor} fillOpacity={0.3} />
+                <Radar name="Baseline" dataKey="baseline" stroke="#6b7280" fill="none" strokeDasharray="4 4" />
               </RadarChart>
             </ResponsiveContainer>
           </div>
@@ -489,6 +641,7 @@ export default function Dashboard() {
           isRunning={isRunningAIP}
           result={aipResult}
           streamingText={streamingText}
+          demoHighlightRef={aipPanelRef as React.RefObject<HTMLDivElement>}
         />
 
         {aipResult && (
@@ -501,6 +654,8 @@ export default function Dashboard() {
           </aside>
         )}
       </div>
+
+      {showMethodology && <MethodologyModal onClose={() => setShowMethodology(false)} />}
     </div>
   );
 }
