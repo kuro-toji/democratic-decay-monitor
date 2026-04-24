@@ -1,15 +1,23 @@
 {
   "name": "democratic-decay-monitor",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "workspaces": [
+    "server"
+  ],
   "scripts": {
     "dev": "vite",
+    "dev:server": "bun --cwd server run dev",
+    "dev:all": "bun run dev",
     "build": "tsc -b && vite build",
+    "build:server": "bun --cwd server run build",
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "db:generate": "bun --cwd server run db:generate",
+    "db:migrate": "bun --cwd server run db:migrate"
   },
   "dependencies": {
     "react": "^19.2.5",
@@ -18,6 +26,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@types/bun": "latest",
     "@types/node": "^24.12.2",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
