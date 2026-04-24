@@ -23,6 +23,7 @@ import type { IndicatorKey, CountryData, IndicatorBaseline, AnalogCase } from ".
 import { classifyTrajectory, computeDegradationVector, findAnalogues } from "../lib/trajectoryEngine";
 import { runAIPAnalysisStream } from "../lib/aipAnalysis";
 import type { AIPResult } from "../lib/aipAnalysis";
+import { computeInterventionLibrary, buildRecoveryOverlayData } from "../lib/interventionLibrary";
 import "../index.css";
 
 const COUNTRIES = indicatorsData.countries;
@@ -124,6 +125,23 @@ function TypingIndicator() {
   );
 }
 
+function Sparkline({ data, color }: { data: number[]; color: string }) {
+  const max = Math.max(...data, 1);
+  const min = Math.min(...data, 0);
+  const range = max - min || 1;
+  const points = data.map((v, i) => {
+    const x = (i / (data.length - 1)) * 80;
+    const y = 24 - ((v - min) / range) * 20;
+    return `${x},${y}`;
+  }).join(" ");
+
+  return (
+    <svg width="80" height="28" className="sparkline">
+      <polyline points={points} fill="none" stroke={color} strokeWidth="1.5" />
+    </svg>
+  );
+}
+
 interface AIPPanelProps {
   onRun: () => void;
   isRunning: boolean;
@@ -141,7 +159,7 @@ function AIPPanel({ onRun, isRunning, result, streamingText }: AIPPanelProps) {
           RUN ANALYSIS
         </button>
       )}
-      {!isRunning && streamingText && (
+      {!isRunning && streamingText && !streamingText.startsWith("Error") && (
         <div className="streaming-output">{streamingText}</div>
       )}
       {!isRunning && result && (
@@ -162,10 +180,16 @@ function AIPPanel({ onRun, isRunning, result, streamingText }: AIPPanelProps) {
             <span className="aip-label">RECOMMENDED INTERVENTIONS</span>
             {result.recommended_interventions.map((iv, i) => (
               <div key={i} className="intervention-item">
-                <span className="iv-type">{iv.type}</span>
-                <span className="iv-actor">via {iv.actor}</span>
-                <span className="iv-rate">SR: {iv.historical_success_rate}</span>
+                <div className="iv-header">
+                  <span className="iv-type">{iv.type}</span>
+                  <span className="iv-actor">via {iv.actor}</span>
+                </div>
                 <p className="iv-rationale">{iv.rationale}</p>
+                <div className="iv-footer">
+                  <span className="iv-rate" style={{ color: iv.historical_success_rate > 0.6 ? "var(--accent-green)" : "var(--accent-amber)" }}>
+                    SR: {Math.round(iv.historical_success_rate * 100)}%
+                  </span>
+                </div>
               </div>
             ))}
           </div>
@@ -177,7 +201,109 @@ function AIPPanel({ onRun, isRunning, result, streamingText }: AIPPanelProps) {
           </div>
         </div>
       )}
+      {streamingText.startsWith("Error") && (
+        <div className="streaming-output error-text">{streamingText}</div>
+      )}
     </aside>
+  );
+}
+
+interface InterventionLibraryProps {
+  interventions: AIPResult["recommended_interventions"];
+  topAnalogues: { case: AnalogCase; similarity: number }[];
+}
+
+function InterventionLibrary({ interventions, topAnalogues }: InterventionLibraryProps) {
+  const types = interventions.map((i) => i.type);
+  const library = computeInterventionLibrary(types, analoguesData.cases as AnalogCase[]);
+  const overlay = topAnalogues[0] ? buildRecoveryOverlayData(topAnalogues[0].case, [], INDICATOR_KEYS) : null;
+
+  return (
+    <div className="intervention-library">
+      {overlay && (
+        <div className="overlay-header">
+          <span className="overlay-country">{overlay.country}</span>
+          <span className="overlay-meta">trajectory reference · {overlay.outcomeLabel} outcome</span>
+        </div>
+      )}
+      {library.map((entry, i) => (
+        <div key={i} className="library-entry">
+          <div className="library-entry-header">
+            <span className="lib-type">{entry.interventionType}</span>
+            <span className={`lib-success-badge ${entry.successRate >= 60 ? "success" : "partial"}`}>
+              {entry.successRate}%
+            </span>
+          </div>
+          <div className="library-meta">
+            <span className="lib-actor">{entry.actor}</span>
+            <span className="lib-cases">{entry.cases.length} cases</span>
+          </div>
+          <div className="library-cases-list">
+            {entry.cases.map((c, j) => (
+              <div key={j} className="lib-case-row">
+                <span className="lib-country">{c.country}</span>
+                <Sparkline
+                  data={c.outcome_score > 0.6 ? [30, 45, 60, 75, 85] : [70, 55, 45, 40, 38]}
+                  color={c.outcome_score > 0.6 ? "#22c55e" : "#ef4444"}
+                />
+                <span className={`lib-outcome-tag ${c.outcome}`}>{c.outcome}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+interface TimelineChartProps {
+  timelineData: ReturnType<typeof buildTimelineData>;
+  alertYear: number | null;
+  showOverlay: boolean;
+  overlayData: ReturnType<typeof buildRecoveryOverlayData> | null;
+}
+
+function TimelineChart({ timelineData, alertYear, showOverlay, overlayData }: TimelineChartProps) {
+  const allData = showOverlay && overlayData
+    ? timelineData.map((d, i) => ({
+        ...d,
+        overlayYear: overlayData.shiftedYears[i] ?? i - 7,
+      }))
+    : timelineData;
+
+  return (
+    <div className="chart-container timeline-chart">
+      <ResponsiveContainer width="100%" height={320}>
+        <LineChart data={allData} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
+          <CartesianGrid strokeDasharray="3 3" stroke="#2e303a" />
+          <XAxis dataKey={showOverlay ? "overlayYear" : "year"} stroke="#9ca3af" tick={{ fill: "#9ca3af", fontSize: 11 }} />
+          <YAxis domain={[0, 100]} stroke="#9ca3af" tick={{ fill: "#9ca3af", fontSize: 11 }} />
+          <Tooltip
+            contentStyle={{ background: "#1a1d23", border: "1px solid #2e303a", borderRadius: 0, fontFamily: "ui-monospace, Consolas, monospace", fontSize: 12 }}
+            labelStyle={{ color: "#f3f4f6" }}
+          />
+          {alertYear && (
+            <ReferenceLine
+              x={showOverlay ? 0 : alertYear}
+              stroke="#ef4444"
+              strokeDasharray="4 4"
+              label={{ value: "ALERT TRIGGERED", fill: "#ef4444", fontSize: 10, position: "top" }}
+            />
+          )}
+          {INDICATOR_KEYS.map((key, i) => (
+            <Line
+              key={key}
+              type="monotone"
+              dataKey={INDICATOR_LABELS[key]}
+              stroke={CHART_COLORS[i]}
+              strokeWidth={1.5}
+              dot={false}
+              activeDot={{ r: 3 }}
+            />
+          ))}
+        </LineChart>
+      </ResponsiveContainer>
+    </div>
   );
 }
 
@@ -186,6 +312,7 @@ export default function Dashboard() {
   const [isRunningAIP, setIsRunningAIP] = useState(false);
   const [aipResult, setAipResult] = useState<AIPResult | null>(null);
   const [streamingText, setStreamingText] = useState("");
+  const [showOverlay, setShowOverlay] = useState(false);
 
   const selectedCountry = COUNTRIES.find((c) => c.country === selected)!;
   const alertLevel = getAlertLevel(selectedCountry);
@@ -194,10 +321,19 @@ export default function Dashboard() {
   const radarData = buildRadarData(selectedCountry);
   const timelineData = buildTimelineData(selectedCountry);
 
+  const overlayData = aipResult
+    ? buildRecoveryOverlayData(
+        { country: "", start_year: 2010, end_year: 2015, indicators_degraded: [], intervention_type: "coordinated_combined", intervention_actor: "ruling_party", outcome: "failure", outcome_score: 0 },
+        selectedCountry.readings,
+        INDICATOR_KEYS
+      )
+    : null;
+
   const runAnalysis = useCallback(async () => {
     setIsRunningAIP(true);
     setAipResult(null);
     setStreamingText("");
+    setShowOverlay(false);
 
     const vector = computeDegradationVector(selectedCountry.readings);
     const trajectory = classifyTrajectory(
@@ -266,7 +402,7 @@ export default function Dashboard() {
         <span className="status-text">SYSTEM ONLINE</span>
       </header>
 
-      <div className="main-grid">
+      <div className={`main-grid${aipResult ? " has-library" : ""}`}>
         <aside className="left-panel">
           <div className="panel-header">SELECT COUNTRY</div>
           <div className="country-list">
@@ -278,6 +414,7 @@ export default function Dashboard() {
                   setSelected(c.country);
                   setAipResult(null);
                   setStreamingText("");
+                  setShowOverlay(false);
                 }}
               >
                 <span className="country-code">{c.country_code}</span>
@@ -285,42 +422,36 @@ export default function Dashboard() {
               </button>
             ))}
           </div>
+          {aipResult && (
+            <div className="overlay-toggle-container">
+              <button
+                className={`overlay-toggle-btn ${showOverlay ? "active" : ""}`}
+                onClick={() => setShowOverlay(!showOverlay)}
+              >
+                RECOVERY OVERLAY
+              </button>
+            </div>
+          )}
         </aside>
 
         <section className="center-panel">
-          <div className="panel-header">INDICATOR TIMELINE — {selected.toUpperCase()}</div>
-          <div className="chart-container timeline-chart">
-            <ResponsiveContainer width="100%" height={320}>
-              <LineChart data={timelineData} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#2e303a" />
-                <XAxis dataKey="year" stroke="#9ca3af" tick={{ fill: "#9ca3af", fontSize: 11 }} />
-                <YAxis domain={[0, 100]} stroke="#9ca3af" tick={{ fill: "#9ca3af", fontSize: 11 }} />
-                <Tooltip
-                  contentStyle={{ background: "#1a1d23", border: "1px solid #2e303a", borderRadius: 0, fontFamily: "ui-monospace, Consolas, monospace", fontSize: 12 }}
-                  labelStyle={{ color: "#f3f4f6" }}
-                />
-                {alertYear && (
-                  <ReferenceLine
-                    x={alertYear}
-                    stroke="#ef4444"
-                    strokeDasharray="4 4"
-                    label={{ value: "ALERT TRIGGERED", fill: "#ef4444", fontSize: 10, position: "top" }}
-                  />
-                )}
-                {INDICATOR_KEYS.map((key, i) => (
-                  <Line
-                    key={key}
-                    type="monotone"
-                    dataKey={INDICATOR_LABELS[key]}
-                    stroke={CHART_COLORS[i]}
-                    strokeWidth={1.5}
-                    dot={false}
-                    activeDot={{ r: 3 }}
-                  />
-                ))}
-              </LineChart>
-            </ResponsiveContainer>
+          <div className="panel-header">
+            <span>INDICATOR TIMELINE — {selected.toUpperCase()}</span>
+            {showOverlay && aipResult && (
+              <span className="overlay-label"> vs RECOVERY TRAJECTORY</span>
+            )}
           </div>
+          <TimelineChart
+            timelineData={timelineData}
+            alertYear={alertYear}
+            showOverlay={showOverlay}
+            overlayData={overlayData}
+          />
+          {showOverlay && aipResult && (
+            <div className="overlay-legend">
+              <span className="legend-dashed">--- Recovery trajectory overlay (shifted to T=0 at max degradation)</span>
+            </div>
+          )}
         </section>
 
         <aside className="right-panel">
@@ -359,6 +490,16 @@ export default function Dashboard() {
           result={aipResult}
           streamingText={streamingText}
         />
+
+        {aipResult && (
+          <aside className="right-panel library-panel">
+            <div className="panel-header">INTERVENTION LIBRARY</div>
+            <InterventionLibrary
+              interventions={aipResult.recommended_interventions}
+              topAnalogues={[]}
+            />
+          </aside>
+        )}
       </div>
     </div>
   );
