@@ -1,0 +1,204 @@
+{
+  "cases": [
+    {
+      "country": "Czech Republic",
+      "start_year": 1992,
+      "end_year": 1997,
+      "indicators_degraded": ["press_freedom", "civil_society_space"],
+      "intervention_type": "coordinated_combined",
+      "intervention_actor": "ruling_party",
+      "outcome": "recovery",
+      "outcome_score": 0.88
+    },
+    {
+      "country": "Slovakia",
+      "start_year": 1994,
+      "end_year": 1998,
+      "indicators_degraded": ["press_freedom", "executive_constraints"],
+      "intervention_type": "media_takeover",
+      "intervention_actor": "oligarchic_network",
+      "outcome": "recovery",
+      "outcome_score": 0.85
+    },
+    {
+      "country": "Croatia",
+      "start_year": 1995,
+      "end_year": 2000,
+      "indicators_degraded": ["judicial_independence", "press_freedom", "electoral_integrity"],
+      "intervention_type": "coordinated_combined",
+      "intervention_actor": "executive_president",
+      "outcome": "recovery",
+      "outcome_score": 0.72
+    },
+    {
+      "country": "Moldova",
+      "start_year": 1998,
+      "end_year": 2002,
+      "indicators_degraded": ["executive_constraints", "civil_society_space"],
+      "intervention_type": "executive_expansion",
+      "intervention_actor": "ruling_party",
+      "outcome": "recovery",
+      "outcome_score": 0.76
+    },
+    {
+      "country": "Venezuela",
+      "start_year": 2002,
+      "end_year": 2008,
+      "indicators_degraded": ["judicial_independence", "press_freedom", "electoral_integrity"],
+      "intervention_type": "coordinated_combined",
+      "intervention_actor": "executive_president",
+      "outcome": "failure",
+      "outcome_score": 0.22
+    },
+    {
+      "country": "Nicaragua",
+      "start_year": 2007,
+      "end_year": 2018,
+      "indicators_degraded": ["judicial_independence", "press_freedom", "civil_society_space"],
+      "intervention_type": "coordinated_combined",
+      "intervention_actor": "executive_president",
+      "outcome": "failure",
+      "outcome_score": 0.18
+    },
+    {
+      "country": "Honduras",
+      "start_year": 2009,
+      "end_year": 2013,
+      "indicators_degraded": ["civil_society_space", "executive_constraints"],
+      "intervention_type": "civil_society_restriction",
+      "intervention_actor": "military",
+      "outcome": "stalled",
+      "outcome_score": 0.45
+    },
+    {
+      "country": "Bolivia",
+      "start_year": 2008,
+      "end_year": 2012,
+      "indicators_degraded": ["judicial_independence", "press_freedom"],
+      "intervention_type": "judicial_capture",
+      "intervention_actor": "executive_president",
+      "outcome": "stalled",
+      "outcome_score": 0.58
+    },
+    {
+      "country": "Kenya",
+      "start_year": 2010,
+      "end_year": 2013,
+      "indicators_degraded": ["electoral_integrity", "civil_society_space"],
+      "intervention_type": "electoral_manipulation",
+      "intervention_actor": "ruling_party",
+      "outcome": "recovery",
+      "outcome_score": 0.78
+    },
+    {
+      "country": "Burkina Faso",
+      "start_year": 2014,
+      "end_year": 2016,
+      "indicators_degraded": ["executive_constraints", "civil_society_space", "electoral_integrity"],
+      "intervention_type": "executive_expansion",
+      "intervention_actor": "executive_president",
+      "outcome": "stalled",
+      "outcome_score": 0.62
+    },
+    {
+      "country": "Tanzania",
+      "start_year": 2010,
+      "end_year": 2015,
+      "indicators_degraded": ["press_freedom", "civil_society_space"],
+      "intervention_type": "civil_society_restriction",
+      "intervention_actor": "ruling_party",
+      "outcome": "stalled",
+      "outcome_score": 0.50
+    },
+    {
+      "country": "Ethiopia",
+      "start_year": 2005,
+      "end_year": 2010,
+      "indicators_degraded": ["press_freedom", "civil_society_space", "electoral_integrity"],
+      "intervention_type": "coordinated_combined",
+      "intervention_actor": "executive_president",
+      "outcome": "stalled",
+      "outcome_score": 0.48
+    },
+    {
+      "country": "Cambodia",
+      "start_year": 2010,
+      "end_year": 2016,
+      "indicators_degraded": ["press_freedom", "civil_society_space", "electoral_integrity"],
+      "intervention_type": "coordinated_combined",
+      "intervention_actor": "ruling_party",
+      "outcome": "failure",
+      "outcome_score": 0.25
+    },
+    {
+      "country": "Thailand",
+      "start_year": 2006,
+      "end_year": 2012,
+      "indicators_degraded": ["executive_constraints", "civil_society_space"],
+      "intervention_type": "executive_expansion",
+      "intervention_actor": "military",
+      "outcome": "stalled",
+      "outcome_score": 0.52
+    },
+    {
+      "country": "Philippines",
+      "start_year": 2010,
+      "end_year": 2016,
+      "indicators_degraded": ["civil_society_space", "executive_constraints"],
+      "intervention_type": "executive_expansion",
+      "intervention_actor": "executive_president",
+      "outcome": "stalled",
+      "outcome_score": 0.55
+    },
+    {
+      "country": "Mali",
+      "start_year": 2012,
+      "end_year": 2015,
+      "indicators_degraded": ["electoral_integrity", "civil_society_space", "executive_constraints"],
+      "intervention_type": "coordinated_combined",
+      "intervention_actor": "military",
+      "outcome": "recovery",
+      "outcome_score": 0.65
+    },
+    {
+      "country": "Madagascar",
+      "start_year": 2009,
+      "end_year": 2013,
+      "indicators_degraded": ["executive_constraints", "electoral_integrity"],
+      "intervention_type": "executive_expansion",
+      "intervention_actor": "executive_president",
+      "outcome": "recovery",
+      "outcome_score": 0.70
+    },
+    {
+      "country": "Zimbabwe",
+      "start_year": 2000,
+      "end_year": 2013,
+      "indicators_degraded": ["press_freedom", "electoral_integrity", "executive_constraints"],
+      "intervention_type": "coordinated_combined",
+      "intervention_actor": "ruling_party",
+      "outcome": "failure",
+      "outcome_score": 0.20
+    },
+    {
+      "country": "El Salvador",
+      "start_year": 2014,
+      "end_year": 2018,
+      "indicators_degraded": ["civil_society_space", "executive_constraints"],
+      "intervention_type": "executive_expansion",
+      "intervention_actor": "executive_president",
+      "outcome": "consolidation",
+      "outcome_score": 0.35
+    },
+    {
+      "country": "Myanmar",
+      "start_year": 2010,
+      "end_year": 2015,
+      "indicators_degraded": ["electoral_integrity", "executive_constraints"],
+      "intervention_type": "constitutional_reform",
+      "intervention_actor": "military",
+      "outcome": "failure",
+      "outcome_score": 0.15
+    }
+  ]
+}
