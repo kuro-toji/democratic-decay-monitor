@@ -1,14 +1,47 @@
 {
   "cases": [
     {
+      "country": "Poland",
+      "start_year": 2015,
+      "end_year": 2023,
+      "indicators_degraded": ["judicial_independence", "press_freedom", "executive_constraints"],
+      "intervention_type": "judicial_capture",
+      "intervention_actor": "ruling_party",
+      "outcome": "recovery",
+      "outcome_score": 0.62,
+      "notes": "PiS captured Constitutional Tribunal Dec 2015, packed Supreme Court 2017, seized public broadcaster TVP. EU Article 7 triggered Dec 2017. December 2023 elections returned Civic Coalition. Recovery underway but institutional damage persistent."
+    },
+    {
+      "country": "Hungary",
+      "start_year": 2011,
+      "end_year": 2023,
+      "indicators_degraded": ["judicial_independence", "press_freedom", "electoral_integrity", "civil_society_space", "executive_constraints"],
+      "intervention_type": "coordinated_combined",
+      "intervention_actor": "ruling_party",
+      "outcome": "failure",
+      "outcome_score": 0.18,
+      "notes": "Fidesz supermajority 2010. 2011 Constitution gutted Constitutional Court. 2010-11 Media Acts placed all broadcast media under Fidesz-appointed council. 2013 National Judicial Council captured. 2017 Stop Soros laws. Four-time winner of rigged elections. First EU member state classified Not Free by Freedom House (2021). No recovery signal. EU Article 7 triggered 2018."
+    },
+    {
+      "country": "Venezuela",
+      "start_year": 2002,
+      "end_year": 2013,
+      "indicators_degraded": ["judicial_independence", "press_freedom", "electoral_integrity"],
+      "intervention_type": "coordinated_combined",
+      "intervention_actor": "executive_president",
+      "outcome": "failure",
+      "outcome_score": 0.15
+    },
+    {
       "country": "Czech Republic",
       "start_year": 1992,
       "end_year": 1997,
       "indicators_degraded": ["press_freedom", "civil_society_space"],
-      "intervention_type": "coordinated_combined",
+      "intervention_type": "media_takeover",
       "intervention_actor": "ruling_party",
       "outcome": "recovery",
-      "outcome_score": 0.88
+      "outcome_score": 0.88,
+      "notes": "Václav Mečiar's third cabinet 1992-1997 saw media capture through state advertising and editorial control. Slovak National Council passed restrictive media laws. NATO/EU accession criteria applied pressure. 1998 elections defeated Mečiar. Recovery swift — media pluralism restored within 2 years. Demonstrates EU conditionality effectiveness."
     },
     {
       "country": "Slovakia",
@@ -39,16 +72,6 @@
       "intervention_actor": "ruling_party",
       "outcome": "recovery",
       "outcome_score": 0.76
-    },
-    {
-      "country": "Venezuela",
-      "start_year": 2002,
-      "end_year": 2008,
-      "indicators_degraded": ["judicial_independence", "press_freedom", "electoral_integrity"],
-      "intervention_type": "coordinated_combined",
-      "intervention_actor": "executive_president",
-      "outcome": "failure",
-      "outcome_score": 0.22
     },
     {
       "country": "Nicaragua",
@@ -199,6 +222,28 @@
       "intervention_actor": "military",
       "outcome": "failure",
       "outcome_score": 0.15
+    },
+    {
+      "country": "Peru",
+      "start_year": 2016,
+      "end_year": 2020,
+      "indicators_degraded": ["judicial_independence", "executive_constraints"],
+      "intervention_type": "executive_expansion",
+      "intervention_actor": "executive_president",
+      "outcome": "recovery",
+      "outcome_score": 0.65,
+      "notes": "Pedro Pablo Kuczynski and Martín Vizcarra administrations saw Congress vs. executive confrontation. Congress dissolved by Vizcarra 2019, later reversed by Constitutional Court. Some recovery post-2020 but political instability persists."
+    },
+    {
+      "country": "North Macedonia",
+      "start_year": 2014,
+      "end_year": 2017,
+      "indicators_degraded": ["press_freedom", "civil_society_space", "electoral_integrity"],
+      "intervention_type": "coordinated_combined",
+      "intervention_actor": "ruling_party",
+      "outcome": "recovery",
+      "outcome_score": 0.70,
+      "notes": "Gruevski VMRO-DPMNE wiretapping scandal 2015, massive protests. EU conditionality forced early elections 2017. Zoran Zaev SDSM victory. Prespa Agreement with Greece. Recovery demonstrated but fragile given ethnic tensions."
     }
   ]
 }

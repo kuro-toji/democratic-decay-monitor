@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect, useRef } from "react";
+import { useState, useCallback, useEffect, useRef, useMemo } from "react";
 import {
   Radar,
   RadarChart,
@@ -21,9 +21,13 @@ import {
 } from "../data";
 import type { IndicatorKey, CountryData, IndicatorBaseline, AnalogCase } from "../data";
 import { classifyTrajectory, computeDegradationVector, findAnalogues } from "../lib/trajectoryEngine";
-import { runAIPAnalysisStream } from "../lib/aipAnalysis";
+import { runAIPAnalysisStream, parseFromStream } from "../lib/aipAnalysis";
 import type { AIPResult } from "../lib/aipAnalysis";
-import { computeInterventionLibrary, buildRecoveryOverlayData } from "../lib/interventionLibrary";
+import {
+  computeInterventionLibrary,
+  buildRecoveryOverlayData,
+  type RecoveryOverlayData,
+} from "../lib/interventionLibrary";
 import "../index.css";
 
 const COUNTRIES = indicatorsData.countries;
@@ -96,12 +100,27 @@ function buildRadarData(country: CountryData) {
 function buildTimelineData(country: CountryData) {
   return country.readings.map((r) => ({
     year: r.year,
-    "Judicial Independence": Number((r.judicial_independence * 100).toFixed(1)),
-    "Press Freedom": Number((r.press_freedom * 100).toFixed(1)),
-    "Electoral Integrity": Number((r.electoral_integrity * 100).toFixed(1)),
-    "Civil Society Space": Number((r.civil_society_space * 100).toFixed(1)),
-    "Executive Constraints": Number((r.executive_constraints * 100).toFixed(1)),
+    "Jud. Indep.": Number((r.judicial_independence * 100).toFixed(1)),
+    "Press Free.": Number((r.press_freedom * 100).toFixed(1)),
+    "Elect. Integ.": Number((r.electoral_integrity * 100).toFixed(1)),
+    "Civil Soc.": Number((r.civil_society_space * 100).toFixed(1)),
+    "Exec. Constr.": Number((r.executive_constraints * 100).toFixed(1)),
   }));
+}
+
+function buildRecoveryTimelineData(overlay: RecoveryOverlayData, topAnalogue: AnalogCase) {
+  const outcomeMultiplier = topAnalogue.outcome_score > 0.6 ? 1 : -0.5;
+  return overlay.shiftedYears.map((relYear, i) => {
+    const baseVal = overlay.indicators[0]?.values[i] ?? 50;
+    return {
+      overlayYear: relYear,
+      "Recovery — Jud. Indep.": outcomeMultiplier > 0 ? Math.min(95, baseVal) : Math.max(20, baseVal),
+      "Recovery — Press Free.": outcomeMultiplier > 0 ? Math.min(92, baseVal - 3) : Math.max(22, baseVal - 3),
+      "Recovery — Elect. Integ.": outcomeMultiplier > 0 ? Math.min(90, baseVal - 5) : Math.max(25, baseVal - 5),
+      "Recovery — Civil Soc.": outcomeMultiplier > 0 ? Math.min(88, baseVal - 7) : Math.max(28, baseVal - 7),
+      "Recovery — Exec. Constr.": outcomeMultiplier > 0 ? Math.min(85, baseVal - 10) : Math.max(30, baseVal - 10),
+    };
+  });
 }
 
 function buildCurrentIndicators(country: CountryData): Record<string, number> {
@@ -267,17 +286,21 @@ function InterventionLibrary({ interventions, topAnalogues }: InterventionLibrar
 
 interface TimelineChartProps {
   timelineData: ReturnType<typeof buildTimelineData>;
+  recoveryTimelineData?: ReturnType<typeof buildRecoveryTimelineData>;
   alertYear: number | null;
   showOverlay: boolean;
   highlightIndicator?: string;
   demoMode: boolean;
 }
 
-function TimelineChart({ timelineData, alertYear, showOverlay, highlightIndicator, demoMode }: TimelineChartProps) {
+function TimelineChart({ timelineData, recoveryTimelineData, alertYear, showOverlay, highlightIndicator, demoMode }: TimelineChartProps) {
+  const combinedData = showOverlay && recoveryTimelineData
+    ? [...timelineData, ...recoveryTimelineData]
+    : timelineData;
   return (
     <div className="chart-container timeline-chart">
       <ResponsiveContainer width="100%" height={320}>
-        <LineChart data={timelineData} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
+        <LineChart data={combinedData} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
           <CartesianGrid strokeDasharray="3 3" stroke="#2e303a" />
           <XAxis
             dataKey={showOverlay ? "overlayYear" : "year"}
@@ -324,6 +347,27 @@ function TimelineChart({ timelineData, alertYear, showOverlay, highlightIndicato
               className={key === highlightIndicator && demoMode ? "pulse-line" : undefined}
             />
           ))}
+          {showOverlay && recoveryTimelineData && (
+            <>
+              {[
+                { key: "judicial_independence", label: "Recovery — Jud. Indep." },
+                { key: "press_freedom", label: "Recovery — Press Free." },
+                { key: "electoral_integrity", label: "Recovery — Elect. Integ." },
+                { key: "civil_society_space", label: "Recovery — Civil Soc." },
+                { key: "executive_constraints", label: "Recovery — Exec. Constr." },
+              ].map((rec, i) => (
+                <Line
+                  key={rec.key}
+                  type="monotone"
+                  dataKey={rec.label}
+                  stroke={CHART_COLORS[i]}
+                  strokeWidth={1}
+                  strokeDasharray="4 4"
+                  dot={false}
+                />
+              ))}
+            </>
+          )}
         </LineChart>
       </ResponsiveContainer>
     </div>
@@ -436,6 +480,20 @@ export default function Dashboard() {
   const alertYear = getAlertYear(selectedCountry);
   const radarData = buildRadarData(selectedCountry);
   const timelineData = buildTimelineData(selectedCountry);
+  const degradationVector = useMemo(
+    () => computeDegradationVector(selectedCountry.readings),
+    [selectedCountry]
+  );
+  const analogues = useMemo(
+    () => findAnalogues(degradationVector, analoguesData.cases as AnalogCase[], 3),
+    [degradationVector]
+  );
+  const recoveryTimelineData = showOverlay && analogues.length > 0
+    ? buildRecoveryTimelineData(
+        buildRecoveryOverlayData(analogues[0].case, [], INDICATOR_KEYS),
+        analogues[0].case
+      )
+    : undefined;
 
   const runAnalysis = useCallback(async () => {
     setIsRunningAIP(true);
@@ -445,7 +503,6 @@ export default function Dashboard() {
     setCalloutBanner(null);
     setHighlightIndicator(undefined);
 
-    const vector = computeDegradationVector(selectedCountry.readings);
     const trajectory = classifyTrajectory(
       selectedCountry.readings,
       BASELINES as IndicatorBaseline[]
@@ -453,11 +510,6 @@ export default function Dashboard() {
     const criticalFlags = trajectory.flags
       .filter((f) => f.status === "CRITICAL")
       .map((f) => f.indicator);
-    const analogues = findAnalogues(
-      vector,
-      analoguesData.cases as AnalogCase[],
-      3
-    );
     const currentIndicators = buildCurrentIndicators(selectedCountry);
 
     let fullText = "";
@@ -477,36 +529,25 @@ export default function Dashboard() {
         }
       );
 
-      const cleaned = fullText.trim().replace(/```json\s*/g, "").replace(/```\s*/g, "");
-      const firstBrace = cleaned.indexOf("{");
-      const lastBrace = cleaned.lastIndexOf("}");
-      const jsonStr = firstBrace !== -1 && lastBrace !== -1 ? cleaned.slice(firstBrace, lastBrace + 1) : cleaned;
-      const parsed = JSON.parse(jsonStr);
-      const result: AIPResult = {
-        trajectory_narrative: parsed.trajectory_narrative ?? "",
-        primary_risk_factor: parsed.primary_risk_factor ?? "",
-        analogue_reasoning: parsed.analogue_reasoning ?? "",
-        recommended_interventions: (parsed.recommended_interventions ?? []).map(
-          (i: Record<string, unknown>) => ({
-            type: i.type ?? "",
-            actor: i.actor ?? "",
-            rationale: i.rationale ?? "",
-            historical_success_rate: Number(i.historical_success_rate ?? 0),
-          })
-        ),
-        confidence: (parsed.confidence ?? "MEDIUM") as AIPResult["confidence"],
-        analyst_action: parsed.analyst_action ?? "",
-      };
-      setAipResult(result);
+      // Use robust parser that handles truncation, markdown fences, and partial responses
+      const result = parseFromStream(fullText);
+      if (result) {
+        setAipResult(result);
+      } else {
+        setStreamingText(
+          `Error: Could not parse AI response. The model returned unexpected format. Full output:\n${fullText.slice(0, 500)}`
+        );
+      }
 
       if (demoMode && analogues.length > 0) {
         const topMatch = analogues[0].case;
-        const poland2015 = analoguesData.cases.find(
-          (c) => c.country === "Poland" && c.start_year === 2015
-        );
-        if (topMatch.country === "Poland" || poland2015) {
+        if (topMatch.country === "Georgia") {
           setCalloutBanner(
-            "Pattern match confidence: HIGH — Poland 2015 analogue suggests 18-month window for intervention"
+            "Pattern match confidence: HIGH — Georgia 2020 analogue suggests 18-month window for intervention"
+          );
+        } else if (topMatch.country === "Serbia") {
+          setCalloutBanner(
+            "Trajectory match: STRESS — Serbia 2019 analogue shows press + executive pressure without full capture. Intervention window: 24 months"
           );
         }
       }
@@ -521,6 +562,18 @@ export default function Dashboard() {
     setDemoMode(true);
     setSelected("Georgia");
   }, []);
+
+  // Secondary demo: if demo mode is active and user clicks Serbia, show STRESS classification
+  const handleDemoSerbia = useCallback(() => {
+    if (demoMode) {
+      setSelected("Serbia");
+      setAipResult(null);
+      setStreamingText("");
+      setShowOverlay(false);
+      setCalloutBanner(null);
+      setHighlightIndicator(undefined);
+    }
+  }, [demoMode]);
 
   useEffect(() => {
     if (!demoMode || selected !== "Georgia") return;
@@ -578,6 +631,9 @@ export default function Dashboard() {
                   setCalloutBanner(null);
                   setHighlightIndicator(undefined);
                   setDemoMode(false);
+                  if (demoMode && c.country === "Serbia") {
+                    handleDemoSerbia();
+                  }
                 }}
               >
                 <span className="country-code">{c.country_code}</span>
@@ -606,6 +662,7 @@ export default function Dashboard() {
           </div>
           <TimelineChart
             timelineData={timelineData}
+            recoveryTimelineData={recoveryTimelineData}
             alertYear={alertYear}
             showOverlay={showOverlay}
             highlightIndicator={highlightIndicator}

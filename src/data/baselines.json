@@ -2,28 +2,28 @@
   "baselines": [
     {
       "indicator": "judicial_independence",
-      "global_mean": 0.72,
-      "one_std_threshold": 0.58
+      "global_mean": 0.59,
+      "one_std_threshold": 0.46
     },
     {
       "indicator": "press_freedom",
-      "global_mean": 0.75,
-      "one_std_threshold": 0.62
+      "global_mean": 0.61,
+      "one_std_threshold": 0.48
     },
     {
       "indicator": "electoral_integrity",
-      "global_mean": 0.78,
-      "one_std_threshold": 0.65
+      "global_mean": 0.68,
+      "one_std_threshold": 0.55
     },
     {
       "indicator": "civil_society_space",
-      "global_mean": 0.80,
-      "one_std_threshold": 0.68
+      "global_mean": 0.72,
+      "one_std_threshold": 0.60
     },
     {
       "indicator": "executive_constraints",
-      "global_mean": 0.74,
-      "one_std_threshold": 0.60
+      "global_mean": 0.59,
+      "one_std_threshold": 0.46
     }
   ]
 }

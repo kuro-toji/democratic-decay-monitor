@@ -61,13 +61,36 @@ export function buildRecoveryOverlayData(
     executive_constraints: "Exec. Constr.",
   };
 
-  const shiftedYears = [-3, -2, -1, 0, 1, 2, 3, 4];
+  // Deterministic LCG seeded by country name — same name = same data every render
+  const nameSeed = topAnalogue.country.split("").reduce((s, c) => s + c.charCodeAt(0), 0);
+  let seedVal = nameSeed;
+  const rand = () => {
+    seedVal = ((seedVal * 1103515245 + 12345) >>> 0) % (1 << 30);
+    return seedVal / (1 << 30);
+  };
 
-  const indicators = overlayIndicators.map((key) => ({
-    key,
-    label: indicatorLabels[key] ?? key,
-    values: shiftedYears.map(() => 50 + Math.random() * 30),
-  }));
+  const shiftedYears = [-3, -2, -1, 0, 1, 2, 3, 4];
+  const outcomeDir = topAnalogue.outcome_score > 0.6 ? 1 : -1;
+
+  const indicators = overlayIndicators.map((key) => {
+    // Recovery cases: base starts mid-range and rises
+    // Failure/Consolidation cases: base starts lower and falls
+    const baseVal = outcomeDir === 1
+      ? 60 + rand() * 20   // 60–80
+      : 35 + rand() * 15;  // 35–50
+
+    return {
+      key,
+      label: indicatorLabels[key] ?? key,
+      values: shiftedYears.map((relYear) => {
+        if (outcomeDir === 1) {
+          return Math.min(95, Math.max(20, baseVal + relYear * 5 + rand() * 4 - 2));
+        } else {
+          return Math.min(80, Math.max(10, baseVal - relYear * 4 + rand() * 4 - 2));
+        }
+      }),
+    };
+  });
 
   return {
     country: topAnalogue.country,
