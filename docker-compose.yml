@@ -1,0 +1,133 @@
+# =============================================================================
+# Democratic Decay Monitor - Docker Compose Configuration
+# =============================================================================
+
+services:
+  # ---------------------------------------------------------------------------
+  # API Server
+  # ---------------------------------------------------------------------------
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    container_name: ddm-api
+    restart: unless-stopped
+    ports:
+      - "${API_PORT:-3000}:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - DATABASE_URL=file:data/democracy.db
+      - MINIMAX_API_KEY=${MINIMAX_API_KEY:-}
+      - VDEM_API_KEY=${VDEM_API_KEY:-}
+      - CORS_ORIGINS=${CORS_ORIGINS:-http://localhost:5173}
+    volumes:
+      - api_data:/app/data
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000/api/health/live"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    networks:
+      - ddm-network
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 256M
+
+  # ---------------------------------------------------------------------------
+  # Frontend (Production Nginx)
+  # ---------------------------------------------------------------------------
+  frontend:
+    image: nginx:alpine
+    container_name: ddm-frontend
+    restart: unless-stopped
+    ports:
+      - "${FRONTEND_PORT:-80}:80"
+    volumes:
+      - ./dist:/usr/share/nginx/html:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      api:
+        condition: service_healthy
+    networks:
+      - ddm-network
+    deploy:
+      resources:
+        limits:
+          cpus: '0.25'
+          memory: 128M
+
+  # ---------------------------------------------------------------------------
+  # Development Services
+  # ---------------------------------------------------------------------------
+
+  api-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    container_name: ddm-api-dev
+    restart: no
+    ports:
+      - "${API_PORT:-3000}:3000"
+    environment:
+      - NODE_ENV=development
+      - PORT=3000
+      - DATABASE_URL=file:data/democracy.db
+      - MINIMAX_API_KEY=${MINIMAX_API_KEY:-}
+      - VDEM_API_KEY=${VDEM_API_KEY:-}
+      - CORS_ORIGINS=*
+    volumes:
+      - ./server/src:/app/server/src:ro
+      - ./server/data:/app/data
+      # Watch mode: rebuild on file changes (requires docker体积)
+    networks:
+      - ddm-network
+
+  # ---------------------------------------------------------------------------
+  # Database (optional - using libsql which is embedded)
+  # ---------------------------------------------------------------------------
+  # Note: This project uses embedded SQLite (libsql). For production with
+  # multiple instances, consider using TursoDB or external SQLite:
+  # 
+  # turso:
+  #   image: ghcr.io/tursodatabase/libsql-server:latest
+  #   environment:
+  #     - DATABASE_URL=${TURSO_DATABASE_URL}
+  #     - DATABASE_AUTH_TOKEN=${TURSO_AUTH_TOKEN}
+  #   networks:
+  #     - ddm-network
+
+# =============================================================================
+# Volumes & Networks
+# =============================================================================
+
+volumes:
+  api_data:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ./data
+
+networks:
+  ddm-network:
+    driver: bridge
+
+# =============================================================================
+# Profiles (use: docker compose --profile dev up)
+# =============================================================================
+
+profiles:
+  dev:
+    - api-dev
+  prod:
+    - api
+    - frontend

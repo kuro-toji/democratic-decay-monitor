@@ -20,7 +20,12 @@
     "db:generate": "bun --cwd server run db:generate",
     "db:migrate": "bun --cwd server run db:migrate",
     "import:data": "bun run scripts/import-data.ts",
-    "import:alerts": "curl -X POST http://localhost:3000/api/alerts/evaluate"
+    "import:alerts": "curl -X POST http://localhost:3000/api/alerts/evaluate",
+    "docker:build": "docker build -t ddm .",
+    "docker:up": "docker compose --profile prod up -d",
+    "docker:down": "docker compose down",
+    "docker:logs": "docker compose logs -f",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "react": "^19.2.5",
