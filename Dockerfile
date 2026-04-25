@@ -3,16 +3,18 @@
 # =============================================================================
 
 # -----------------------------------------------------------------------------
-# Stage 1: Dependencies
+# Stage 1: Dependencies (all workspaces)
 # -----------------------------------------------------------------------------
 FROM oven/bun:1.2 AS deps
 
 WORKDIR /app
 
-# Copy package files
+# Copy root package files + workspaces
 COPY package.json bun.lockb* ./
+COPY server/ ./server/
+COPY scripts/ ./scripts/
 
-# Install all dependencies
+# Install all dependencies (resolves workspaces)
 RUN bun install --frozen-lockfile
 
 # -----------------------------------------------------------------------------
@@ -22,9 +24,8 @@ FROM oven/bun:1.2 AS server-builder
 
 WORKDIR /app
 
-# Copy dependencies from deps stage
+# Copy dependencies from deps stage (hoisted to root in Bun workspaces)
 COPY --from=deps /app/node_modules ./node_modules
-COPY --from=deps /app/server/node_modules ./server/node_modules
 
 # Copy server source
 COPY server/ ./server/
@@ -32,7 +33,7 @@ COPY server/ ./server/
 WORKDIR /app/server
 
 # Build server (compile TypeScript)
-RUN bun --no-bundlesrc run build
+RUN bun run build
 
 # -----------------------------------------------------------------------------
 # Stage 3: Build Frontend
@@ -43,32 +44,26 @@ WORKDIR /app
 
 # Copy dependencies from deps stage
 COPY --from=deps /app/node_modules ./node_modules
-COPY --from=deps /app/client/node_modules ./client/node_modules 2>/dev/null || true
 
-# Copy frontend source
-COPY client/ ./client/
-COPY src/ ./src/
-COPY index.html ./
+# Copy frontend source (root level files)
+COPY package.json ./
+COPY bun.lockb* ./
 COPY vite.config.ts ./
 COPY tsconfig.json ./
+COPY tsconfig.app.json ./
 COPY tsconfig.node.json ./
+COPY src/ ./src/
+COPY index.html ./
 
 WORKDIR /app
 
-# Build frontend
+# Build frontend (using root package.json scripts)
 RUN bun run build
 
 # -----------------------------------------------------------------------------
 # Stage 4: Production Server
 # -----------------------------------------------------------------------------
 FROM oven/bun:1.2 AS production
-
-# Install production dependencies only
-RUN bun add --global drizzle-kit@latest
-
-# Create non-root user for security
-RUN addgroup -g 1001 -S nodejs && \
-    adduser -S nodejs -u 1001
 
 WORKDIR /app
 
@@ -79,16 +74,14 @@ COPY --from=server-builder /app/server/package.json ./package.json
 # Copy frontend build
 COPY --from=frontend-builder /app/dist ./frontend/dist
 
-# Create data directory
-RUN mkdir -p data && chown -R nodejs:nodejs /app
-
-# Switch to non-root user
-USER nodejs
+# Create data directory and ensure it's writable
+RUN mkdir -p /app/data && chmod 777 /app/data
 
 # Environment variables (set at runtime)
 ENV NODE_ENV=production
 ENV PORT=3000
-ENV DATABASE_URL=file:data/democracy.db
+# Use absolute path for SQLite database
+ENV DATABASE_URL=file:///app/data/democracy.db
 
 # Expose port
 EXPOSE 3000
