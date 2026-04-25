@@ -7,6 +7,7 @@ import { countriesRoutes } from "./routes/countries";
 import { alertsRoutes } from "./routes/alerts";
 import { aipRoutes } from "./routes/aip";
 import { healthRoutes } from "./routes/health";
+import { realtimeRoutes } from "./routes/realtime";
 
 // Initialize database (auto-creates tables)
 import { initializeDatabase } from "./services/initDb";
@@ -57,6 +58,9 @@ app.route("/api/alerts", alertsRoutes);
 
 // AIP (AI-powered analysis) endpoints
 app.route("/api/aip", aipRoutes);
+
+// Real-time SSE endpoints for live updates
+app.route("/api/realtime", realtimeRoutes);
 
 // ============================================================================
 // Error Handling

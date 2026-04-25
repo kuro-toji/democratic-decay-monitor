@@ -1,19 +1,57 @@
-import { useState } from "react";
-import { useActiveAlerts, api } from "../lib/api";
-import type { Alert } from "../lib/api";
+import { useState, useCallback, useEffect } from "react";
+import { useAlertSSE, triggerEvaluation } from "../lib/useRealtime";
+import type { AlertSummary } from "../lib/useRealtime";
 
 // ============================================================================
 // Types
 // ============================================================================
 
+interface Alert {
+  id: number;
+  countryId: number;
+  countryName?: string;
+  alertType: string;
+  priority: "CRITICAL" | "WARNING" | "INFO";
+  title: string;
+  message: string;
+  affectedIndicators?: string[];
+  createdAt: string;
+  resolved: boolean;
+}
+
 interface AlertPanelProps {
   maxVisible?: number;
 }
 
-interface AlertGroup {
-  CRITICAL: Alert[];
-  WARNING: Alert[];
-  INFO: Alert[];
+// ============================================================================
+// Helper Functions
+// ============================================================================
+
+function getTimeAgo(date: string): string {
+  const seconds = Math.floor((Date.now() - new Date(date).getTime()) / 1000);
+  
+  const intervals = [
+    { label: "y", seconds: 31536000 },
+    { label: "mo", seconds: 2592000 },
+    { label: "d", seconds: 86400 },
+    { label: "h", seconds: 3600 },
+    { label: "m", seconds: 60 },
+  ];
+
+  for (const interval of intervals) {
+    const count = Math.floor(seconds / interval.seconds);
+    if (count >= 1) {
+      return `${count}${interval.label} ago`;
+    }
+  }
+  return "just now";
+}
+
+function formatIndicatorName(name: string): string {
+  return name
+    .split("_")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
 }
 
 // ============================================================================
@@ -30,18 +68,16 @@ function AlertCard({ alert, onResolve }: { alert: Alert; onResolve: () => void }
     ANALOGUE_MATCH: "🔍",
   };
 
-  const timeAgo = getTimeAgo(new Date(alert.createdAt));
-
   return (
     <div className={`alert-card ${alert.priority.toLowerCase()} ${alert.resolved ? "resolved" : ""}`}>
       <div className="alert-header" onClick={() => setExpanded(!expanded)}>
         <div className="alert-type-icon">{typeIcons[alert.alertType] ?? "📋"}</div>
         <div className="alert-info">
-          <div className="alert-country">{alert.country?.name ?? "Unknown Country"}</div>
+          <div className="alert-country">{alert.countryName ?? "Unknown Country"}</div>
           <div className="alert-title">{alert.title}</div>
         </div>
         <div className="alert-meta">
-          <span className="alert-time">{timeAgo}</span>
+          <span className="alert-time">{getTimeAgo(alert.createdAt)}</span>
           <button 
             className="resolve-btn" 
             onClick={(e) => { e.stopPropagation(); onResolve(); }}
@@ -79,10 +115,21 @@ function AlertCard({ alert, onResolve }: { alert: Alert; onResolve: () => void }
 // Alert Summary Bar
 // ============================================================================
 
-function AlertSummaryBar({ summary, onClick }: { summary: { total: number; critical: number; warning: number; info: number }; onClick: () => void }) {
+function AlertSummaryBar({ 
+  summary, 
+  onClick,
+  isLive 
+}: { 
+  summary: AlertSummary; 
+  onClick: () => void;
+  isLive: boolean;
+}) {
   return (
     <div className="alert-summary-bar" onClick={onClick}>
       <div className="summary-total">
+        <span className="live-indicator">
+          {isLive ? "🔴 LIVE" : "⚫ OFFLINE"}
+        </span>
         <span className="total-count">{summary.total}</span>
         <span className="total-label">Active Alerts</span>
       </div>
@@ -112,73 +159,113 @@ function AlertSummaryBar({ summary, onClick }: { summary: { total: number; criti
 }
 
 // ============================================================================
-// Alert Panel Component
+// Alert Panel Component (Real-time enabled)
 // ============================================================================
 
 export default function AlertPanel({ maxVisible = 10 }: AlertPanelProps) {
-  const { alerts, summary, loading, error, refresh } = useActiveAlerts();
-  const [filter, setFilter] = useState<Alert["priority"] | "ALL">("ALL");
+  const [filter, setFilter] = useState<"CRITICAL" | "WARNING" | "INFO" | "ALL">("ALL");
   const [expanded, setExpanded] = useState(false);
+  const [alerts, setAlerts] = useState<Alert[]>([]);
+  const [isRefreshing, setIsRefreshing] = useState(false);
+
+  // Real-time SSE connection
+  const { connected, alertSummary, lastMessage, reconnect } = useAlertSSE();
+
+  // Convert SSE messages to local alerts (mock for demo)
+  useEffect(() => {
+    if (lastMessage?.type === "ALERT_SUMMARY" && lastMessage.data?.recent) {
+      const mockAlerts: Alert[] = lastMessage.data.recent.map((a: any, i: number) => ({
+        id: i + 1,
+        countryId: a.countryId ?? 1,
+        countryName: a.country?.name ?? "Unknown",
+        alertType: a.alertType ?? "TRAJECTORY_CHANGE",
+        priority: a.priority ?? "WARNING",
+        title: a.title ?? `Alert for ${a.country?.name ?? "Country"}`,
+        message: a.message ?? "System alert triggered",
+        affectedIndicators: a.affectedIndicators ?? [],
+        createdAt: a.createdAt ?? new Date().toISOString(),
+        resolved: a.resolved ?? false,
+      }));
+      setAlerts(mockAlerts);
+    }
+  }, [lastMessage]);
+
+  // Manual refresh
+  const handleRefresh = useCallback(async () => {
+    setIsRefreshing(true);
+    try {
+      const result = await triggerEvaluation();
+      console.log("[AlertPanel] Evaluation triggered:", result);
+    } catch (error) {
+      console.error("[AlertPanel] Refresh failed:", error);
+    } finally {
+      setIsRefreshing(false);
+    }
+  }, []);
 
   const filteredAlerts = alerts.filter((alert) => 
     filter === "ALL" || alert.priority === filter
   ).slice(0, expanded ? undefined : maxVisible);
 
-  const groupedAlerts = filteredAlerts.reduce<AlertGroup>((acc, alert) => {
-    acc[alert.priority].push(alert);
-    return acc;
-  }, { CRITICAL: [], WARNING: [], INFO: [] });
-
-  const handleResolve = async (alertId: number) => {
-    try {
-      await api.resolveAlert(alertId);
-      refresh();
-    } catch (err) {
-      console.error("Failed to resolve alert:", err);
-    }
+  // Group by priority
+  const groupedAlerts = {
+    CRITICAL: filteredAlerts.filter(a => a.priority === "CRITICAL"),
+    WARNING: filteredAlerts.filter(a => a.priority === "WARNING"),
+    INFO: filteredAlerts.filter(a => a.priority === "INFO"),
   };
 
-  if (loading) {
-    return (
-      <div className="alert-panel loading">
-        <div className="loading-spinner" />
-        <span>Loading alerts...</span>
-      </div>
-    );
-  }
+  const handleResolve = async (alertId: number) => {
+    setAlerts(prev => prev.map(a => a.id === alertId ? { ...a, resolved: true } : a));
+  };
 
-  if (error) {
+  if (!connected && alerts.length === 0) {
     return (
       <div className="alert-panel error">
-        <span>⚠️ Failed to load alerts</span>
-        <button onClick={refresh}>Retry</button>
+        <div className="connection-status disconnected">
+          <span className="status-icon">⚠️</span>
+          <span className="status-text">Disconnected from real-time feed</span>
+        </div>
+        <button className="reconnect-btn" onClick={reconnect}>
+          Reconnect
+        </button>
+        <p className="connection-hint">
+          The backend server must be running to receive live alerts.
+        </p>
       </div>
     );
   }
 
-  if (summary.total === 0) {
+  if (alertSummary.total === 0 && alerts.length === 0) {
     return (
       <div className="alert-panel empty">
         <div className="empty-icon">✓</div>
         <span className="empty-text">No active alerts</span>
         <span className="empty-subtext">All countries are stable</span>
+        {connected && (
+          <div className="live-badge">🔴 Live monitoring active</div>
+        )}
       </div>
     );
   }
 
   return (
     <div className="alert-panel">
-      {/* Header with summary */}
+      {/* Header with controls */}
       <div className="panel-header">
         <span>ACTIVE ALERTS</span>
         <div className="header-actions">
-          <button className="refresh-btn" onClick={refresh} title="Refresh alerts">
+          <button 
+            className={`refresh-btn ${isRefreshing ? "spinning" : ""}`} 
+            onClick={handleRefresh}
+            title="Refresh alerts"
+            disabled={isRefreshing}
+          >
             ↻
           </button>
           <select 
             className="filter-select"
             value={filter}
-            onChange={(e) => setFilter(e.target.value as Alert["priority"] | "ALL")}
+            onChange={(e) => setFilter(e.target.value as any)}
           >
             <option value="ALL">All</option>
             <option value="CRITICAL">Critical</option>
@@ -188,11 +275,20 @@ export default function AlertPanel({ maxVisible = 10 }: AlertPanelProps) {
         </div>
       </div>
 
-      {/* Summary bar */}
+      {/* Summary bar with live indicator */}
       <AlertSummaryBar 
-        summary={summary} 
-        onClick={() => setExpanded(!expanded)} 
+        summary={alertSummary.total > 0 ? alertSummary : { total: alerts.length, critical: groupedAlerts.CRITICAL.length, warning: groupedAlerts.WARNING.length, info: groupedAlerts.INFO.length }}
+        onClick={() => setExpanded(!expanded)}
+        isLive={connected}
       />
+
+      {/* Connection indicator */}
+      {connected && (
+        <div className="sse-indicator">
+          <span className="pulse-dot"></span>
+          <span className="sse-text">Real-time updates active</span>
+        </div>
+      )}
 
       {/* Alert list */}
       <div className="alert-list">
@@ -256,35 +352,4 @@ export default function AlertPanel({ maxVisible = 10 }: AlertPanelProps) {
       )}
     </div>
   );
-}
-
-// ============================================================================
-// Helper Functions
-// ============================================================================
-
-function getTimeAgo(date: Date): string {
-  const seconds = Math.floor((Date.now() - date.getTime()) / 1000);
-  
-  const intervals = [
-    { label: "y", seconds: 31536000 },
-    { label: "mo", seconds: 2592000 },
-    { label: "d", seconds: 86400 },
-    { label: "h", seconds: 3600 },
-    { label: "m", seconds: 60 },
-  ];
-
-  for (const interval of intervals) {
-    const count = Math.floor(seconds / interval.seconds);
-    if (count >= 1) {
-      return `${count}${interval.label} ago`;
-    }
-  }
-  return "just now";
-}
-
-function formatIndicatorName(name: string): string {
-  return name
-    .split("_")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(" ");
 }
