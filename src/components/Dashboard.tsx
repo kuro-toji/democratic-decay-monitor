@@ -597,9 +597,6 @@ export default function Dashboard() {
           🔔
           {showAlertPanel && <span className="alert-count-badge">6</span>}
         </button>
-        <button className="demo-btn" onClick={runDemo}>
-          DEMO MODE
-        </button>
         <button className="methodology-btn" onClick={() => setShowMethodology(true)}>
           ?
         </button>
