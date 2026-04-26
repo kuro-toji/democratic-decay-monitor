@@ -1,17 +1,16 @@
 from datetime import datetime
-from typing import Optional
 
 from pydantic import BaseModel
 
 
 class DdiScore(BaseModel):
     iso3: str
+    year: int
     ddi_score: float
     dimension_scores: dict[str, float]
     alert_level: str
     computed_at: datetime
     weights_version: str
-    year: int
 
 
 class CountrySnapshot(BaseModel):
@@ -19,7 +18,7 @@ class CountrySnapshot(BaseModel):
     source: str
     dimension: str
     score: float
-    raw_value: Optional[float] = None
+    raw_value: float | None = None
     year: int
     created_at: datetime
 
@@ -34,4 +33,3 @@ class Alert(BaseModel):
     triggered_at: datetime
     description: str
     weights_version: str
-    metadata: Optional[dict] = None
