@@ -613,16 +613,16 @@ export default function Dashboard() {
               setSelected(country.country);
               setAipResult(null);
               setStreamingText("");
-              setShowOverlay(false);
               setCalloutBanner(null);
               setHighlightIndicator(undefined);
-              setDemoMode(false);
+              // Scroll up to timeline chart
+              document.getElementById("timeline-chart")?.scrollIntoView({ behavior: "smooth", block: "start" });
             }}
             selectedCountryId={COUNTRIES.findIndex(c => c.country === selected) + 1}
           />
         </aside>
 
-        <section className="center-panel">
+        <section className="center-panel" id="timeline-chart">
           <div className="panel-header">
             <span>INDICATOR TIMELINE — {selected.toUpperCase()}</span>
             {showOverlay && aipResult && (
