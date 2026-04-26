@@ -1,0 +1,48 @@
+name: Annual Data Refresh
+
+on:
+  schedule:
+    cron: "0 2 1 2 *"
+  workflow_dispatch:
+
+jobs:
+  refresh:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install pipeline dependencies
+        run: |
+          pip install -r pipeline/requirements.txt
+
+      - name: Ingest Freedom House FIW
+        run: python -m pipeline.ingestors.freedom_house --download
+        env:
+          MONGO_URI: ${{ secrets.MONGO_URI }}
+
+      - name: Ingest World Bank WGI
+        run: python -m pipeline.ingestors.wgi --years 2000-2023
+        env:
+          MONGO_URI: ${{ secrets.MONGO_URI }}
+
+      - name: Compute DDI scores
+        run: python -m pipeline.scoring.compute_ddi --all-countries
+        env:
+          MONGO_URI: ${{ secrets.MONGO_URI }}
+
+      - name: Detect anomalies
+        run: python -m pipeline.anomaly.detect --all-countries
+        env:
+          MONGO_URI: ${{ secrets.MONGO_URI }}
+
+      - name: Post job summary
+        run: |
+          echo "## Annual Data Refresh Complete" >> $GITHUB_STEP_SUMMARY
+          echo "- Freedom House FIW: ingested" >> $GITHUB_STEP_SUMMARY
+          echo "- World Bank WGI: ingested" >> $GITHUB_STEP_SUMMARY
+          echo "- DDI scores: computed" >> $GITHUB_STEP_SUMMARY
+          echo "- Anomalies: detected" >> $GITHUB_STEP_SUMMARY

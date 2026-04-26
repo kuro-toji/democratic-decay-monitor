@@ -1,0 +1,27 @@
+name: Deploy API to Railway
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "api/**"
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Railway CLI
+        run: npm install -g @railway/cli
+
+      - name: Deploy to Railway
+        run: railway up --service ddm-api --var MONGO_URI=${{ secrets.MONGO_URI }}
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}

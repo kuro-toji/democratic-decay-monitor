@@ -1,0 +1,40 @@
+name: Daily GDELT + Shutdown Signals
+
+on:
+  schedule:
+    cron: "0 6 * * *"
+  workflow_dispatch:
+
+jobs:
+  daily:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install pipeline dependencies
+        run: |
+          pip install -r pipeline/requirements.txt
+
+      - name: Ingest GDELT daily events
+        run: python -m pipeline.ingestors.gdelt
+        env:
+          MONGO_URI: ${{ secrets.MONGO_URI }}
+
+      - name: Ingest Access Now shutdown data
+        run: python -m pipeline.ingestors.access_now --year 2024
+        env:
+          MONGO_URI: ${{ secrets.MONGO_URI }}
+
+      - name: Compute DDI scores for changed countries
+        run: python -m pipeline.scoring.compute_ddi --changed-only
+        env:
+          MONGO_URI: ${{ secrets.MONGO_URI }}
+
+      - name: Detect anomalies for changed countries
+        run: python -m pipeline.anomaly.detect --changed-only
+        env:
+          MONGO_URI: ${{ secrets.MONGO_URI }}
