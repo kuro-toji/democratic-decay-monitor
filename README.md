@@ -140,3 +140,93 @@ Click **?** in the top bar to open the full methodology modal covering:
 | **Georgia** | 2020–2024 | Russian-model consolidation, foreign agent law, civil society crackdown. Currently DEGRADING. |
 | **Serbia** | 2012–2024 | Vučić/SNS media consolidation, 2019 NGO law, 2024 foreign agent protests. Currently STRESS — 18–24 months from potential capture. |
 | **Czech Republic** | 1992–1997 | Mečiar media capture → EU/NATO conditionality → 1998 electoral defeat. Recovery within 2 years. Demonstrates conditionality effectiveness model. |
+
+---
+
+
+## Deployment
+
+### Frontend (Cloudflare Pages)
+
+The frontend is deployed to Cloudflare Pages with automatic deployments from GitHub Actions.
+
+#### Prerequisites
+
+1. Cloudflare account with Pages enabled
+2. GitHub repository with Actions enabled
+3. Domain configured in Cloudflare (optional)
+
+#### Required Secrets
+
+Set these in GitHub → Settings → Secrets and variables → Actions:
+
+| Secret | Where to get it | Purpose |
+|--------|-----------------|---------|
+| `CF_ACCOUNT_ID` | Cloudflare Dashboard → Overview → Account ID | Identifies your Cloudflare account |
+| `CF_API_TOKEN` | Cloudflare Dashboard → Profile → API Tokens → Create Token | Grants access to deploy to Pages |
+| `API_BASE_URL` | Your API deployment URL | Backend API endpoint for the frontend |
+
+**Creating CF_API_TOKEN:**
+1. Go to Cloudflare Dashboard → Profile → API Tokens
+2. Create a custom token with the **Cloudflare Pages** template
+3. Grant edit permissions for your account
+4. Copy the generated token to GitHub Secrets
+
+#### Custom Domain Setup
+
+1. Go to Cloudflare Pages → democratic-decay-monitor → Settings → Custom Domains
+2. Add your domain (e.g., `ddm.example.com`)
+3. Update DNS in Cloudflare DNS panel with a CNAME to `ddm.pages.dev`
+4. SSL will be provisioned automatically
+
+#### Preview Deployments
+
+Every pull request automatically gets a unique preview URL:
+```
+https://<pr-number>.democratic-decay-monitor.pages.dev
+```
+
+This allows you to test changes before merging.
+
+#### Manual Deployment
+
+If you need to deploy without GitHub Actions:
+
+```bash
+# Install Wrangler
+npm install -g wrangler
+
+# Login to Cloudflare
+wrangler pages login
+
+# Deploy directory
+wrangler pages deploy frontend/dist --project-name=democratic-decay-monitor
+```
+
+### API (Railway)
+
+The backend API is deployed separately. See [api/README.md](api/README.md) for Railway-specific instructions.
+
+#### API Environment Variables
+
+| Variable | Description |
+|----------|-------------|
+| `DATABASE_URL` | Turso SQLite connection string |
+| `VITE_MINIMAX_API_KEY` | Optional: MiniMax API key for AIP layer |
+
+
+---
+
+## Embeddable Widget
+
+News outlets can embed a compact DDI widget on their pages:
+
+```html
+<!-- Add this script -->
+<script src="https://ddm.pages.dev/embed.js" data-iso3="IND"></script>
+
+<!-- Or use a div with specific country -->
+<div data-ddm-widget data-iso3="HUN"></div>
+```
+
+The widget renders a small card showing the country's flag, DDI score, and alert level. It's ~9KB uncompressed and requires no dependencies.

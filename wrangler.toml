@@ -1,0 +1,8 @@
+name = "democratic-decay-monitor"
+compatibility_date = "2024-01-01"
+pages_build_output_dir = "frontend/dist"
+
+# Optional: uncomment for KV namespace binding
+# [[kv_namespaces]]
+# binding = "CACHE"
+# id = "your-kv-id"
