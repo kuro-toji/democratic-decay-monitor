@@ -18,6 +18,7 @@ import {
   indicatorsData,
   baselinesData,
   analoguesData,
+  analysisResults,
 } from "../data";
 import type { IndicatorKey, CountryData, IndicatorBaseline, AnalogCase } from "../data";
 import { classifyTrajectory, computeDegradationVector, findAnalogues } from "../lib/trajectoryEngine";
@@ -658,6 +659,27 @@ export default function Dashboard() {
           </div>
           <div className="alert-badge" style={{ borderColor: radarColor, color: radarColor }}>
             ALERT LEVEL: {alertLevel >= 3 ? "HIGH" : alertLevel === 0 ? "NOMINAL" : "ELEVATED"}
+          </div>
+          {/* Auto-analysis summary */}
+          <div className="analysis-summary">
+            <div className="summary-row">
+              <span className="summary-label">Trajectory:</span>
+              <span className={`summary-value ${trajectory.status.toLowerCase()}`}>
+                {trajectory.status}
+              </span>
+            </div>
+            <div className="summary-row">
+              <span className="summary-label">Score:</span>
+              <span className="summary-value">{Math.round((selectedCountry.readings[selectedCountry.readings.length-1].judicial_independence + selectedCountry.readings[selectedCountry.readings.length-1].press_freedom + selectedCountry.readings[selectedCountry.readings.length-1].electoral_integrity + selectedCountry.readings[selectedCountry.readings.length-1].civil_society_space + selectedCountry.readings[selectedCountry.readings.length-1].executive_constraints) * 20)}/100</span>
+            </div>
+            <div className="summary-row">
+              <span className="summary-label">Critical:</span>
+              <span className="summary-value">{trajectory.flags.filter(f => f.status === "CRITICAL").length} indicators</span>
+            </div>
+            <div className="summary-row">
+              <span className="summary-label">Trend:</span>
+              <span className="summary-value">{computeDegradationVector(selectedCountry.readings).length >= 3 ? "DECLINING" : "STABLE"}</span>
+            </div>
           </div>
         </aside>
 

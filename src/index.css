@@ -194,6 +194,45 @@ body {
   text-align: center;
 }
 
+.analysis-summary {
+  margin-top: 12px;
+  padding: 10px;
+  background: #1a1d23;
+  border: 1px solid #2e303a;
+  font-size: 11px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  border-bottom: 1px solid #2e303a;
+}
+
+.summary-row:last-child {
+  border-bottom: none;
+}
+
+.summary-label {
+  color: #9ca3af;
+}
+
+.summary-value {
+  font-weight: 600;
+}
+
+.summary-value.degrading {
+  color: #ef4444;
+}
+
+.summary-value.stress {
+  color: #f59e0b;
+}
+
+.summary-value.stable {
+  color: #22c55e;
+}
+
 .aip-panel {
   /* no override needed — explicit borders handled by .right-panel */
 }

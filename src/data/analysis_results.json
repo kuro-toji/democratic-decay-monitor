@@ -1,0 +1,1377 @@
+{
+  "countries": [
+    {
+      "country": "Afghanistan",
+      "code": "AFG",
+      "trajectory": "STRESS",
+      "alert_level": 2,
+      "composite_score": 54.0
+    },
+    {
+      "country": "Albania",
+      "code": "ALB",
+      "trajectory": "STABLE",
+      "alert_level": 1,
+      "composite_score": 56.4
+    },
+    {
+      "country": "Algeria",
+      "code": "DZA",
+      "trajectory": "STRESS",
+      "alert_level": 0,
+      "composite_score": 65.0
+    },
+    {
+      "country": "Andorra",
+      "code": "AND",
+      "trajectory": "STRESS",
+      "alert_level": 3,
+      "composite_score": 47.4
+    },
+    {
+      "country": "Angola",
+      "code": "AGO",
+      "trajectory": "STRESS",
+      "alert_level": 3,
+      "composite_score": 50.6
+    },
+    {
+      "country": "Antigua and Barbuda",
+      "code": "ATG",
+      "trajectory": "STABLE",
+      "alert_level": 1,
+      "composite_score": 54.0
+    },
+    {
+      "country": "Argentina",
+      "code": "ARG",
+      "trajectory": "STABLE",
+      "alert_level": 1,
+      "composite_score": 59.0
+    },
+    {
+      "country": "Armenia",
+      "code": "ARM",
+      "trajectory": "STRESS",
+      "alert_level": 4,
+      "composite_score": 46.2
+    },
+    {
+      "country": "Australia",
+      "code": "AUS",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 89.4
+    },
+    {
+      "country": "Austria",
+      "code": "AUT",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 78.4
+    },
+    {
+      "country": "Azerbaijan",
+      "code": "AZE",
+      "trajectory": "STABLE",
+      "alert_level": 1,
+      "composite_score": 56.0
+    },
+    {
+      "country": "Bahamas",
+      "code": "BHS",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 64.2
+    },
+    {
+      "country": "Bahrain",
+      "code": "BHR",
+      "trajectory": "STABLE",
+      "alert_level": 1,
+      "composite_score": 57.4
+    },
+    {
+      "country": "Bangladesh",
+      "code": "BGD",
+      "trajectory": "STABLE",
+      "alert_level": 1,
+      "composite_score": 62.8
+    },
+    {
+      "country": "Barbados",
+      "code": "BRB",
+      "trajectory": "STABLE",
+      "alert_level": 1,
+      "composite_score": 64.6
+    },
+    {
+      "country": "Belarus",
+      "code": "BLR",
+      "trajectory": "STABLE",
+      "alert_level": 1,
+      "composite_score": 58.6
+    },
+    {
+      "country": "Belgium",
+      "code": "BEL",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 78.4
+    },
+    {
+      "country": "Belize",
+      "code": "BLZ",
+      "trajectory": "STABLE",
+      "alert_level": 2,
+      "composite_score": 49.8
+    },
+    {
+      "country": "Benin",
+      "code": "BEN",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 77.2
+    },
+    {
+      "country": "Bhutan",
+      "code": "BTN",
+      "trajectory": "STABLE",
+      "alert_level": 1,
+      "composite_score": 62.2
+    },
+    {
+      "country": "Bolivia",
+      "code": "BOL",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 70.6
+    },
+    {
+      "country": "Bosnia and Herzegovina",
+      "code": "BIH",
+      "trajectory": "STABLE",
+      "alert_level": 1,
+      "composite_score": 59.4
+    },
+    {
+      "country": "Botswana",
+      "code": "BWA",
+      "trajectory": "STABLE",
+      "alert_level": 1,
+      "composite_score": 62.2
+    },
+    {
+      "country": "Brazil",
+      "code": "BRA",
+      "trajectory": "STRESS",
+      "alert_level": 4,
+      "composite_score": 46.2
+    },
+    {
+      "country": "Brunei",
+      "code": "BRN",
+      "trajectory": "STABLE",
+      "alert_level": 2,
+      "composite_score": 62.8
+    },
+    {
+      "country": "Bulgaria",
+      "code": "BGR",
+      "trajectory": "STABLE",
+      "alert_level": 1,
+      "composite_score": 55.4
+    },
+    {
+      "country": "Burkina Faso",
+      "code": "BFA",
+      "trajectory": "STABLE",
+      "alert_level": 4,
+      "composite_score": 40.6
+    },
+    {
+      "country": "Burundi",
+      "code": "BDI",
+      "trajectory": "STRESS",
+      "alert_level": 5,
+      "composite_score": 25.8
+    },
+    {
+      "country": "Cabo Verde",
+      "code": "CPV",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 66.8
+    },
+    {
+      "country": "Cambodia",
+      "code": "KHM",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 78.0
+    },
+    {
+      "country": "Cameroon",
+      "code": "CMR",
+      "trajectory": "STABLE",
+      "alert_level": 2,
+      "composite_score": 50.2
+    },
+    {
+      "country": "Canada",
+      "code": "CAN",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 93.6
+    },
+    {
+      "country": "Central African Republic",
+      "code": "CAF",
+      "trajectory": "STABLE",
+      "alert_level": 1,
+      "composite_score": 58.2
+    },
+    {
+      "country": "Chad",
+      "code": "TCD",
+      "trajectory": "STRESS",
+      "alert_level": 2,
+      "composite_score": 55.6
+    },
+    {
+      "country": "Chile",
+      "code": "CHL",
+      "trajectory": "STABLE",
+      "alert_level": 1,
+      "composite_score": 68.8
+    },
+    {
+      "country": "China",
+      "code": "CHN",
+      "trajectory": "STABLE",
+      "alert_level": 1,
+      "composite_score": 64.4
+    },
+    {
+      "country": "Colombia",
+      "code": "COL",
+      "trajectory": "STRESS",
+      "alert_level": 5,
+      "composite_score": 39.8
+    },
+    {
+      "country": "Comoros",
+      "code": "COM",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 67.2
+    },
+    {
+      "country": "Congo",
+      "code": "COG",
+      "trajectory": "STABLE",
+      "alert_level": 2,
+      "composite_score": 55.2
+    },
+    {
+      "country": "Democratic Republic of the Congo",
+      "code": "COD",
+      "trajectory": "STRESS",
+      "alert_level": 4,
+      "composite_score": 41.8
+    },
+    {
+      "country": "Costa Rica",
+      "code": "CRI",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 92.0
+    },
+    {
+      "country": "Cote d'Ivoire",
+      "code": "CIV",
+      "trajectory": "STRESS",
+      "alert_level": 2,
+      "composite_score": 51.4
+    },
+    {
+      "country": "Croatia",
+      "code": "HRV",
+      "trajectory": "STABLE",
+      "alert_level": 3,
+      "composite_score": 45.0
+    },
+    {
+      "country": "Cuba",
+      "code": "CUB",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 67.4
+    },
+    {
+      "country": "Cyprus",
+      "code": "CYP",
+      "trajectory": "STABLE",
+      "alert_level": 3,
+      "composite_score": 51.0
+    },
+    {
+      "country": "Czech Republic",
+      "code": "CZE",
+      "trajectory": "STABLE",
+      "alert_level": 1,
+      "composite_score": 62.8
+    },
+    {
+      "country": "Denmark",
+      "code": "DNK",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 95.6
+    },
+    {
+      "country": "Djibouti",
+      "code": "DJI",
+      "trajectory": "STABLE",
+      "alert_level": 1,
+      "composite_score": 53.4
+    },
+    {
+      "country": "Dominica",
+      "code": "DMA",
+      "trajectory": "STABLE",
+      "alert_level": 1,
+      "composite_score": 60.6
+    },
+    {
+      "country": "Dominican Republic",
+      "code": "DOM",
+      "trajectory": "STABLE",
+      "alert_level": 3,
+      "composite_score": 52.4
+    },
+    {
+      "country": "Ecuador",
+      "code": "ECU",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 67.6
+    },
+    {
+      "country": "Egypt",
+      "code": "EGY",
+      "trajectory": "STABLE",
+      "alert_level": 5,
+      "composite_score": 44.6
+    },
+    {
+      "country": "El Salvador",
+      "code": "SLV",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 66.4
+    },
+    {
+      "country": "Equatorial Guinea",
+      "code": "GNQ",
+      "trajectory": "STABLE",
+      "alert_level": 1,
+      "composite_score": 60.4
+    },
+    {
+      "country": "Eritrea",
+      "code": "ERI",
+      "trajectory": "STABLE",
+      "alert_level": 5,
+      "composite_score": 41.6
+    },
+    {
+      "country": "Estonia",
+      "code": "EST",
+      "trajectory": "STABLE",
+      "alert_level": 3,
+      "composite_score": 51.6
+    },
+    {
+      "country": "Eswatini",
+      "code": "SWZ",
+      "trajectory": "STRESS",
+      "alert_level": 4,
+      "composite_score": 39.4
+    },
+    {
+      "country": "Ethiopia",
+      "code": "ETH",
+      "trajectory": "STRESS",
+      "alert_level": 3,
+      "composite_score": 42.4
+    },
+    {
+      "country": "Fiji",
+      "code": "FJI",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 70.6
+    },
+    {
+      "country": "Finland",
+      "code": "FIN",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 95.0
+    },
+    {
+      "country": "France",
+      "code": "FRA",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 74.0
+    },
+    {
+      "country": "Gabon",
+      "code": "GAB",
+      "trajectory": "STABLE",
+      "alert_level": 1,
+      "composite_score": 57.0
+    },
+    {
+      "country": "Gambia",
+      "code": "GMB",
+      "trajectory": "STRESS",
+      "alert_level": 4,
+      "composite_score": 44.4
+    },
+    {
+      "country": "Georgia",
+      "code": "GEO",
+      "trajectory": "DEGRADING",
+      "alert_level": 5,
+      "composite_score": 28.8
+    },
+    {
+      "country": "Germany",
+      "code": "DEU",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 82.8
+    },
+    {
+      "country": "Ghana",
+      "code": "GHA",
+      "trajectory": "STRESS",
+      "alert_level": 2,
+      "composite_score": 55.6
+    },
+    {
+      "country": "Greece",
+      "code": "GRC",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 66.8
+    },
+    {
+      "country": "Grenada",
+      "code": "GRD",
+      "trajectory": "STRESS",
+      "alert_level": 5,
+      "composite_score": 38.0
+    },
+    {
+      "country": "Guatemala",
+      "code": "GTM",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 69.6
+    },
+    {
+      "country": "Guinea",
+      "code": "GIN",
+      "trajectory": "STRESS",
+      "alert_level": 4,
+      "composite_score": 47.2
+    },
+    {
+      "country": "Guinea-Bissau",
+      "code": "GNB",
+      "trajectory": "STRESS",
+      "alert_level": 0,
+      "composite_score": 59.8
+    },
+    {
+      "country": "Guyana",
+      "code": "GUY",
+      "trajectory": "STABLE",
+      "alert_level": 1,
+      "composite_score": 60.4
+    },
+    {
+      "country": "Haiti",
+      "code": "HTI",
+      "trajectory": "STABLE",
+      "alert_level": 1,
+      "composite_score": 58.0
+    },
+    {
+      "country": "Honduras",
+      "code": "HND",
+      "trajectory": "STRESS",
+      "alert_level": 1,
+      "composite_score": 59.6
+    },
+    {
+      "country": "Hungary",
+      "code": "HUN",
+      "trajectory": "DEGRADING",
+      "alert_level": 5,
+      "composite_score": 20.4
+    },
+    {
+      "country": "Iceland",
+      "code": "ISL",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 70.6
+    },
+    {
+      "country": "India",
+      "code": "IND",
+      "trajectory": "STABLE",
+      "alert_level": 5,
+      "composite_score": 41.4
+    },
+    {
+      "country": "Indonesia",
+      "code": "IDN",
+      "trajectory": "STABLE",
+      "alert_level": 5,
+      "composite_score": 36.0
+    },
+    {
+      "country": "Iran",
+      "code": "IRN",
+      "trajectory": "STRESS",
+      "alert_level": 1,
+      "composite_score": 61.6
+    },
+    {
+      "country": "Iraq",
+      "code": "IRQ",
+      "trajectory": "STABLE",
+      "alert_level": 2,
+      "composite_score": 56.2
+    },
+    {
+      "country": "Ireland",
+      "code": "IRL",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 89.2
+    },
+    {
+      "country": "Israel",
+      "code": "ISR",
+      "trajectory": "STABLE",
+      "alert_level": 1,
+      "composite_score": 65.8
+    },
+    {
+      "country": "Italy",
+      "code": "ITA",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 67.4
+    },
+    {
+      "country": "Jamaica",
+      "code": "JAM",
+      "trajectory": "STABLE",
+      "alert_level": 1,
+      "composite_score": 56.4
+    },
+    {
+      "country": "Japan",
+      "code": "JPN",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 81.0
+    },
+    {
+      "country": "Jordan",
+      "code": "JOR",
+      "trajectory": "STRESS",
+      "alert_level": 5,
+      "composite_score": 39.6
+    },
+    {
+      "country": "Kazakhstan",
+      "code": "KAZ",
+      "trajectory": "STABLE",
+      "alert_level": 1,
+      "composite_score": 55.0
+    },
+    {
+      "country": "Kenya",
+      "code": "KEN",
+      "trajectory": "STABLE",
+      "alert_level": 1,
+      "composite_score": 66.2
+    },
+    {
+      "country": "Kiribati",
+      "code": "KIR",
+      "trajectory": "STRESS",
+      "alert_level": 0,
+      "composite_score": 62.6
+    },
+    {
+      "country": "North Korea",
+      "code": "PRK",
+      "trajectory": "STABLE",
+      "alert_level": 1,
+      "composite_score": 56.8
+    },
+    {
+      "country": "South Korea",
+      "code": "KOR",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 67.4
+    },
+    {
+      "country": "Kuwait",
+      "code": "KWT",
+      "trajectory": "STABLE",
+      "alert_level": 3,
+      "composite_score": 47.6
+    },
+    {
+      "country": "Kyrgyzstan",
+      "code": "KGZ",
+      "trajectory": "STRESS",
+      "alert_level": 1,
+      "composite_score": 54.2
+    },
+    {
+      "country": "Laos",
+      "code": "LAO",
+      "trajectory": "STABLE",
+      "alert_level": 2,
+      "composite_score": 51.8
+    },
+    {
+      "country": "Latvia",
+      "code": "LVA",
+      "trajectory": "STABLE",
+      "alert_level": 4,
+      "composite_score": 48.6
+    },
+    {
+      "country": "Lebanon",
+      "code": "LBN",
+      "trajectory": "STRESS",
+      "alert_level": 4,
+      "composite_score": 41.2
+    },
+    {
+      "country": "Lesotho",
+      "code": "LSO",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 69.8
+    },
+    {
+      "country": "Liberia",
+      "code": "LBR",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 71.8
+    },
+    {
+      "country": "Libya",
+      "code": "LBY",
+      "trajectory": "STRESS",
+      "alert_level": 2,
+      "composite_score": 47.2
+    },
+    {
+      "country": "Liechtenstein",
+      "code": "LIE",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 64.4
+    },
+    {
+      "country": "Lithuania",
+      "code": "LTU",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 72.6
+    },
+    {
+      "country": "Luxembourg",
+      "code": "LUX",
+      "trajectory": "STABLE",
+      "alert_level": 4,
+      "composite_score": 43.8
+    },
+    {
+      "country": "Madagascar",
+      "code": "MDG",
+      "trajectory": "STRESS",
+      "alert_level": 2,
+      "composite_score": 56.8
+    },
+    {
+      "country": "Malawi",
+      "code": "MWI",
+      "trajectory": "STABLE",
+      "alert_level": 2,
+      "composite_score": 56.0
+    },
+    {
+      "country": "Malaysia",
+      "code": "MYS",
+      "trajectory": "STABLE",
+      "alert_level": 5,
+      "composite_score": 37.6
+    },
+    {
+      "country": "Maldives",
+      "code": "MDV",
+      "trajectory": "STABLE",
+      "alert_level": 3,
+      "composite_score": 44.8
+    },
+    {
+      "country": "Mali",
+      "code": "MLI",
+      "trajectory": "STABLE",
+      "alert_level": 1,
+      "composite_score": 56.8
+    },
+    {
+      "country": "Malta",
+      "code": "MLT",
+      "trajectory": "STRESS",
+      "alert_level": 4,
+      "composite_score": 42.6
+    },
+    {
+      "country": "Marshall Islands",
+      "code": "MHL",
+      "trajectory": "STABLE",
+      "alert_level": 1,
+      "composite_score": 53.2
+    },
+    {
+      "country": "Mauritania",
+      "code": "MRT",
+      "trajectory": "STABLE",
+      "alert_level": 3,
+      "composite_score": 48.6
+    },
+    {
+      "country": "Mauritius",
+      "code": "MUS",
+      "trajectory": "STABLE",
+      "alert_level": 3,
+      "composite_score": 53.4
+    },
+    {
+      "country": "Mexico",
+      "code": "MEX",
+      "trajectory": "STABLE",
+      "alert_level": 1,
+      "composite_score": 49.6
+    },
+    {
+      "country": "Micronesia",
+      "code": "FSM",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 63.8
+    },
+    {
+      "country": "Moldova",
+      "code": "MDA",
+      "trajectory": "STRESS",
+      "alert_level": 4,
+      "composite_score": 37.2
+    },
+    {
+      "country": "Monaco",
+      "code": "MCO",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 64.2
+    },
+    {
+      "country": "Mongolia",
+      "code": "MNG",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 70.0
+    },
+    {
+      "country": "Montenegro",
+      "code": "MNE",
+      "trajectory": "STRESS",
+      "alert_level": 3,
+      "composite_score": 42.6
+    },
+    {
+      "country": "Morocco",
+      "code": "MAR",
+      "trajectory": "STRESS",
+      "alert_level": 1,
+      "composite_score": 59.0
+    },
+    {
+      "country": "Mozambique",
+      "code": "MOZ",
+      "trajectory": "STABLE",
+      "alert_level": 5,
+      "composite_score": 31.0
+    },
+    {
+      "country": "Myanmar",
+      "code": "MMR",
+      "trajectory": "STRESS",
+      "alert_level": 4,
+      "composite_score": 41.4
+    },
+    {
+      "country": "Namibia",
+      "code": "NAM",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 65.4
+    },
+    {
+      "country": "Nauru",
+      "code": "NRU",
+      "trajectory": "STABLE",
+      "alert_level": 2,
+      "composite_score": 58.4
+    },
+    {
+      "country": "Nepal",
+      "code": "NPL",
+      "trajectory": "STABLE",
+      "alert_level": 3,
+      "composite_score": 50.6
+    },
+    {
+      "country": "Netherlands",
+      "code": "NLD",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 90.4
+    },
+    {
+      "country": "New Zealand",
+      "code": "NZL",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 92.0
+    },
+    {
+      "country": "Nicaragua",
+      "code": "NIC",
+      "trajectory": "STABLE",
+      "alert_level": 5,
+      "composite_score": 42.2
+    },
+    {
+      "country": "Niger",
+      "code": "NER",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 66.4
+    },
+    {
+      "country": "Nigeria",
+      "code": "NGA",
+      "trajectory": "STRESS",
+      "alert_level": 4,
+      "composite_score": 38.0
+    },
+    {
+      "country": "North Macedonia",
+      "code": "MKD",
+      "trajectory": "STABLE",
+      "alert_level": 2,
+      "composite_score": 55.4
+    },
+    {
+      "country": "Norway",
+      "code": "NOR",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 96.0
+    },
+    {
+      "country": "Oman",
+      "code": "OMN",
+      "trajectory": "STRESS",
+      "alert_level": 4,
+      "composite_score": 48.6
+    },
+    {
+      "country": "Pakistan",
+      "code": "PAK",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 68.0
+    },
+    {
+      "country": "Palau",
+      "code": "PLW",
+      "trajectory": "STRESS",
+      "alert_level": 2,
+      "composite_score": 60.0
+    },
+    {
+      "country": "Palestine",
+      "code": "PSE",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 75.0
+    },
+    {
+      "country": "Panama",
+      "code": "PAN",
+      "trajectory": "STABLE",
+      "alert_level": 3,
+      "composite_score": 50.6
+    },
+    {
+      "country": "Papua New Guinea",
+      "code": "PNG",
+      "trajectory": "STABLE",
+      "alert_level": 2,
+      "composite_score": 54.0
+    },
+    {
+      "country": "Paraguay",
+      "code": "PRY",
+      "trajectory": "STRESS",
+      "alert_level": 0,
+      "composite_score": 63.4
+    },
+    {
+      "country": "Peru",
+      "code": "PER",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 66.2
+    },
+    {
+      "country": "Philippines",
+      "code": "PHL",
+      "trajectory": "STRESS",
+      "alert_level": 5,
+      "composite_score": 36.8
+    },
+    {
+      "country": "Poland",
+      "code": "POL",
+      "trajectory": "DEGRADING",
+      "alert_level": 3,
+      "composite_score": 47.6
+    },
+    {
+      "country": "Portugal",
+      "code": "PRT",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 85.8
+    },
+    {
+      "country": "Qatar",
+      "code": "QAT",
+      "trajectory": "STABLE",
+      "alert_level": 1,
+      "composite_score": 53.2
+    },
+    {
+      "country": "Romania",
+      "code": "ROU",
+      "trajectory": "STABLE",
+      "alert_level": 4,
+      "composite_score": 44.2
+    },
+    {
+      "country": "Russia",
+      "code": "RUS",
+      "trajectory": "STRESS",
+      "alert_level": 5,
+      "composite_score": 23.8
+    },
+    {
+      "country": "Rwanda",
+      "code": "RWA",
+      "trajectory": "STABLE",
+      "alert_level": 1,
+      "composite_score": 61.2
+    },
+    {
+      "country": "Saint Kitts and Nevis",
+      "code": "KNA",
+      "trajectory": "STRESS",
+      "alert_level": 1,
+      "composite_score": 55.6
+    },
+    {
+      "country": "Saint Lucia",
+      "code": "LCA",
+      "trajectory": "STABLE",
+      "alert_level": 3,
+      "composite_score": 56.6
+    },
+    {
+      "country": "Saint Vincent and the Grenadines",
+      "code": "VCT",
+      "trajectory": "STABLE",
+      "alert_level": 4,
+      "composite_score": 39.8
+    },
+    {
+      "country": "Samoa",
+      "code": "WSM",
+      "trajectory": "STABLE",
+      "alert_level": 1,
+      "composite_score": 60.6
+    },
+    {
+      "country": "San Marino",
+      "code": "SMR",
+      "trajectory": "STRESS",
+      "alert_level": 0,
+      "composite_score": 58.6
+    },
+    {
+      "country": "Sao Tome and Principe",
+      "code": "STP",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 68.8
+    },
+    {
+      "country": "Saudi Arabia",
+      "code": "SAU",
+      "trajectory": "STABLE",
+      "alert_level": 3,
+      "composite_score": 42.0
+    },
+    {
+      "country": "Senegal",
+      "code": "SEN",
+      "trajectory": "STABLE",
+      "alert_level": 5,
+      "composite_score": 42.0
+    },
+    {
+      "country": "Serbia",
+      "code": "SRB",
+      "trajectory": "DEGRADING",
+      "alert_level": 5,
+      "composite_score": 37.8
+    },
+    {
+      "country": "Seychelles",
+      "code": "SYC",
+      "trajectory": "STRESS",
+      "alert_level": 3,
+      "composite_score": 46.8
+    },
+    {
+      "country": "Sierra Leone",
+      "code": "SLE",
+      "trajectory": "STRESS",
+      "alert_level": 1,
+      "composite_score": 55.4
+    },
+    {
+      "country": "Singapore",
+      "code": "SGP",
+      "trajectory": "STRESS",
+      "alert_level": 2,
+      "composite_score": 51.0
+    },
+    {
+      "country": "Slovakia",
+      "code": "SVK",
+      "trajectory": "STABLE",
+      "alert_level": 2,
+      "composite_score": 58.2
+    },
+    {
+      "country": "Slovenia",
+      "code": "SVN",
+      "trajectory": "STRESS",
+      "alert_level": 4,
+      "composite_score": 39.6
+    },
+    {
+      "country": "Solomon Islands",
+      "code": "SLB",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 72.0
+    },
+    {
+      "country": "Somalia",
+      "code": "SOM",
+      "trajectory": "STRESS",
+      "alert_level": 4,
+      "composite_score": 44.0
+    },
+    {
+      "country": "South Africa",
+      "code": "ZAF",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 68.2
+    },
+    {
+      "country": "South Sudan",
+      "code": "SSD",
+      "trajectory": "STRESS",
+      "alert_level": 1,
+      "composite_score": 60.0
+    },
+    {
+      "country": "Spain",
+      "code": "ESP",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 82.4
+    },
+    {
+      "country": "Sri Lanka",
+      "code": "LKA",
+      "trajectory": "STRESS",
+      "alert_level": 2,
+      "composite_score": 50.4
+    },
+    {
+      "country": "Sudan",
+      "code": "SDN",
+      "trajectory": "STABLE",
+      "alert_level": 2,
+      "composite_score": 54.8
+    },
+    {
+      "country": "Suriname",
+      "code": "SUR",
+      "trajectory": "STABLE",
+      "alert_level": 1,
+      "composite_score": 65.0
+    },
+    {
+      "country": "Sweden",
+      "code": "SWE",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 95.4
+    },
+    {
+      "country": "Switzerland",
+      "code": "CHE",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 89.0
+    },
+    {
+      "country": "Syria",
+      "code": "SYR",
+      "trajectory": "STABLE",
+      "alert_level": 2,
+      "composite_score": 51.0
+    },
+    {
+      "country": "Taiwan",
+      "code": "TWN",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 80.4
+    },
+    {
+      "country": "Tajikistan",
+      "code": "TJK",
+      "trajectory": "STABLE",
+      "alert_level": 5,
+      "composite_score": 39.2
+    },
+    {
+      "country": "Tanzania",
+      "code": "TZA",
+      "trajectory": "STRESS",
+      "alert_level": 5,
+      "composite_score": 42.6
+    },
+    {
+      "country": "Thailand",
+      "code": "THA",
+      "trajectory": "STRESS",
+      "alert_level": 5,
+      "composite_score": 32.4
+    },
+    {
+      "country": "Timor-Leste",
+      "code": "TLS",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 61.4
+    },
+    {
+      "country": "Togo",
+      "code": "TGO",
+      "trajectory": "STABLE",
+      "alert_level": 4,
+      "composite_score": 42.8
+    },
+    {
+      "country": "Tonga",
+      "code": "TON",
+      "trajectory": "STRESS",
+      "alert_level": 2,
+      "composite_score": 50.0
+    },
+    {
+      "country": "Trinidad and Tobago",
+      "code": "TTO",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 66.2
+    },
+    {
+      "country": "Tunisia",
+      "code": "TUN",
+      "trajectory": "DEGRADING",
+      "alert_level": 5,
+      "composite_score": 29.6
+    },
+    {
+      "country": "Turkey",
+      "code": "TUR",
+      "trajectory": "DEGRADING",
+      "alert_level": 5,
+      "composite_score": 19.2
+    },
+    {
+      "country": "Turkmenistan",
+      "code": "TKM",
+      "trajectory": "STABLE",
+      "alert_level": 4,
+      "composite_score": 46.0
+    },
+    {
+      "country": "Tuvalu",
+      "code": "TUV",
+      "trajectory": "STRESS",
+      "alert_level": 2,
+      "composite_score": 48.2
+    },
+    {
+      "country": "Uganda",
+      "code": "UGA",
+      "trajectory": "STABLE",
+      "alert_level": 2,
+      "composite_score": 62.4
+    },
+    {
+      "country": "Ukraine",
+      "code": "UKR",
+      "trajectory": "STRESS",
+      "alert_level": 5,
+      "composite_score": 43.2
+    },
+    {
+      "country": "United Arab Emirates",
+      "code": "ARE",
+      "trajectory": "STABLE",
+      "alert_level": 1,
+      "composite_score": 63.2
+    },
+    {
+      "country": "United Kingdom",
+      "code": "GBR",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 80.6
+    },
+    {
+      "country": "United States",
+      "code": "USA",
+      "trajectory": "STRESS",
+      "alert_level": 0,
+      "composite_score": 66.8
+    },
+    {
+      "country": "Uruguay",
+      "code": "URY",
+      "trajectory": "STRESS",
+      "alert_level": 0,
+      "composite_score": 74.2
+    },
+    {
+      "country": "Uzbekistan",
+      "code": "UZB",
+      "trajectory": "STABLE",
+      "alert_level": 1,
+      "composite_score": 63.0
+    },
+    {
+      "country": "Vanuatu",
+      "code": "VUT",
+      "trajectory": "STABLE",
+      "alert_level": 1,
+      "composite_score": 59.0
+    },
+    {
+      "country": "Vatican City",
+      "code": "VAT",
+      "trajectory": "STABLE",
+      "alert_level": 4,
+      "composite_score": 45.2
+    },
+    {
+      "country": "Venezuela",
+      "code": "VEN",
+      "trajectory": "DEGRADING",
+      "alert_level": 5,
+      "composite_score": 15.0
+    },
+    {
+      "country": "Vietnam",
+      "code": "VNM",
+      "trajectory": "STRESS",
+      "alert_level": 4,
+      "composite_score": 34.4
+    },
+    {
+      "country": "Yemen",
+      "code": "YEM",
+      "trajectory": "STABLE",
+      "alert_level": 1,
+      "composite_score": 61.0
+    },
+    {
+      "country": "Zambia",
+      "code": "ZMB",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 58.6
+    },
+    {
+      "country": "Zimbabwe",
+      "code": "ZWE",
+      "trajectory": "STABLE",
+      "alert_level": 0,
+      "composite_score": 64.2
+    }
+  ],
+  "generated_at": "2026-04-26 18:18:28"
+}
