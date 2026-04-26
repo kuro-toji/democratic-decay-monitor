@@ -1,1377 +1,4189 @@
 {
+  "summary": {
+    "generated_at": "2026-04-26T18:30:37.165077",
+    "total_countries": 196,
+    "degrading": 7,
+    "stress": 54,
+    "stable": 135
+  },
   "countries": [
     {
-      "country": "Afghanistan",
-      "code": "AFG",
-      "trajectory": "STRESS",
-      "alert_level": 2,
-      "composite_score": 54.0
-    },
-    {
-      "country": "Albania",
-      "code": "ALB",
-      "trajectory": "STABLE",
-      "alert_level": 1,
-      "composite_score": 56.4
-    },
-    {
-      "country": "Algeria",
-      "code": "DZA",
-      "trajectory": "STRESS",
-      "alert_level": 0,
-      "composite_score": 65.0
-    },
-    {
-      "country": "Andorra",
-      "code": "AND",
-      "trajectory": "STRESS",
-      "alert_level": 3,
-      "composite_score": 47.4
-    },
-    {
-      "country": "Angola",
-      "code": "AGO",
-      "trajectory": "STRESS",
-      "alert_level": 3,
-      "composite_score": 50.6
-    },
-    {
-      "country": "Antigua and Barbuda",
-      "code": "ATG",
-      "trajectory": "STABLE",
-      "alert_level": 1,
-      "composite_score": 54.0
-    },
-    {
-      "country": "Argentina",
-      "code": "ARG",
-      "trajectory": "STABLE",
-      "alert_level": 1,
-      "composite_score": 59.0
-    },
-    {
-      "country": "Armenia",
-      "code": "ARM",
-      "trajectory": "STRESS",
-      "alert_level": 4,
-      "composite_score": 46.2
-    },
-    {
-      "country": "Australia",
-      "code": "AUS",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 89.4
-    },
-    {
-      "country": "Austria",
-      "code": "AUT",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 78.4
-    },
-    {
-      "country": "Azerbaijan",
-      "code": "AZE",
-      "trajectory": "STABLE",
-      "alert_level": 1,
-      "composite_score": 56.0
-    },
-    {
-      "country": "Bahamas",
-      "code": "BHS",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 64.2
-    },
-    {
-      "country": "Bahrain",
-      "code": "BHR",
-      "trajectory": "STABLE",
-      "alert_level": 1,
-      "composite_score": 57.4
-    },
-    {
-      "country": "Bangladesh",
-      "code": "BGD",
-      "trajectory": "STABLE",
-      "alert_level": 1,
-      "composite_score": 62.8
-    },
-    {
-      "country": "Barbados",
-      "code": "BRB",
-      "trajectory": "STABLE",
-      "alert_level": 1,
-      "composite_score": 64.6
-    },
-    {
-      "country": "Belarus",
-      "code": "BLR",
-      "trajectory": "STABLE",
-      "alert_level": 1,
-      "composite_score": 58.6
-    },
-    {
-      "country": "Belgium",
-      "code": "BEL",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 78.4
-    },
-    {
-      "country": "Belize",
-      "code": "BLZ",
-      "trajectory": "STABLE",
-      "alert_level": 2,
-      "composite_score": 49.8
-    },
-    {
-      "country": "Benin",
-      "code": "BEN",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 77.2
-    },
-    {
-      "country": "Bhutan",
-      "code": "BTN",
-      "trajectory": "STABLE",
-      "alert_level": 1,
-      "composite_score": 62.2
-    },
-    {
-      "country": "Bolivia",
-      "code": "BOL",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 70.6
-    },
-    {
-      "country": "Bosnia and Herzegovina",
-      "code": "BIH",
-      "trajectory": "STABLE",
-      "alert_level": 1,
-      "composite_score": 59.4
-    },
-    {
-      "country": "Botswana",
-      "code": "BWA",
-      "trajectory": "STABLE",
-      "alert_level": 1,
-      "composite_score": 62.2
-    },
-    {
-      "country": "Brazil",
-      "code": "BRA",
-      "trajectory": "STRESS",
-      "alert_level": 4,
-      "composite_score": 46.2
-    },
-    {
-      "country": "Brunei",
-      "code": "BRN",
-      "trajectory": "STABLE",
-      "alert_level": 2,
-      "composite_score": 62.8
-    },
-    {
-      "country": "Bulgaria",
-      "code": "BGR",
-      "trajectory": "STABLE",
-      "alert_level": 1,
-      "composite_score": 55.4
-    },
-    {
-      "country": "Burkina Faso",
-      "code": "BFA",
-      "trajectory": "STABLE",
-      "alert_level": 4,
-      "composite_score": 40.6
-    },
-    {
-      "country": "Burundi",
-      "code": "BDI",
-      "trajectory": "STRESS",
-      "alert_level": 5,
-      "composite_score": 25.8
-    },
-    {
-      "country": "Cabo Verde",
-      "code": "CPV",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 66.8
-    },
-    {
-      "country": "Cambodia",
-      "code": "KHM",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 78.0
-    },
-    {
-      "country": "Cameroon",
-      "code": "CMR",
-      "trajectory": "STABLE",
-      "alert_level": 2,
-      "composite_score": 50.2
-    },
-    {
-      "country": "Canada",
-      "code": "CAN",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 93.6
-    },
-    {
-      "country": "Central African Republic",
-      "code": "CAF",
-      "trajectory": "STABLE",
-      "alert_level": 1,
-      "composite_score": 58.2
-    },
-    {
-      "country": "Chad",
-      "code": "TCD",
-      "trajectory": "STRESS",
-      "alert_level": 2,
-      "composite_score": 55.6
-    },
-    {
-      "country": "Chile",
-      "code": "CHL",
-      "trajectory": "STABLE",
-      "alert_level": 1,
-      "composite_score": 68.8
-    },
-    {
-      "country": "China",
-      "code": "CHN",
-      "trajectory": "STABLE",
-      "alert_level": 1,
-      "composite_score": 64.4
-    },
-    {
-      "country": "Colombia",
-      "code": "COL",
-      "trajectory": "STRESS",
-      "alert_level": 5,
-      "composite_score": 39.8
-    },
-    {
-      "country": "Comoros",
-      "code": "COM",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 67.2
-    },
-    {
-      "country": "Congo",
-      "code": "COG",
-      "trajectory": "STABLE",
-      "alert_level": 2,
-      "composite_score": 55.2
-    },
-    {
-      "country": "Democratic Republic of the Congo",
-      "code": "COD",
-      "trajectory": "STRESS",
-      "alert_level": 4,
-      "composite_score": 41.8
-    },
-    {
-      "country": "Costa Rica",
-      "code": "CRI",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 92.0
-    },
-    {
-      "country": "Cote d'Ivoire",
-      "code": "CIV",
-      "trajectory": "STRESS",
-      "alert_level": 2,
-      "composite_score": 51.4
-    },
-    {
-      "country": "Croatia",
-      "code": "HRV",
-      "trajectory": "STABLE",
-      "alert_level": 3,
-      "composite_score": 45.0
-    },
-    {
-      "country": "Cuba",
-      "code": "CUB",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 67.4
-    },
-    {
-      "country": "Cyprus",
-      "code": "CYP",
-      "trajectory": "STABLE",
-      "alert_level": 3,
-      "composite_score": 51.0
-    },
-    {
-      "country": "Czech Republic",
-      "code": "CZE",
-      "trajectory": "STABLE",
-      "alert_level": 1,
-      "composite_score": 62.8
-    },
-    {
-      "country": "Denmark",
-      "code": "DNK",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 95.6
-    },
-    {
-      "country": "Djibouti",
-      "code": "DJI",
-      "trajectory": "STABLE",
-      "alert_level": 1,
-      "composite_score": 53.4
-    },
-    {
-      "country": "Dominica",
-      "code": "DMA",
-      "trajectory": "STABLE",
-      "alert_level": 1,
-      "composite_score": 60.6
-    },
-    {
-      "country": "Dominican Republic",
-      "code": "DOM",
-      "trajectory": "STABLE",
-      "alert_level": 3,
-      "composite_score": 52.4
-    },
-    {
-      "country": "Ecuador",
-      "code": "ECU",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 67.6
-    },
-    {
-      "country": "Egypt",
-      "code": "EGY",
-      "trajectory": "STABLE",
-      "alert_level": 5,
-      "composite_score": 44.6
-    },
-    {
-      "country": "El Salvador",
-      "code": "SLV",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 66.4
-    },
-    {
-      "country": "Equatorial Guinea",
-      "code": "GNQ",
-      "trajectory": "STABLE",
-      "alert_level": 1,
-      "composite_score": 60.4
-    },
-    {
-      "country": "Eritrea",
-      "code": "ERI",
-      "trajectory": "STABLE",
-      "alert_level": 5,
-      "composite_score": 41.6
-    },
-    {
-      "country": "Estonia",
-      "code": "EST",
-      "trajectory": "STABLE",
-      "alert_level": 3,
-      "composite_score": 51.6
-    },
-    {
-      "country": "Eswatini",
-      "code": "SWZ",
-      "trajectory": "STRESS",
-      "alert_level": 4,
-      "composite_score": 39.4
-    },
-    {
-      "country": "Ethiopia",
-      "code": "ETH",
-      "trajectory": "STRESS",
-      "alert_level": 3,
-      "composite_score": 42.4
-    },
-    {
-      "country": "Fiji",
-      "code": "FJI",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 70.6
-    },
-    {
-      "country": "Finland",
-      "code": "FIN",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 95.0
-    },
-    {
-      "country": "France",
-      "code": "FRA",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 74.0
-    },
-    {
-      "country": "Gabon",
-      "code": "GAB",
-      "trajectory": "STABLE",
-      "alert_level": 1,
-      "composite_score": 57.0
-    },
-    {
-      "country": "Gambia",
-      "code": "GMB",
-      "trajectory": "STRESS",
-      "alert_level": 4,
-      "composite_score": 44.4
-    },
-    {
-      "country": "Georgia",
       "code": "GEO",
+      "name": "Georgia",
       "trajectory": "DEGRADING",
+      "declining_indicators": [
+        "judicial_independence",
+        "press_freedom",
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
       "alert_level": 5,
-      "composite_score": 28.8
+      "critical_indicators": [
+        "judicial_independence",
+        "press_freedom",
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "composite_score": 28.8,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.26,
+        "press_freedom": 0.34,
+        "electoral_integrity": 0.17,
+        "civil_society_space": 0.3,
+        "executive_constraints": 0.37
+      },
+      "year": 2024
     },
     {
-      "country": "Germany",
-      "code": "DEU",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 82.8
-    },
-    {
-      "country": "Ghana",
-      "code": "GHA",
-      "trajectory": "STRESS",
-      "alert_level": 2,
-      "composite_score": 55.6
-    },
-    {
-      "country": "Greece",
-      "code": "GRC",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 66.8
-    },
-    {
-      "country": "Grenada",
-      "code": "GRD",
-      "trajectory": "STRESS",
-      "alert_level": 5,
-      "composite_score": 38.0
-    },
-    {
-      "country": "Guatemala",
-      "code": "GTM",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 69.6
-    },
-    {
-      "country": "Guinea",
-      "code": "GIN",
-      "trajectory": "STRESS",
-      "alert_level": 4,
-      "composite_score": 47.2
-    },
-    {
-      "country": "Guinea-Bissau",
-      "code": "GNB",
-      "trajectory": "STRESS",
-      "alert_level": 0,
-      "composite_score": 59.8
-    },
-    {
-      "country": "Guyana",
-      "code": "GUY",
-      "trajectory": "STABLE",
-      "alert_level": 1,
-      "composite_score": 60.4
-    },
-    {
-      "country": "Haiti",
-      "code": "HTI",
-      "trajectory": "STABLE",
-      "alert_level": 1,
-      "composite_score": 58.0
-    },
-    {
-      "country": "Honduras",
-      "code": "HND",
-      "trajectory": "STRESS",
-      "alert_level": 1,
-      "composite_score": 59.6
-    },
-    {
-      "country": "Hungary",
       "code": "HUN",
+      "name": "Hungary",
       "trajectory": "DEGRADING",
+      "declining_indicators": [
+        "judicial_independence",
+        "press_freedom",
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
       "alert_level": 5,
-      "composite_score": 20.4
+      "critical_indicators": [
+        "judicial_independence",
+        "press_freedom",
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "composite_score": 20.4,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.18,
+        "press_freedom": 0.16,
+        "electoral_integrity": 0.31,
+        "civil_society_space": 0.18,
+        "executive_constraints": 0.19
+      },
+      "year": 2024
     },
     {
-      "country": "Iceland",
-      "code": "ISL",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 70.6
-    },
-    {
-      "country": "India",
-      "code": "IND",
-      "trajectory": "STABLE",
-      "alert_level": 5,
-      "composite_score": 41.4
-    },
-    {
-      "country": "Indonesia",
-      "code": "IDN",
-      "trajectory": "STABLE",
-      "alert_level": 5,
-      "composite_score": 36.0
-    },
-    {
-      "country": "Iran",
-      "code": "IRN",
-      "trajectory": "STRESS",
-      "alert_level": 1,
-      "composite_score": 61.6
-    },
-    {
-      "country": "Iraq",
-      "code": "IRQ",
-      "trajectory": "STABLE",
-      "alert_level": 2,
-      "composite_score": 56.2
-    },
-    {
-      "country": "Ireland",
-      "code": "IRL",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 89.2
-    },
-    {
-      "country": "Israel",
-      "code": "ISR",
-      "trajectory": "STABLE",
-      "alert_level": 1,
-      "composite_score": 65.8
-    },
-    {
-      "country": "Italy",
-      "code": "ITA",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 67.4
-    },
-    {
-      "country": "Jamaica",
-      "code": "JAM",
-      "trajectory": "STABLE",
-      "alert_level": 1,
-      "composite_score": 56.4
-    },
-    {
-      "country": "Japan",
-      "code": "JPN",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 81.0
-    },
-    {
-      "country": "Jordan",
-      "code": "JOR",
-      "trajectory": "STRESS",
-      "alert_level": 5,
-      "composite_score": 39.6
-    },
-    {
-      "country": "Kazakhstan",
-      "code": "KAZ",
-      "trajectory": "STABLE",
-      "alert_level": 1,
-      "composite_score": 55.0
-    },
-    {
-      "country": "Kenya",
-      "code": "KEN",
-      "trajectory": "STABLE",
-      "alert_level": 1,
-      "composite_score": 66.2
-    },
-    {
-      "country": "Kiribati",
-      "code": "KIR",
-      "trajectory": "STRESS",
-      "alert_level": 0,
-      "composite_score": 62.6
-    },
-    {
-      "country": "North Korea",
-      "code": "PRK",
-      "trajectory": "STABLE",
-      "alert_level": 1,
-      "composite_score": 56.8
-    },
-    {
-      "country": "South Korea",
-      "code": "KOR",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 67.4
-    },
-    {
-      "country": "Kuwait",
-      "code": "KWT",
-      "trajectory": "STABLE",
-      "alert_level": 3,
-      "composite_score": 47.6
-    },
-    {
-      "country": "Kyrgyzstan",
-      "code": "KGZ",
-      "trajectory": "STRESS",
-      "alert_level": 1,
-      "composite_score": 54.2
-    },
-    {
-      "country": "Laos",
-      "code": "LAO",
-      "trajectory": "STABLE",
-      "alert_level": 2,
-      "composite_score": 51.8
-    },
-    {
-      "country": "Latvia",
-      "code": "LVA",
-      "trajectory": "STABLE",
-      "alert_level": 4,
-      "composite_score": 48.6
-    },
-    {
-      "country": "Lebanon",
-      "code": "LBN",
-      "trajectory": "STRESS",
-      "alert_level": 4,
-      "composite_score": 41.2
-    },
-    {
-      "country": "Lesotho",
-      "code": "LSO",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 69.8
-    },
-    {
-      "country": "Liberia",
-      "code": "LBR",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 71.8
-    },
-    {
-      "country": "Libya",
-      "code": "LBY",
-      "trajectory": "STRESS",
-      "alert_level": 2,
-      "composite_score": 47.2
-    },
-    {
-      "country": "Liechtenstein",
-      "code": "LIE",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 64.4
-    },
-    {
-      "country": "Lithuania",
-      "code": "LTU",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 72.6
-    },
-    {
-      "country": "Luxembourg",
-      "code": "LUX",
-      "trajectory": "STABLE",
-      "alert_level": 4,
-      "composite_score": 43.8
-    },
-    {
-      "country": "Madagascar",
-      "code": "MDG",
-      "trajectory": "STRESS",
-      "alert_level": 2,
-      "composite_score": 56.8
-    },
-    {
-      "country": "Malawi",
-      "code": "MWI",
-      "trajectory": "STABLE",
-      "alert_level": 2,
-      "composite_score": 56.0
-    },
-    {
-      "country": "Malaysia",
-      "code": "MYS",
-      "trajectory": "STABLE",
-      "alert_level": 5,
-      "composite_score": 37.6
-    },
-    {
-      "country": "Maldives",
-      "code": "MDV",
-      "trajectory": "STABLE",
-      "alert_level": 3,
-      "composite_score": 44.8
-    },
-    {
-      "country": "Mali",
-      "code": "MLI",
-      "trajectory": "STABLE",
-      "alert_level": 1,
-      "composite_score": 56.8
-    },
-    {
-      "country": "Malta",
-      "code": "MLT",
-      "trajectory": "STRESS",
-      "alert_level": 4,
-      "composite_score": 42.6
-    },
-    {
-      "country": "Marshall Islands",
-      "code": "MHL",
-      "trajectory": "STABLE",
-      "alert_level": 1,
-      "composite_score": 53.2
-    },
-    {
-      "country": "Mauritania",
-      "code": "MRT",
-      "trajectory": "STABLE",
-      "alert_level": 3,
-      "composite_score": 48.6
-    },
-    {
-      "country": "Mauritius",
-      "code": "MUS",
-      "trajectory": "STABLE",
-      "alert_level": 3,
-      "composite_score": 53.4
-    },
-    {
-      "country": "Mexico",
-      "code": "MEX",
-      "trajectory": "STABLE",
-      "alert_level": 1,
-      "composite_score": 49.6
-    },
-    {
-      "country": "Micronesia",
-      "code": "FSM",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 63.8
-    },
-    {
-      "country": "Moldova",
-      "code": "MDA",
-      "trajectory": "STRESS",
-      "alert_level": 4,
-      "composite_score": 37.2
-    },
-    {
-      "country": "Monaco",
-      "code": "MCO",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 64.2
-    },
-    {
-      "country": "Mongolia",
-      "code": "MNG",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 70.0
-    },
-    {
-      "country": "Montenegro",
-      "code": "MNE",
-      "trajectory": "STRESS",
-      "alert_level": 3,
-      "composite_score": 42.6
-    },
-    {
-      "country": "Morocco",
-      "code": "MAR",
-      "trajectory": "STRESS",
-      "alert_level": 1,
-      "composite_score": 59.0
-    },
-    {
-      "country": "Mozambique",
-      "code": "MOZ",
-      "trajectory": "STABLE",
-      "alert_level": 5,
-      "composite_score": 31.0
-    },
-    {
-      "country": "Myanmar",
-      "code": "MMR",
-      "trajectory": "STRESS",
-      "alert_level": 4,
-      "composite_score": 41.4
-    },
-    {
-      "country": "Namibia",
-      "code": "NAM",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 65.4
-    },
-    {
-      "country": "Nauru",
-      "code": "NRU",
-      "trajectory": "STABLE",
-      "alert_level": 2,
-      "composite_score": 58.4
-    },
-    {
-      "country": "Nepal",
-      "code": "NPL",
-      "trajectory": "STABLE",
-      "alert_level": 3,
-      "composite_score": 50.6
-    },
-    {
-      "country": "Netherlands",
-      "code": "NLD",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 90.4
-    },
-    {
-      "country": "New Zealand",
-      "code": "NZL",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 92.0
-    },
-    {
-      "country": "Nicaragua",
-      "code": "NIC",
-      "trajectory": "STABLE",
-      "alert_level": 5,
-      "composite_score": 42.2
-    },
-    {
-      "country": "Niger",
-      "code": "NER",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 66.4
-    },
-    {
-      "country": "Nigeria",
-      "code": "NGA",
-      "trajectory": "STRESS",
-      "alert_level": 4,
-      "composite_score": 38.0
-    },
-    {
-      "country": "North Macedonia",
-      "code": "MKD",
-      "trajectory": "STABLE",
-      "alert_level": 2,
-      "composite_score": 55.4
-    },
-    {
-      "country": "Norway",
-      "code": "NOR",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 96.0
-    },
-    {
-      "country": "Oman",
-      "code": "OMN",
-      "trajectory": "STRESS",
-      "alert_level": 4,
-      "composite_score": 48.6
-    },
-    {
-      "country": "Pakistan",
-      "code": "PAK",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 68.0
-    },
-    {
-      "country": "Palau",
-      "code": "PLW",
-      "trajectory": "STRESS",
-      "alert_level": 2,
-      "composite_score": 60.0
-    },
-    {
-      "country": "Palestine",
-      "code": "PSE",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 75.0
-    },
-    {
-      "country": "Panama",
-      "code": "PAN",
-      "trajectory": "STABLE",
-      "alert_level": 3,
-      "composite_score": 50.6
-    },
-    {
-      "country": "Papua New Guinea",
-      "code": "PNG",
-      "trajectory": "STABLE",
-      "alert_level": 2,
-      "composite_score": 54.0
-    },
-    {
-      "country": "Paraguay",
-      "code": "PRY",
-      "trajectory": "STRESS",
-      "alert_level": 0,
-      "composite_score": 63.4
-    },
-    {
-      "country": "Peru",
-      "code": "PER",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 66.2
-    },
-    {
-      "country": "Philippines",
-      "code": "PHL",
-      "trajectory": "STRESS",
-      "alert_level": 5,
-      "composite_score": 36.8
-    },
-    {
-      "country": "Poland",
       "code": "POL",
+      "name": "Poland",
       "trajectory": "DEGRADING",
+      "declining_indicators": [
+        "judicial_independence",
+        "press_freedom",
+        "electoral_integrity",
+        "civil_society_space"
+      ],
       "alert_level": 3,
-      "composite_score": 47.6
+      "critical_indicators": [
+        "judicial_independence",
+        "electoral_integrity",
+        "civil_society_space"
+      ],
+      "composite_score": 47.6,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.45,
+        "press_freedom": 0.49,
+        "electoral_integrity": 0.5,
+        "civil_society_space": 0.35,
+        "executive_constraints": 0.59
+      },
+      "year": 2024
     },
     {
-      "country": "Portugal",
-      "code": "PRT",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 85.8
-    },
-    {
-      "country": "Qatar",
-      "code": "QAT",
-      "trajectory": "STABLE",
-      "alert_level": 1,
-      "composite_score": 53.2
-    },
-    {
-      "country": "Romania",
-      "code": "ROU",
-      "trajectory": "STABLE",
-      "alert_level": 4,
-      "composite_score": 44.2
-    },
-    {
-      "country": "Russia",
-      "code": "RUS",
-      "trajectory": "STRESS",
-      "alert_level": 5,
-      "composite_score": 23.8
-    },
-    {
-      "country": "Rwanda",
-      "code": "RWA",
-      "trajectory": "STABLE",
-      "alert_level": 1,
-      "composite_score": 61.2
-    },
-    {
-      "country": "Saint Kitts and Nevis",
-      "code": "KNA",
-      "trajectory": "STRESS",
-      "alert_level": 1,
-      "composite_score": 55.6
-    },
-    {
-      "country": "Saint Lucia",
-      "code": "LCA",
-      "trajectory": "STABLE",
-      "alert_level": 3,
-      "composite_score": 56.6
-    },
-    {
-      "country": "Saint Vincent and the Grenadines",
-      "code": "VCT",
-      "trajectory": "STABLE",
-      "alert_level": 4,
-      "composite_score": 39.8
-    },
-    {
-      "country": "Samoa",
-      "code": "WSM",
-      "trajectory": "STABLE",
-      "alert_level": 1,
-      "composite_score": 60.6
-    },
-    {
-      "country": "San Marino",
-      "code": "SMR",
-      "trajectory": "STRESS",
-      "alert_level": 0,
-      "composite_score": 58.6
-    },
-    {
-      "country": "Sao Tome and Principe",
-      "code": "STP",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 68.8
-    },
-    {
-      "country": "Saudi Arabia",
-      "code": "SAU",
-      "trajectory": "STABLE",
-      "alert_level": 3,
-      "composite_score": 42.0
-    },
-    {
-      "country": "Senegal",
-      "code": "SEN",
-      "trajectory": "STABLE",
-      "alert_level": 5,
-      "composite_score": 42.0
-    },
-    {
-      "country": "Serbia",
       "code": "SRB",
+      "name": "Serbia",
       "trajectory": "DEGRADING",
+      "declining_indicators": [
+        "judicial_independence",
+        "press_freedom",
+        "electoral_integrity",
+        "executive_constraints"
+      ],
       "alert_level": 5,
-      "composite_score": 37.8
+      "critical_indicators": [
+        "judicial_independence",
+        "press_freedom",
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "composite_score": 37.8,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.34,
+        "press_freedom": 0.36,
+        "electoral_integrity": 0.43,
+        "civil_society_space": 0.46,
+        "executive_constraints": 0.3
+      },
+      "year": 2024
     },
     {
-      "country": "Seychelles",
-      "code": "SYC",
-      "trajectory": "STRESS",
-      "alert_level": 3,
-      "composite_score": 46.8
-    },
-    {
-      "country": "Sierra Leone",
-      "code": "SLE",
-      "trajectory": "STRESS",
-      "alert_level": 1,
-      "composite_score": 55.4
-    },
-    {
-      "country": "Singapore",
-      "code": "SGP",
-      "trajectory": "STRESS",
-      "alert_level": 2,
-      "composite_score": 51.0
-    },
-    {
-      "country": "Slovakia",
-      "code": "SVK",
-      "trajectory": "STABLE",
-      "alert_level": 2,
-      "composite_score": 58.2
-    },
-    {
-      "country": "Slovenia",
-      "code": "SVN",
-      "trajectory": "STRESS",
-      "alert_level": 4,
-      "composite_score": 39.6
-    },
-    {
-      "country": "Solomon Islands",
-      "code": "SLB",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 72.0
-    },
-    {
-      "country": "Somalia",
-      "code": "SOM",
-      "trajectory": "STRESS",
-      "alert_level": 4,
-      "composite_score": 44.0
-    },
-    {
-      "country": "South Africa",
-      "code": "ZAF",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 68.2
-    },
-    {
-      "country": "South Sudan",
-      "code": "SSD",
-      "trajectory": "STRESS",
-      "alert_level": 1,
-      "composite_score": 60.0
-    },
-    {
-      "country": "Spain",
-      "code": "ESP",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 82.4
-    },
-    {
-      "country": "Sri Lanka",
-      "code": "LKA",
-      "trajectory": "STRESS",
-      "alert_level": 2,
-      "composite_score": 50.4
-    },
-    {
-      "country": "Sudan",
-      "code": "SDN",
-      "trajectory": "STABLE",
-      "alert_level": 2,
-      "composite_score": 54.8
-    },
-    {
-      "country": "Suriname",
-      "code": "SUR",
-      "trajectory": "STABLE",
-      "alert_level": 1,
-      "composite_score": 65.0
-    },
-    {
-      "country": "Sweden",
-      "code": "SWE",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 95.4
-    },
-    {
-      "country": "Switzerland",
-      "code": "CHE",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 89.0
-    },
-    {
-      "country": "Syria",
-      "code": "SYR",
-      "trajectory": "STABLE",
-      "alert_level": 2,
-      "composite_score": 51.0
-    },
-    {
-      "country": "Taiwan",
-      "code": "TWN",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 80.4
-    },
-    {
-      "country": "Tajikistan",
-      "code": "TJK",
-      "trajectory": "STABLE",
-      "alert_level": 5,
-      "composite_score": 39.2
-    },
-    {
-      "country": "Tanzania",
-      "code": "TZA",
-      "trajectory": "STRESS",
-      "alert_level": 5,
-      "composite_score": 42.6
-    },
-    {
-      "country": "Thailand",
-      "code": "THA",
-      "trajectory": "STRESS",
-      "alert_level": 5,
-      "composite_score": 32.4
-    },
-    {
-      "country": "Timor-Leste",
-      "code": "TLS",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 61.4
-    },
-    {
-      "country": "Togo",
-      "code": "TGO",
-      "trajectory": "STABLE",
-      "alert_level": 4,
-      "composite_score": 42.8
-    },
-    {
-      "country": "Tonga",
-      "code": "TON",
-      "trajectory": "STRESS",
-      "alert_level": 2,
-      "composite_score": 50.0
-    },
-    {
-      "country": "Trinidad and Tobago",
-      "code": "TTO",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 66.2
-    },
-    {
-      "country": "Tunisia",
       "code": "TUN",
+      "name": "Tunisia",
       "trajectory": "DEGRADING",
+      "declining_indicators": [
+        "judicial_independence",
+        "civil_society_space",
+        "executive_constraints"
+      ],
       "alert_level": 5,
-      "composite_score": 29.6
+      "critical_indicators": [
+        "judicial_independence",
+        "press_freedom",
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "composite_score": 29.6,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.29,
+        "press_freedom": 0.35,
+        "electoral_integrity": 0.33,
+        "civil_society_space": 0.24,
+        "executive_constraints": 0.27
+      },
+      "year": 2024
     },
     {
-      "country": "Turkey",
       "code": "TUR",
+      "name": "Turkey",
       "trajectory": "DEGRADING",
+      "declining_indicators": [
+        "judicial_independence",
+        "press_freedom",
+        "electoral_integrity",
+        "executive_constraints"
+      ],
       "alert_level": 5,
-      "composite_score": 19.2
+      "critical_indicators": [
+        "judicial_independence",
+        "press_freedom",
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "composite_score": 19.2,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.17,
+        "press_freedom": 0.12,
+        "electoral_integrity": 0.26,
+        "civil_society_space": 0.3,
+        "executive_constraints": 0.11
+      },
+      "year": 2024
     },
     {
-      "country": "Turkmenistan",
-      "code": "TKM",
-      "trajectory": "STABLE",
-      "alert_level": 4,
-      "composite_score": 46.0
-    },
-    {
-      "country": "Tuvalu",
-      "code": "TUV",
-      "trajectory": "STRESS",
-      "alert_level": 2,
-      "composite_score": 48.2
-    },
-    {
-      "country": "Uganda",
-      "code": "UGA",
-      "trajectory": "STABLE",
-      "alert_level": 2,
-      "composite_score": 62.4
-    },
-    {
-      "country": "Ukraine",
-      "code": "UKR",
-      "trajectory": "STRESS",
-      "alert_level": 5,
-      "composite_score": 43.2
-    },
-    {
-      "country": "United Arab Emirates",
-      "code": "ARE",
-      "trajectory": "STABLE",
-      "alert_level": 1,
-      "composite_score": 63.2
-    },
-    {
-      "country": "United Kingdom",
-      "code": "GBR",
-      "trajectory": "STABLE",
-      "alert_level": 0,
-      "composite_score": 80.6
-    },
-    {
-      "country": "United States",
-      "code": "USA",
-      "trajectory": "STRESS",
-      "alert_level": 0,
-      "composite_score": 66.8
-    },
-    {
-      "country": "Uruguay",
-      "code": "URY",
-      "trajectory": "STRESS",
-      "alert_level": 0,
-      "composite_score": 74.2
-    },
-    {
-      "country": "Uzbekistan",
-      "code": "UZB",
-      "trajectory": "STABLE",
-      "alert_level": 1,
-      "composite_score": 63.0
-    },
-    {
-      "country": "Vanuatu",
-      "code": "VUT",
-      "trajectory": "STABLE",
-      "alert_level": 1,
-      "composite_score": 59.0
-    },
-    {
-      "country": "Vatican City",
-      "code": "VAT",
-      "trajectory": "STABLE",
-      "alert_level": 4,
-      "composite_score": 45.2
-    },
-    {
-      "country": "Venezuela",
       "code": "VEN",
+      "name": "Venezuela",
       "trajectory": "DEGRADING",
+      "declining_indicators": [
+        "judicial_independence",
+        "press_freedom",
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
       "alert_level": 5,
-      "composite_score": 15.0
+      "critical_indicators": [
+        "judicial_independence",
+        "press_freedom",
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "composite_score": 15.0,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.1,
+        "press_freedom": 0.14,
+        "electoral_integrity": 0.16,
+        "civil_society_space": 0.23,
+        "executive_constraints": 0.12
+      },
+      "year": 2024
     },
     {
-      "country": "Vietnam",
-      "code": "VNM",
+      "code": "AFG",
+      "name": "Afghanistan",
       "trajectory": "STRESS",
+      "declining_indicators": [
+        "executive_constraints"
+      ],
+      "alert_level": 2,
+      "critical_indicators": [
+        "press_freedom",
+        "civil_society_space"
+      ],
+      "composite_score": 54.0,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.62,
+        "press_freedom": 0.37,
+        "electoral_integrity": 0.58,
+        "civil_society_space": 0.54,
+        "executive_constraints": 0.59
+      },
+      "year": 2024
+    },
+    {
+      "code": "DZA",
+      "name": "Algeria",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "civil_society_space"
+      ],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 65.0,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.66,
+        "press_freedom": 0.48,
+        "electoral_integrity": 0.7,
+        "civil_society_space": 0.63,
+        "executive_constraints": 0.78
+      },
+      "year": 2024
+    },
+    {
+      "code": "AND",
+      "name": "Andorra",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "executive_constraints"
+      ],
+      "alert_level": 3,
+      "critical_indicators": [
+        "press_freedom",
+        "electoral_integrity",
+        "civil_society_space"
+      ],
+      "composite_score": 47.4,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.49,
+        "press_freedom": 0.41,
+        "electoral_integrity": 0.51,
+        "civil_society_space": 0.5,
+        "executive_constraints": 0.46
+      },
+      "year": 2024
+    },
+    {
+      "code": "AGO",
+      "name": "Angola",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "electoral_integrity",
+        "civil_society_space"
+      ],
+      "alert_level": 3,
+      "critical_indicators": [
+        "judicial_independence",
+        "electoral_integrity",
+        "civil_society_space"
+      ],
+      "composite_score": 50.6,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.44,
+        "press_freedom": 0.71,
+        "electoral_integrity": 0.4,
+        "civil_society_space": 0.49,
+        "executive_constraints": 0.49
+      },
+      "year": 2024
+    },
+    {
+      "code": "ARM",
+      "name": "Armenia",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "electoral_integrity"
+      ],
       "alert_level": 4,
-      "composite_score": 34.4
+      "critical_indicators": [
+        "judicial_independence",
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "composite_score": 46.2,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.42,
+        "press_freedom": 0.66,
+        "electoral_integrity": 0.4,
+        "civil_society_space": 0.4,
+        "executive_constraints": 0.43
+      },
+      "year": 2024
     },
     {
-      "country": "Yemen",
-      "code": "YEM",
-      "trajectory": "STABLE",
+      "code": "BRA",
+      "name": "Brazil",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "alert_level": 4,
+      "critical_indicators": [
+        "press_freedom",
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "composite_score": 46.2,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.49,
+        "press_freedom": 0.44,
+        "electoral_integrity": 0.43,
+        "civil_society_space": 0.55,
+        "executive_constraints": 0.4
+      },
+      "year": 2024
+    },
+    {
+      "code": "BDI",
+      "name": "Burundi",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "press_freedom",
+        "executive_constraints"
+      ],
+      "alert_level": 5,
+      "critical_indicators": [
+        "judicial_independence",
+        "press_freedom",
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "composite_score": 25.8,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.26,
+        "press_freedom": 0.21,
+        "electoral_integrity": 0.25,
+        "civil_society_space": 0.2,
+        "executive_constraints": 0.37
+      },
+      "year": 2024
+    },
+    {
+      "code": "TCD",
+      "name": "Chad",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "civil_society_space"
+      ],
+      "alert_level": 2,
+      "critical_indicators": [
+        "electoral_integrity",
+        "civil_society_space"
+      ],
+      "composite_score": 55.6,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.5,
+        "press_freedom": 0.59,
+        "electoral_integrity": 0.54,
+        "civil_society_space": 0.56,
+        "executive_constraints": 0.59
+      },
+      "year": 2024
+    },
+    {
+      "code": "COL",
+      "name": "Colombia",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "alert_level": 5,
+      "critical_indicators": [
+        "judicial_independence",
+        "press_freedom",
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "composite_score": 39.8,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.4,
+        "press_freedom": 0.42,
+        "electoral_integrity": 0.44,
+        "civil_society_space": 0.38,
+        "executive_constraints": 0.35
+      },
+      "year": 2024
+    },
+    {
+      "code": "CIV",
+      "name": "Cote d'Ivoire",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "civil_society_space"
+      ],
+      "alert_level": 2,
+      "critical_indicators": [
+        "press_freedom",
+        "civil_society_space"
+      ],
+      "composite_score": 51.4,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.52,
+        "press_freedom": 0.43,
+        "electoral_integrity": 0.64,
+        "civil_society_space": 0.43,
+        "executive_constraints": 0.55
+      },
+      "year": 2024
+    },
+    {
+      "code": "COD",
+      "name": "Democratic Republic of the Congo",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "civil_society_space"
+      ],
+      "alert_level": 4,
+      "critical_indicators": [
+        "judicial_independence",
+        "press_freedom",
+        "electoral_integrity",
+        "civil_society_space"
+      ],
+      "composite_score": 41.8,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.4,
+        "press_freedom": 0.37,
+        "electoral_integrity": 0.42,
+        "civil_society_space": 0.43,
+        "executive_constraints": 0.47
+      },
+      "year": 2024
+    },
+    {
+      "code": "SWZ",
+      "name": "Eswatini",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "electoral_integrity"
+      ],
+      "alert_level": 4,
+      "critical_indicators": [
+        "judicial_independence",
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "composite_score": 39.4,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.32,
+        "press_freedom": 0.58,
+        "electoral_integrity": 0.44,
+        "civil_society_space": 0.29,
+        "executive_constraints": 0.34
+      },
+      "year": 2024
+    },
+    {
+      "code": "ETH",
+      "name": "Ethiopia",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "civil_society_space"
+      ],
+      "alert_level": 3,
+      "critical_indicators": [
+        "judicial_independence",
+        "press_freedom",
+        "civil_society_space"
+      ],
+      "composite_score": 42.4,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.42,
+        "press_freedom": 0.33,
+        "electoral_integrity": 0.56,
+        "civil_society_space": 0.32,
+        "executive_constraints": 0.49
+      },
+      "year": 2024
+    },
+    {
+      "code": "GMB",
+      "name": "Gambia",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "executive_constraints"
+      ],
+      "alert_level": 4,
+      "critical_indicators": [
+        "press_freedom",
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "composite_score": 44.4,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.5,
+        "press_freedom": 0.43,
+        "electoral_integrity": 0.46,
+        "civil_society_space": 0.43,
+        "executive_constraints": 0.4
+      },
+      "year": 2024
+    },
+    {
+      "code": "GHA",
+      "name": "Ghana",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "civil_society_space"
+      ],
+      "alert_level": 2,
+      "critical_indicators": [
+        "press_freedom",
+        "civil_society_space"
+      ],
+      "composite_score": 55.6,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.56,
+        "press_freedom": 0.47,
+        "electoral_integrity": 0.56,
+        "civil_society_space": 0.58,
+        "executive_constraints": 0.61
+      },
+      "year": 2024
+    },
+    {
+      "code": "GRD",
+      "name": "Grenada",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "civil_society_space"
+      ],
+      "alert_level": 5,
+      "critical_indicators": [
+        "judicial_independence",
+        "press_freedom",
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "composite_score": 38.0,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.37,
+        "press_freedom": 0.45,
+        "electoral_integrity": 0.36,
+        "civil_society_space": 0.33,
+        "executive_constraints": 0.39
+      },
+      "year": 2024
+    },
+    {
+      "code": "GIN",
+      "name": "Guinea",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "civil_society_space"
+      ],
+      "alert_level": 4,
+      "critical_indicators": [
+        "judicial_independence",
+        "press_freedom",
+        "electoral_integrity",
+        "civil_society_space"
+      ],
+      "composite_score": 47.2,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.45,
+        "press_freedom": 0.42,
+        "electoral_integrity": 0.54,
+        "civil_society_space": 0.4,
+        "executive_constraints": 0.55
+      },
+      "year": 2024
+    },
+    {
+      "code": "GNB",
+      "name": "Guinea-Bissau",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "electoral_integrity"
+      ],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 59.8,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.58,
+        "press_freedom": 0.69,
+        "electoral_integrity": 0.58,
+        "civil_society_space": 0.65,
+        "executive_constraints": 0.49
+      },
+      "year": 2024
+    },
+    {
+      "code": "HND",
+      "name": "Honduras",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "civil_society_space"
+      ],
       "alert_level": 1,
-      "composite_score": 61.0
+      "critical_indicators": [
+        "civil_society_space"
+      ],
+      "composite_score": 59.6,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.54,
+        "press_freedom": 0.6,
+        "electoral_integrity": 0.64,
+        "civil_society_space": 0.55,
+        "executive_constraints": 0.65
+      },
+      "year": 2024
     },
     {
-      "country": "Zambia",
+      "code": "IRN",
+      "name": "Iran",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "civil_society_space"
+      ],
+      "alert_level": 1,
+      "critical_indicators": [
+        "civil_society_space"
+      ],
+      "composite_score": 61.6,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.68,
+        "press_freedom": 0.5,
+        "electoral_integrity": 0.72,
+        "civil_society_space": 0.58,
+        "executive_constraints": 0.6
+      },
+      "year": 2024
+    },
+    {
+      "code": "JOR",
+      "name": "Jordan",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "civil_society_space"
+      ],
+      "alert_level": 5,
+      "critical_indicators": [
+        "judicial_independence",
+        "press_freedom",
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "composite_score": 39.6,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.37,
+        "press_freedom": 0.39,
+        "electoral_integrity": 0.36,
+        "civil_society_space": 0.41,
+        "executive_constraints": 0.45
+      },
+      "year": 2024
+    },
+    {
+      "code": "KIR",
+      "name": "Kiribati",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "electoral_integrity"
+      ],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 62.6,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.65,
+        "press_freedom": 0.55,
+        "electoral_integrity": 0.6,
+        "civil_society_space": 0.7,
+        "executive_constraints": 0.63
+      },
+      "year": 2024
+    },
+    {
+      "code": "KGZ",
+      "name": "Kyrgyzstan",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "electoral_integrity"
+      ],
+      "alert_level": 1,
+      "critical_indicators": [
+        "civil_society_space"
+      ],
+      "composite_score": 54.2,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.54,
+        "press_freedom": 0.59,
+        "electoral_integrity": 0.62,
+        "civil_society_space": 0.49,
+        "executive_constraints": 0.47
+      },
+      "year": 2024
+    },
+    {
+      "code": "LBN",
+      "name": "Lebanon",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "civil_society_space"
+      ],
+      "alert_level": 4,
+      "critical_indicators": [
+        "judicial_independence",
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "composite_score": 41.2,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.35,
+        "press_freedom": 0.6,
+        "electoral_integrity": 0.35,
+        "civil_society_space": 0.34,
+        "executive_constraints": 0.42
+      },
+      "year": 2024
+    },
+    {
+      "code": "LBY",
+      "name": "Libya",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "civil_society_space"
+      ],
+      "alert_level": 2,
+      "critical_indicators": [
+        "press_freedom",
+        "civil_society_space"
+      ],
+      "composite_score": 47.2,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.53,
+        "press_freedom": 0.3,
+        "electoral_integrity": 0.58,
+        "civil_society_space": 0.44,
+        "executive_constraints": 0.51
+      },
+      "year": 2024
+    },
+    {
+      "code": "MDG",
+      "name": "Madagascar",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "executive_constraints"
+      ],
+      "alert_level": 2,
+      "critical_indicators": [
+        "press_freedom",
+        "civil_society_space"
+      ],
+      "composite_score": 56.8,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.57,
+        "press_freedom": 0.43,
+        "electoral_integrity": 0.68,
+        "civil_society_space": 0.58,
+        "executive_constraints": 0.58
+      },
+      "year": 2024
+    },
+    {
+      "code": "MLT",
+      "name": "Malta",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "civil_society_space"
+      ],
+      "alert_level": 4,
+      "critical_indicators": [
+        "press_freedom",
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "composite_score": 42.6,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.47,
+        "press_freedom": 0.35,
+        "electoral_integrity": 0.45,
+        "civil_society_space": 0.42,
+        "executive_constraints": 0.44
+      },
+      "year": 2024
+    },
+    {
+      "code": "MDA",
+      "name": "Moldova",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "civil_society_space"
+      ],
+      "alert_level": 4,
+      "critical_indicators": [
+        "judicial_independence",
+        "press_freedom",
+        "electoral_integrity",
+        "civil_society_space"
+      ],
+      "composite_score": 37.2,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.36,
+        "press_freedom": 0.31,
+        "electoral_integrity": 0.43,
+        "civil_society_space": 0.27,
+        "executive_constraints": 0.49
+      },
+      "year": 2024
+    },
+    {
+      "code": "MNE",
+      "name": "Montenegro",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "civil_society_space"
+      ],
+      "alert_level": 3,
+      "critical_indicators": [
+        "press_freedom",
+        "electoral_integrity",
+        "civil_society_space"
+      ],
+      "composite_score": 42.6,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.48,
+        "press_freedom": 0.27,
+        "electoral_integrity": 0.39,
+        "civil_society_space": 0.41,
+        "executive_constraints": 0.58
+      },
+      "year": 2024
+    },
+    {
+      "code": "MAR",
+      "name": "Morocco",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "electoral_integrity"
+      ],
+      "alert_level": 1,
+      "critical_indicators": [
+        "civil_society_space"
+      ],
+      "composite_score": 59.0,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.57,
+        "press_freedom": 0.49,
+        "electoral_integrity": 0.61,
+        "civil_society_space": 0.58,
+        "executive_constraints": 0.7
+      },
+      "year": 2024
+    },
+    {
+      "code": "MMR",
+      "name": "Myanmar",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "electoral_integrity",
+        "civil_society_space"
+      ],
+      "alert_level": 4,
+      "critical_indicators": [
+        "judicial_independence",
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "composite_score": 41.4,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.38,
+        "press_freedom": 0.62,
+        "electoral_integrity": 0.39,
+        "civil_society_space": 0.32,
+        "executive_constraints": 0.36
+      },
+      "year": 2024
+    },
+    {
+      "code": "NGA",
+      "name": "Nigeria",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "electoral_integrity"
+      ],
+      "alert_level": 4,
+      "critical_indicators": [
+        "judicial_independence",
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "composite_score": 38.0,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.35,
+        "press_freedom": 0.56,
+        "electoral_integrity": 0.26,
+        "civil_society_space": 0.28,
+        "executive_constraints": 0.45
+      },
+      "year": 2024
+    },
+    {
+      "code": "OMN",
+      "name": "Oman",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "executive_constraints"
+      ],
+      "alert_level": 4,
+      "critical_indicators": [
+        "judicial_independence",
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "composite_score": 48.6,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.42,
+        "press_freedom": 0.63,
+        "electoral_integrity": 0.46,
+        "civil_society_space": 0.53,
+        "executive_constraints": 0.39
+      },
+      "year": 2024
+    },
+    {
+      "code": "PLW",
+      "name": "Palau",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "civil_society_space"
+      ],
+      "alert_level": 2,
+      "critical_indicators": [
+        "electoral_integrity",
+        "civil_society_space"
+      ],
+      "composite_score": 60.0,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.58,
+        "press_freedom": 0.74,
+        "electoral_integrity": 0.53,
+        "civil_society_space": 0.49,
+        "executive_constraints": 0.66
+      },
+      "year": 2024
+    },
+    {
+      "code": "PRY",
+      "name": "Paraguay",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "executive_constraints"
+      ],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 63.4,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.66,
+        "press_freedom": 0.63,
+        "electoral_integrity": 0.67,
+        "civil_society_space": 0.63,
+        "executive_constraints": 0.58
+      },
+      "year": 2024
+    },
+    {
+      "code": "PHL",
+      "name": "Philippines",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "alert_level": 5,
+      "critical_indicators": [
+        "judicial_independence",
+        "press_freedom",
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "composite_score": 36.8,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.41,
+        "press_freedom": 0.36,
+        "electoral_integrity": 0.37,
+        "civil_society_space": 0.32,
+        "executive_constraints": 0.38
+      },
+      "year": 2024
+    },
+    {
+      "code": "RUS",
+      "name": "Russia",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "judicial_independence",
+        "press_freedom"
+      ],
+      "alert_level": 5,
+      "critical_indicators": [
+        "judicial_independence",
+        "press_freedom",
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "composite_score": 23.8,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.21,
+        "press_freedom": 0.16,
+        "electoral_integrity": 0.18,
+        "civil_society_space": 0.29,
+        "executive_constraints": 0.35
+      },
+      "year": 2024
+    },
+    {
+      "code": "KNA",
+      "name": "Saint Kitts and Nevis",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "executive_constraints"
+      ],
+      "alert_level": 1,
+      "critical_indicators": [
+        "executive_constraints"
+      ],
+      "composite_score": 55.6,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.51,
+        "press_freedom": 0.58,
+        "electoral_integrity": 0.61,
+        "civil_society_space": 0.65,
+        "executive_constraints": 0.43
+      },
+      "year": 2024
+    },
+    {
+      "code": "SMR",
+      "name": "San Marino",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "electoral_integrity",
+        "executive_constraints"
+      ],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 58.6,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.52,
+        "press_freedom": 0.65,
+        "electoral_integrity": 0.59,
+        "civil_society_space": 0.64,
+        "executive_constraints": 0.53
+      },
+      "year": 2024
+    },
+    {
+      "code": "SYC",
+      "name": "Seychelles",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "civil_society_space"
+      ],
+      "alert_level": 3,
+      "critical_indicators": [
+        "judicial_independence",
+        "electoral_integrity",
+        "civil_society_space"
+      ],
+      "composite_score": 46.8,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.45,
+        "press_freedom": 0.51,
+        "electoral_integrity": 0.5,
+        "civil_society_space": 0.36,
+        "executive_constraints": 0.52
+      },
+      "year": 2024
+    },
+    {
+      "code": "SLE",
+      "name": "Sierra Leone",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "executive_constraints"
+      ],
+      "alert_level": 1,
+      "critical_indicators": [
+        "press_freedom"
+      ],
+      "composite_score": 55.4,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.57,
+        "press_freedom": 0.46,
+        "electoral_integrity": 0.62,
+        "civil_society_space": 0.64,
+        "executive_constraints": 0.48
+      },
+      "year": 2024
+    },
+    {
+      "code": "SGP",
+      "name": "Singapore",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "civil_society_space"
+      ],
+      "alert_level": 2,
+      "critical_indicators": [
+        "electoral_integrity",
+        "civil_society_space"
+      ],
+      "composite_score": 51.0,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.48,
+        "press_freedom": 0.61,
+        "electoral_integrity": 0.43,
+        "civil_society_space": 0.43,
+        "executive_constraints": 0.6
+      },
+      "year": 2024
+    },
+    {
+      "code": "SVN",
+      "name": "Slovenia",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "executive_constraints"
+      ],
+      "alert_level": 4,
+      "critical_indicators": [
+        "judicial_independence",
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "composite_score": 39.6,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.32,
+        "press_freedom": 0.5,
+        "electoral_integrity": 0.43,
+        "civil_society_space": 0.35,
+        "executive_constraints": 0.38
+      },
+      "year": 2024
+    },
+    {
+      "code": "SOM",
+      "name": "Somalia",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "electoral_integrity"
+      ],
+      "alert_level": 4,
+      "critical_indicators": [
+        "press_freedom",
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "composite_score": 44.0,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.5,
+        "press_freedom": 0.32,
+        "electoral_integrity": 0.41,
+        "civil_society_space": 0.53,
+        "executive_constraints": 0.44
+      },
+      "year": 2024
+    },
+    {
+      "code": "SSD",
+      "name": "South Sudan",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "electoral_integrity"
+      ],
+      "alert_level": 1,
+      "critical_indicators": [
+        "press_freedom"
+      ],
+      "composite_score": 60.0,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.66,
+        "press_freedom": 0.37,
+        "electoral_integrity": 0.63,
+        "civil_society_space": 0.69,
+        "executive_constraints": 0.65
+      },
+      "year": 2024
+    },
+    {
+      "code": "LKA",
+      "name": "Sri Lanka",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "electoral_integrity"
+      ],
+      "alert_level": 2,
+      "critical_indicators": [
+        "electoral_integrity",
+        "civil_society_space"
+      ],
+      "composite_score": 50.4,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.46,
+        "press_freedom": 0.52,
+        "electoral_integrity": 0.44,
+        "civil_society_space": 0.55,
+        "executive_constraints": 0.55
+      },
+      "year": 2024
+    },
+    {
+      "code": "TZA",
+      "name": "Tanzania",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "electoral_integrity"
+      ],
+      "alert_level": 5,
+      "critical_indicators": [
+        "judicial_independence",
+        "press_freedom",
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "composite_score": 42.6,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.45,
+        "press_freedom": 0.33,
+        "electoral_integrity": 0.42,
+        "civil_society_space": 0.53,
+        "executive_constraints": 0.4
+      },
+      "year": 2024
+    },
+    {
+      "code": "THA",
+      "name": "Thailand",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "civil_society_space"
+      ],
+      "alert_level": 5,
+      "critical_indicators": [
+        "judicial_independence",
+        "press_freedom",
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "composite_score": 32.4,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.31,
+        "press_freedom": 0.26,
+        "electoral_integrity": 0.37,
+        "civil_society_space": 0.3,
+        "executive_constraints": 0.38
+      },
+      "year": 2024
+    },
+    {
+      "code": "TON",
+      "name": "Tonga",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "executive_constraints"
+      ],
+      "alert_level": 2,
+      "critical_indicators": [
+        "press_freedom",
+        "civil_society_space"
+      ],
+      "composite_score": 50.0,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.51,
+        "press_freedom": 0.33,
+        "electoral_integrity": 0.65,
+        "civil_society_space": 0.51,
+        "executive_constraints": 0.5
+      },
+      "year": 2024
+    },
+    {
+      "code": "TUV",
+      "name": "Tuvalu",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "executive_constraints"
+      ],
+      "alert_level": 2,
+      "critical_indicators": [
+        "press_freedom",
+        "civil_society_space"
+      ],
+      "composite_score": 48.2,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.49,
+        "press_freedom": 0.45,
+        "electoral_integrity": 0.55,
+        "civil_society_space": 0.44,
+        "executive_constraints": 0.48
+      },
+      "year": 2024
+    },
+    {
+      "code": "UKR",
+      "name": "Ukraine",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "executive_constraints"
+      ],
+      "alert_level": 5,
+      "critical_indicators": [
+        "judicial_independence",
+        "press_freedom",
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "composite_score": 43.2,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.41,
+        "press_freedom": 0.36,
+        "electoral_integrity": 0.51,
+        "civil_society_space": 0.52,
+        "executive_constraints": 0.36
+      },
+      "year": 2024
+    },
+    {
+      "code": "USA",
+      "name": "United States",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "electoral_integrity"
+      ],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 66.8,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.69,
+        "press_freedom": 0.67,
+        "electoral_integrity": 0.63,
+        "civil_society_space": 0.68,
+        "executive_constraints": 0.67
+      },
+      "year": 2024
+    },
+    {
+      "code": "URY",
+      "name": "Uruguay",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "civil_society_space"
+      ],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 74.2,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.75,
+        "press_freedom": 0.73,
+        "electoral_integrity": 0.83,
+        "civil_society_space": 0.74,
+        "executive_constraints": 0.66
+      },
+      "year": 2024
+    },
+    {
+      "code": "VNM",
+      "name": "Vietnam",
+      "trajectory": "STRESS",
+      "declining_indicators": [
+        "electoral_integrity",
+        "executive_constraints"
+      ],
+      "alert_level": 4,
+      "critical_indicators": [
+        "judicial_independence",
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "composite_score": 34.4,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.31,
+        "press_freedom": 0.56,
+        "electoral_integrity": 0.25,
+        "civil_society_space": 0.29,
+        "executive_constraints": 0.31
+      },
+      "year": 2024
+    },
+    {
+      "code": "ALB",
+      "name": "Albania",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 1,
+      "critical_indicators": [
+        "civil_society_space"
+      ],
+      "composite_score": 56.4,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.6,
+        "press_freedom": 0.49,
+        "electoral_integrity": 0.61,
+        "civil_society_space": 0.52,
+        "executive_constraints": 0.6
+      },
+      "year": 2024
+    },
+    {
+      "code": "ATG",
+      "name": "Antigua and Barbuda",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 1,
+      "critical_indicators": [
+        "executive_constraints"
+      ],
+      "composite_score": 54.0,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.49,
+        "press_freedom": 0.56,
+        "electoral_integrity": 0.62,
+        "civil_society_space": 0.61,
+        "executive_constraints": 0.42
+      },
+      "year": 2024
+    },
+    {
+      "code": "ARG",
+      "name": "Argentina",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 1,
+      "critical_indicators": [
+        "electoral_integrity"
+      ],
+      "composite_score": 59.0,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.57,
+        "press_freedom": 0.51,
+        "electoral_integrity": 0.5,
+        "civil_society_space": 0.69,
+        "executive_constraints": 0.68
+      },
+      "year": 2024
+    },
+    {
+      "code": "AUS",
+      "name": "Australia",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 89.4,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.88,
+        "press_freedom": 0.9,
+        "electoral_integrity": 0.94,
+        "civil_society_space": 0.78,
+        "executive_constraints": 0.97
+      },
+      "year": 2024
+    },
+    {
+      "code": "AUT",
+      "name": "Austria",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 78.4,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.78,
+        "press_freedom": 0.81,
+        "electoral_integrity": 0.82,
+        "civil_society_space": 0.78,
+        "executive_constraints": 0.73
+      },
+      "year": 2024
+    },
+    {
+      "code": "AZE",
+      "name": "Azerbaijan",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 1,
+      "critical_indicators": [
+        "electoral_integrity"
+      ],
+      "composite_score": 56.0,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.49,
+        "press_freedom": 0.68,
+        "electoral_integrity": 0.52,
+        "civil_society_space": 0.64,
+        "executive_constraints": 0.47
+      },
+      "year": 2024
+    },
+    {
+      "code": "BHS",
+      "name": "Bahamas",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 64.2,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.57,
+        "press_freedom": 0.62,
+        "electoral_integrity": 0.71,
+        "civil_society_space": 0.63,
+        "executive_constraints": 0.68
+      },
+      "year": 2024
+    },
+    {
+      "code": "BHR",
+      "name": "Bahrain",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 1,
+      "critical_indicators": [
+        "press_freedom"
+      ],
+      "composite_score": 57.4,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.58,
+        "press_freedom": 0.47,
+        "electoral_integrity": 0.59,
+        "civil_society_space": 0.67,
+        "executive_constraints": 0.56
+      },
+      "year": 2024
+    },
+    {
+      "code": "BGD",
+      "name": "Bangladesh",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 1,
+      "critical_indicators": [
+        "press_freedom"
+      ],
+      "composite_score": 62.8,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.65,
+        "press_freedom": 0.47,
+        "electoral_integrity": 0.58,
+        "civil_society_space": 0.74,
+        "executive_constraints": 0.7
+      },
+      "year": 2024
+    },
+    {
+      "code": "BRB",
+      "name": "Barbados",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 1,
+      "critical_indicators": [
+        "press_freedom"
+      ],
+      "composite_score": 64.6,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.64,
+        "press_freedom": 0.42,
+        "electoral_integrity": 0.72,
+        "civil_society_space": 0.78,
+        "executive_constraints": 0.67
+      },
+      "year": 2024
+    },
+    {
+      "code": "BLR",
+      "name": "Belarus",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 1,
+      "critical_indicators": [
+        "press_freedom"
+      ],
+      "composite_score": 58.6,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.59,
+        "press_freedom": 0.43,
+        "electoral_integrity": 0.58,
+        "civil_society_space": 0.68,
+        "executive_constraints": 0.65
+      },
+      "year": 2024
+    },
+    {
+      "code": "BEL",
+      "name": "Belgium",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 78.4,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.78,
+        "press_freedom": 0.81,
+        "electoral_integrity": 0.8,
+        "civil_society_space": 0.72,
+        "executive_constraints": 0.81
+      },
+      "year": 2024
+    },
+    {
+      "code": "BLZ",
+      "name": "Belize",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 2,
+      "critical_indicators": [
+        "electoral_integrity",
+        "civil_society_space"
+      ],
+      "composite_score": 49.8,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.46,
+        "press_freedom": 0.54,
+        "electoral_integrity": 0.38,
+        "civil_society_space": 0.52,
+        "executive_constraints": 0.59
+      },
+      "year": 2024
+    },
+    {
+      "code": "BEN",
+      "name": "Benin",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 77.2,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.74,
+        "press_freedom": 0.64,
+        "electoral_integrity": 0.89,
+        "civil_society_space": 0.71,
+        "executive_constraints": 0.88
+      },
+      "year": 2024
+    },
+    {
+      "code": "BTN",
+      "name": "Bhutan",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 1,
+      "critical_indicators": [
+        "press_freedom"
+      ],
+      "composite_score": 62.2,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.58,
+        "press_freedom": 0.43,
+        "electoral_integrity": 0.73,
+        "civil_society_space": 0.7,
+        "executive_constraints": 0.67
+      },
+      "year": 2024
+    },
+    {
+      "code": "BOL",
+      "name": "Bolivia",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 70.6,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.68,
+        "press_freedom": 0.67,
+        "electoral_integrity": 0.67,
+        "civil_society_space": 0.69,
+        "executive_constraints": 0.82
+      },
+      "year": 2024
+    },
+    {
+      "code": "BIH",
+      "name": "Bosnia and Herzegovina",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 1,
+      "critical_indicators": [
+        "press_freedom"
+      ],
+      "composite_score": 59.4,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.65,
+        "press_freedom": 0.34,
+        "electoral_integrity": 0.74,
+        "civil_society_space": 0.67,
+        "executive_constraints": 0.57
+      },
+      "year": 2024
+    },
+    {
+      "code": "BWA",
+      "name": "Botswana",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 1,
+      "critical_indicators": [
+        "civil_society_space"
+      ],
+      "composite_score": 62.2,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.6,
+        "press_freedom": 0.77,
+        "electoral_integrity": 0.7,
+        "civil_society_space": 0.52,
+        "executive_constraints": 0.52
+      },
+      "year": 2024
+    },
+    {
+      "code": "BRN",
+      "name": "Brunei",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 2,
+      "critical_indicators": [
+        "press_freedom",
+        "electoral_integrity"
+      ],
+      "composite_score": 62.8,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.64,
+        "press_freedom": 0.43,
+        "electoral_integrity": 0.54,
+        "civil_society_space": 0.77,
+        "executive_constraints": 0.76
+      },
+      "year": 2024
+    },
+    {
+      "code": "BGR",
+      "name": "Bulgaria",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 1,
+      "critical_indicators": [
+        "civil_society_space"
+      ],
+      "composite_score": 55.4,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.53,
+        "press_freedom": 0.53,
+        "electoral_integrity": 0.65,
+        "civil_society_space": 0.59,
+        "executive_constraints": 0.47
+      },
+      "year": 2024
+    },
+    {
+      "code": "BFA",
+      "name": "Burkina Faso",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 4,
+      "critical_indicators": [
+        "judicial_independence",
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "composite_score": 40.6,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.38,
+        "press_freedom": 0.53,
+        "electoral_integrity": 0.31,
+        "civil_society_space": 0.45,
+        "executive_constraints": 0.36
+      },
+      "year": 2024
+    },
+    {
+      "code": "CPV",
+      "name": "Cabo Verde",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 66.8,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.69,
+        "press_freedom": 0.7,
+        "electoral_integrity": 0.6,
+        "civil_society_space": 0.71,
+        "executive_constraints": 0.64
+      },
+      "year": 2024
+    },
+    {
+      "code": "KHM",
+      "name": "Cambodia",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 78.0,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.79,
+        "press_freedom": 0.55,
+        "electoral_integrity": 0.94,
+        "civil_society_space": 0.83,
+        "executive_constraints": 0.79
+      },
+      "year": 2024
+    },
+    {
+      "code": "CMR",
+      "name": "Cameroon",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 2,
+      "critical_indicators": [
+        "judicial_independence",
+        "civil_society_space"
+      ],
+      "composite_score": 50.2,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.45,
+        "press_freedom": 0.52,
+        "electoral_integrity": 0.59,
+        "civil_society_space": 0.47,
+        "executive_constraints": 0.48
+      },
+      "year": 2024
+    },
+    {
+      "code": "CAN",
+      "name": "Canada",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 93.6,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.9,
+        "press_freedom": 0.92,
+        "electoral_integrity": 0.99,
+        "civil_society_space": 0.94,
+        "executive_constraints": 0.93
+      },
+      "year": 2024
+    },
+    {
+      "code": "CAF",
+      "name": "Central African Republic",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 1,
+      "critical_indicators": [
+        "electoral_integrity"
+      ],
+      "composite_score": 58.2,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.52,
+        "press_freedom": 0.62,
+        "electoral_integrity": 0.5,
+        "civil_society_space": 0.67,
+        "executive_constraints": 0.6
+      },
+      "year": 2024
+    },
+    {
+      "code": "CHL",
+      "name": "Chile",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 1,
+      "critical_indicators": [
+        "civil_society_space"
+      ],
+      "composite_score": 68.8,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.69,
+        "press_freedom": 0.67,
+        "electoral_integrity": 0.67,
+        "civil_society_space": 0.59,
+        "executive_constraints": 0.82
+      },
+      "year": 2024
+    },
+    {
+      "code": "CHN",
+      "name": "China",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 1,
+      "critical_indicators": [
+        "electoral_integrity"
+      ],
+      "composite_score": 64.4,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.57,
+        "press_freedom": 0.76,
+        "electoral_integrity": 0.51,
+        "civil_society_space": 0.72,
+        "executive_constraints": 0.66
+      },
+      "year": 2024
+    },
+    {
+      "code": "COM",
+      "name": "Comoros",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 67.2,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.72,
+        "press_freedom": 0.49,
+        "electoral_integrity": 0.75,
+        "civil_society_space": 0.77,
+        "executive_constraints": 0.63
+      },
+      "year": 2024
+    },
+    {
+      "code": "COG",
+      "name": "Congo",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 2,
+      "critical_indicators": [
+        "electoral_integrity",
+        "civil_society_space"
+      ],
+      "composite_score": 55.2,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.55,
+        "press_freedom": 0.67,
+        "electoral_integrity": 0.48,
+        "civil_society_space": 0.49,
+        "executive_constraints": 0.57
+      },
+      "year": 2024
+    },
+    {
+      "code": "CRI",
+      "name": "Costa Rica",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 92.0,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.85,
+        "press_freedom": 0.88,
+        "electoral_integrity": 0.94,
+        "civil_society_space": 0.94,
+        "executive_constraints": 0.99
+      },
+      "year": 2024
+    },
+    {
+      "code": "HRV",
+      "name": "Croatia",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 3,
+      "critical_indicators": [
+        "judicial_independence",
+        "electoral_integrity",
+        "civil_society_space"
+      ],
+      "composite_score": 45.0,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.41,
+        "press_freedom": 0.62,
+        "electoral_integrity": 0.36,
+        "civil_society_space": 0.38,
+        "executive_constraints": 0.48
+      },
+      "year": 2024
+    },
+    {
+      "code": "CUB",
+      "name": "Cuba",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 67.4,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.61,
+        "press_freedom": 0.72,
+        "electoral_integrity": 0.72,
+        "civil_society_space": 0.64,
+        "executive_constraints": 0.68
+      },
+      "year": 2024
+    },
+    {
+      "code": "CYP",
+      "name": "Cyprus",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 3,
+      "critical_indicators": [
+        "press_freedom",
+        "electoral_integrity",
+        "civil_society_space"
+      ],
+      "composite_score": 51.0,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.56,
+        "press_freedom": 0.39,
+        "electoral_integrity": 0.5,
+        "civil_society_space": 0.51,
+        "executive_constraints": 0.59
+      },
+      "year": 2024
+    },
+    {
+      "code": "CZE",
+      "name": "Czech Republic",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 1,
+      "critical_indicators": [
+        "press_freedom"
+      ],
+      "composite_score": 62.8,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.67,
+        "press_freedom": 0.45,
+        "electoral_integrity": 0.61,
+        "civil_society_space": 0.63,
+        "executive_constraints": 0.78
+      },
+      "year": 2024
+    },
+    {
+      "code": "DNK",
+      "name": "Denmark",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 95.6,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.95,
+        "press_freedom": 0.98,
+        "electoral_integrity": 0.9,
+        "civil_society_space": 0.96,
+        "executive_constraints": 0.99
+      },
+      "year": 2024
+    },
+    {
+      "code": "DJI",
+      "name": "Djibouti",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 1,
+      "critical_indicators": [
+        "press_freedom"
+      ],
+      "composite_score": 53.4,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.51,
+        "press_freedom": 0.36,
+        "electoral_integrity": 0.65,
+        "civil_society_space": 0.66,
+        "executive_constraints": 0.49
+      },
+      "year": 2024
+    },
+    {
+      "code": "DMA",
+      "name": "Dominica",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 1,
+      "critical_indicators": [
+        "civil_society_space"
+      ],
+      "composite_score": 60.6,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.6,
+        "press_freedom": 0.52,
+        "electoral_integrity": 0.66,
+        "civil_society_space": 0.51,
+        "executive_constraints": 0.74
+      },
+      "year": 2024
+    },
+    {
+      "code": "DOM",
+      "name": "Dominican Republic",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 3,
+      "critical_indicators": [
+        "press_freedom",
+        "electoral_integrity",
+        "civil_society_space"
+      ],
+      "composite_score": 52.4,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.57,
+        "press_freedom": 0.45,
+        "electoral_integrity": 0.52,
+        "civil_society_space": 0.57,
+        "executive_constraints": 0.51
+      },
+      "year": 2024
+    },
+    {
+      "code": "ECU",
+      "name": "Ecuador",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 67.6,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.65,
+        "press_freedom": 0.57,
+        "electoral_integrity": 0.8,
+        "civil_society_space": 0.69,
+        "executive_constraints": 0.67
+      },
+      "year": 2024
+    },
+    {
+      "code": "EGY",
+      "name": "Egypt",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 5,
+      "critical_indicators": [
+        "judicial_independence",
+        "press_freedom",
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "composite_score": 44.6,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.39,
+        "press_freedom": 0.46,
+        "electoral_integrity": 0.54,
+        "civil_society_space": 0.49,
+        "executive_constraints": 0.35
+      },
+      "year": 2024
+    },
+    {
+      "code": "SLV",
+      "name": "El Salvador",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 66.4,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.68,
+        "press_freedom": 0.59,
+        "electoral_integrity": 0.81,
+        "civil_society_space": 0.66,
+        "executive_constraints": 0.58
+      },
+      "year": 2024
+    },
+    {
+      "code": "GNQ",
+      "name": "Equatorial Guinea",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 1,
+      "critical_indicators": [
+        "civil_society_space"
+      ],
+      "composite_score": 60.4,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.61,
+        "press_freedom": 0.59,
+        "electoral_integrity": 0.68,
+        "civil_society_space": 0.51,
+        "executive_constraints": 0.63
+      },
+      "year": 2024
+    },
+    {
+      "code": "ERI",
+      "name": "Eritrea",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 5,
+      "critical_indicators": [
+        "judicial_independence",
+        "press_freedom",
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "composite_score": 41.6,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.36,
+        "press_freedom": 0.4,
+        "electoral_integrity": 0.43,
+        "civil_society_space": 0.47,
+        "executive_constraints": 0.42
+      },
+      "year": 2024
+    },
+    {
+      "code": "EST",
+      "name": "Estonia",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 3,
+      "critical_indicators": [
+        "judicial_independence",
+        "electoral_integrity",
+        "civil_society_space"
+      ],
+      "composite_score": 51.6,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.45,
+        "press_freedom": 0.54,
+        "electoral_integrity": 0.51,
+        "civil_society_space": 0.56,
+        "executive_constraints": 0.52
+      },
+      "year": 2024
+    },
+    {
+      "code": "FJI",
+      "name": "Fiji",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 70.6,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.73,
+        "press_freedom": 0.68,
+        "electoral_integrity": 0.66,
+        "civil_society_space": 0.66,
+        "executive_constraints": 0.8
+      },
+      "year": 2024
+    },
+    {
+      "code": "FIN",
+      "name": "Finland",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 95.0,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.92,
+        "press_freedom": 0.95,
+        "electoral_integrity": 0.96,
+        "civil_society_space": 1.0,
+        "executive_constraints": 0.92
+      },
+      "year": 2024
+    },
+    {
+      "code": "FRA",
+      "name": "France",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 74.0,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.71,
+        "press_freedom": 0.73,
+        "electoral_integrity": 0.77,
+        "civil_society_space": 0.68,
+        "executive_constraints": 0.81
+      },
+      "year": 2024
+    },
+    {
+      "code": "GAB",
+      "name": "Gabon",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 1,
+      "critical_indicators": [
+        "press_freedom"
+      ],
+      "composite_score": 57.0,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.63,
+        "press_freedom": 0.28,
+        "electoral_integrity": 0.76,
+        "civil_society_space": 0.63,
+        "executive_constraints": 0.55
+      },
+      "year": 2024
+    },
+    {
+      "code": "DEU",
+      "name": "Germany",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 82.8,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.81,
+        "press_freedom": 0.83,
+        "electoral_integrity": 0.83,
+        "civil_society_space": 0.73,
+        "executive_constraints": 0.94
+      },
+      "year": 2024
+    },
+    {
+      "code": "GRC",
+      "name": "Greece",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 66.8,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.63,
+        "press_freedom": 0.65,
+        "electoral_integrity": 0.58,
+        "civil_society_space": 0.74,
+        "executive_constraints": 0.74
+      },
+      "year": 2024
+    },
+    {
+      "code": "GTM",
+      "name": "Guatemala",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 69.6,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.62,
+        "press_freedom": 0.67,
+        "electoral_integrity": 0.73,
+        "civil_society_space": 0.73,
+        "executive_constraints": 0.73
+      },
+      "year": 2024
+    },
+    {
+      "code": "GUY",
+      "name": "Guyana",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 1,
+      "critical_indicators": [
+        "press_freedom"
+      ],
+      "composite_score": 60.4,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.68,
+        "press_freedom": 0.43,
+        "electoral_integrity": 0.61,
+        "civil_society_space": 0.6,
+        "executive_constraints": 0.7
+      },
+      "year": 2024
+    },
+    {
+      "code": "HTI",
+      "name": "Haiti",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 1,
+      "critical_indicators": [
+        "press_freedom"
+      ],
+      "composite_score": 58.0,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.65,
+        "press_freedom": 0.4,
+        "electoral_integrity": 0.65,
+        "civil_society_space": 0.64,
+        "executive_constraints": 0.56
+      },
+      "year": 2024
+    },
+    {
+      "code": "ISL",
+      "name": "Iceland",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 70.6,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.7,
+        "press_freedom": 0.67,
+        "electoral_integrity": 0.76,
+        "civil_society_space": 0.65,
+        "executive_constraints": 0.75
+      },
+      "year": 2024
+    },
+    {
+      "code": "IND",
+      "name": "India",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 5,
+      "critical_indicators": [
+        "judicial_independence",
+        "press_freedom",
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "composite_score": 41.4,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.39,
+        "press_freedom": 0.34,
+        "electoral_integrity": 0.49,
+        "civil_society_space": 0.49,
+        "executive_constraints": 0.36
+      },
+      "year": 2024
+    },
+    {
+      "code": "IDN",
+      "name": "Indonesia",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 5,
+      "critical_indicators": [
+        "judicial_independence",
+        "press_freedom",
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "composite_score": 36.0,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.36,
+        "press_freedom": 0.31,
+        "electoral_integrity": 0.38,
+        "civil_society_space": 0.4,
+        "executive_constraints": 0.35
+      },
+      "year": 2024
+    },
+    {
+      "code": "IRQ",
+      "name": "Iraq",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 2,
+      "critical_indicators": [
+        "electoral_integrity",
+        "civil_society_space"
+      ],
+      "composite_score": 56.2,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.55,
+        "press_freedom": 0.59,
+        "electoral_integrity": 0.48,
+        "civil_society_space": 0.54,
+        "executive_constraints": 0.65
+      },
+      "year": 2024
+    },
+    {
+      "code": "IRL",
+      "name": "Ireland",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 89.2,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.88,
+        "press_freedom": 0.9,
+        "electoral_integrity": 0.94,
+        "civil_society_space": 0.81,
+        "executive_constraints": 0.93
+      },
+      "year": 2024
+    },
+    {
+      "code": "ISR",
+      "name": "Israel",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 1,
+      "critical_indicators": [
+        "press_freedom"
+      ],
+      "composite_score": 65.8,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.7,
+        "press_freedom": 0.46,
+        "electoral_integrity": 0.69,
+        "civil_society_space": 0.65,
+        "executive_constraints": 0.79
+      },
+      "year": 2024
+    },
+    {
+      "code": "ITA",
+      "name": "Italy",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 67.4,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.63,
+        "press_freedom": 0.65,
+        "electoral_integrity": 0.69,
+        "civil_society_space": 0.74,
+        "executive_constraints": 0.66
+      },
+      "year": 2024
+    },
+    {
+      "code": "JAM",
+      "name": "Jamaica",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 1,
+      "critical_indicators": [
+        "executive_constraints"
+      ],
+      "composite_score": 56.4,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.48,
+        "press_freedom": 0.69,
+        "electoral_integrity": 0.63,
+        "civil_society_space": 0.6,
+        "executive_constraints": 0.42
+      },
+      "year": 2024
+    },
+    {
+      "code": "JPN",
+      "name": "Japan",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 81.0,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.75,
+        "press_freedom": 0.8,
+        "electoral_integrity": 0.84,
+        "civil_society_space": 0.84,
+        "executive_constraints": 0.82
+      },
+      "year": 2024
+    },
+    {
+      "code": "KAZ",
+      "name": "Kazakhstan",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 1,
+      "critical_indicators": [
+        "press_freedom"
+      ],
+      "composite_score": 55.0,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.55,
+        "press_freedom": 0.33,
+        "electoral_integrity": 0.66,
+        "civil_society_space": 0.68,
+        "executive_constraints": 0.53
+      },
+      "year": 2024
+    },
+    {
+      "code": "KEN",
+      "name": "Kenya",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 1,
+      "critical_indicators": [
+        "press_freedom"
+      ],
+      "composite_score": 66.2,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.7,
+        "press_freedom": 0.43,
+        "electoral_integrity": 0.69,
+        "civil_society_space": 0.82,
+        "executive_constraints": 0.67
+      },
+      "year": 2024
+    },
+    {
+      "code": "KWT",
+      "name": "Kuwait",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 3,
+      "critical_indicators": [
+        "press_freedom",
+        "electoral_integrity",
+        "civil_society_space"
+      ],
+      "composite_score": 47.6,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.46,
+        "press_freedom": 0.43,
+        "electoral_integrity": 0.36,
+        "civil_society_space": 0.56,
+        "executive_constraints": 0.57
+      },
+      "year": 2024
+    },
+    {
+      "code": "LAO",
+      "name": "Laos",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 2,
+      "critical_indicators": [
+        "electoral_integrity",
+        "civil_society_space"
+      ],
+      "composite_score": 51.8,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.55,
+        "press_freedom": 0.49,
+        "electoral_integrity": 0.53,
+        "civil_society_space": 0.5,
+        "executive_constraints": 0.52
+      },
+      "year": 2024
+    },
+    {
+      "code": "LVA",
+      "name": "Latvia",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 4,
+      "critical_indicators": [
+        "judicial_independence",
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "composite_score": 48.6,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.45,
+        "press_freedom": 0.71,
+        "electoral_integrity": 0.42,
+        "civil_society_space": 0.41,
+        "executive_constraints": 0.44
+      },
+      "year": 2024
+    },
+    {
+      "code": "LSO",
+      "name": "Lesotho",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 69.8,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.72,
+        "press_freedom": 0.5,
+        "electoral_integrity": 0.74,
+        "civil_society_space": 0.72,
+        "executive_constraints": 0.81
+      },
+      "year": 2024
+    },
+    {
+      "code": "LBR",
+      "name": "Liberia",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 71.8,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.72,
+        "press_freedom": 0.57,
+        "electoral_integrity": 0.84,
+        "civil_society_space": 0.68,
+        "executive_constraints": 0.78
+      },
+      "year": 2024
+    },
+    {
+      "code": "LIE",
+      "name": "Liechtenstein",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 64.4,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.66,
+        "press_freedom": 0.51,
+        "electoral_integrity": 0.72,
+        "civil_society_space": 0.77,
+        "executive_constraints": 0.56
+      },
+      "year": 2024
+    },
+    {
+      "code": "LTU",
+      "name": "Lithuania",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 72.6,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.71,
+        "press_freedom": 0.63,
+        "electoral_integrity": 0.84,
+        "civil_society_space": 0.7,
+        "executive_constraints": 0.75
+      },
+      "year": 2024
+    },
+    {
+      "code": "LUX",
+      "name": "Luxembourg",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 4,
+      "critical_indicators": [
+        "judicial_independence",
+        "press_freedom",
+        "electoral_integrity",
+        "civil_society_space"
+      ],
+      "composite_score": 43.8,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.41,
+        "press_freedom": 0.38,
+        "electoral_integrity": 0.48,
+        "civil_society_space": 0.4,
+        "executive_constraints": 0.52
+      },
+      "year": 2024
+    },
+    {
+      "code": "MWI",
+      "name": "Malawi",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 2,
+      "critical_indicators": [
+        "press_freedom",
+        "civil_society_space"
+      ],
+      "composite_score": 56.0,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.57,
+        "press_freedom": 0.35,
+        "electoral_integrity": 0.67,
+        "civil_society_space": 0.58,
+        "executive_constraints": 0.63
+      },
+      "year": 2024
+    },
+    {
+      "code": "MYS",
+      "name": "Malaysia",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 5,
+      "critical_indicators": [
+        "judicial_independence",
+        "press_freedom",
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "composite_score": 37.6,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.41,
+        "press_freedom": 0.36,
+        "electoral_integrity": 0.33,
+        "civil_society_space": 0.38,
+        "executive_constraints": 0.4
+      },
+      "year": 2024
+    },
+    {
+      "code": "MDV",
+      "name": "Maldives",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 3,
+      "critical_indicators": [
+        "press_freedom",
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "composite_score": 44.8,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.49,
+        "press_freedom": 0.37,
+        "electoral_integrity": 0.55,
+        "civil_society_space": 0.39,
+        "executive_constraints": 0.44
+      },
+      "year": 2024
+    },
+    {
+      "code": "MLI",
+      "name": "Mali",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 1,
+      "critical_indicators": [
+        "civil_society_space"
+      ],
+      "composite_score": 56.8,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.47,
+        "press_freedom": 0.67,
+        "electoral_integrity": 0.59,
+        "civil_society_space": 0.56,
+        "executive_constraints": 0.55
+      },
+      "year": 2024
+    },
+    {
+      "code": "MHL",
+      "name": "Marshall Islands",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 1,
+      "critical_indicators": [
+        "civil_society_space"
+      ],
+      "composite_score": 53.2,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.51,
+        "press_freedom": 0.56,
+        "electoral_integrity": 0.59,
+        "civil_society_space": 0.53,
+        "executive_constraints": 0.47
+      },
+      "year": 2024
+    },
+    {
+      "code": "MRT",
+      "name": "Mauritania",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 3,
+      "critical_indicators": [
+        "judicial_independence",
+        "electoral_integrity",
+        "civil_society_space"
+      ],
+      "composite_score": 48.6,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.4,
+        "press_freedom": 0.66,
+        "electoral_integrity": 0.42,
+        "civil_society_space": 0.44,
+        "executive_constraints": 0.51
+      },
+      "year": 2024
+    },
+    {
+      "code": "MUS",
+      "name": "Mauritius",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 3,
+      "critical_indicators": [
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "composite_score": 53.4,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.46,
+        "press_freedom": 0.77,
+        "electoral_integrity": 0.54,
+        "civil_society_space": 0.46,
+        "executive_constraints": 0.44
+      },
+      "year": 2024
+    },
+    {
+      "code": "MEX",
+      "name": "Mexico",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 1,
+      "critical_indicators": [
+        "civil_society_space"
+      ],
+      "composite_score": 49.6,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.48,
+        "press_freedom": 0.48,
+        "electoral_integrity": 0.55,
+        "civil_society_space": 0.41,
+        "executive_constraints": 0.56
+      },
+      "year": 2024
+    },
+    {
+      "code": "FSM",
+      "name": "Micronesia",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 63.8,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.68,
+        "press_freedom": 0.68,
+        "electoral_integrity": 0.59,
+        "civil_society_space": 0.61,
+        "executive_constraints": 0.63
+      },
+      "year": 2024
+    },
+    {
+      "code": "MCO",
+      "name": "Monaco",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 64.2,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.59,
+        "press_freedom": 0.72,
+        "electoral_integrity": 0.56,
+        "civil_society_space": 0.61,
+        "executive_constraints": 0.73
+      },
+      "year": 2024
+    },
+    {
+      "code": "MNG",
+      "name": "Mongolia",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 70.0,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.62,
+        "press_freedom": 0.73,
+        "electoral_integrity": 0.73,
+        "civil_society_space": 0.71,
+        "executive_constraints": 0.71
+      },
+      "year": 2024
+    },
+    {
+      "code": "MOZ",
+      "name": "Mozambique",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 5,
+      "critical_indicators": [
+        "judicial_independence",
+        "press_freedom",
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "composite_score": 31.0,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.3,
+        "press_freedom": 0.32,
+        "electoral_integrity": 0.32,
+        "civil_society_space": 0.24,
+        "executive_constraints": 0.37
+      },
+      "year": 2024
+    },
+    {
+      "code": "NAM",
+      "name": "Namibia",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 65.4,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.64,
+        "press_freedom": 0.53,
+        "electoral_integrity": 0.62,
+        "civil_society_space": 0.72,
+        "executive_constraints": 0.76
+      },
+      "year": 2024
+    },
+    {
+      "code": "NRU",
+      "name": "Nauru",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 2,
+      "critical_indicators": [
+        "press_freedom",
+        "civil_society_space"
+      ],
+      "composite_score": 58.4,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.64,
+        "press_freedom": 0.35,
+        "electoral_integrity": 0.72,
+        "civil_society_space": 0.59,
+        "executive_constraints": 0.62
+      },
+      "year": 2024
+    },
+    {
+      "code": "NPL",
+      "name": "Nepal",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 3,
+      "critical_indicators": [
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "composite_score": 50.6,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.47,
+        "press_freedom": 0.63,
+        "electoral_integrity": 0.45,
+        "civil_society_space": 0.53,
+        "executive_constraints": 0.45
+      },
+      "year": 2024
+    },
+    {
+      "code": "NLD",
+      "name": "Netherlands",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 90.4,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.92,
+        "press_freedom": 0.95,
+        "electoral_integrity": 0.93,
+        "civil_society_space": 0.9,
+        "executive_constraints": 0.82
+      },
+      "year": 2024
+    },
+    {
+      "code": "NZL",
+      "name": "New Zealand",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 92.0,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.9,
+        "press_freedom": 0.92,
+        "electoral_integrity": 1.0,
+        "civil_society_space": 0.89,
+        "executive_constraints": 0.89
+      },
+      "year": 2024
+    },
+    {
+      "code": "NIC",
+      "name": "Nicaragua",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 5,
+      "critical_indicators": [
+        "judicial_independence",
+        "press_freedom",
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "composite_score": 42.2,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.38,
+        "press_freedom": 0.4,
+        "electoral_integrity": 0.49,
+        "civil_society_space": 0.4,
+        "executive_constraints": 0.44
+      },
+      "year": 2024
+    },
+    {
+      "code": "NER",
+      "name": "Niger",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 66.4,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.69,
+        "press_freedom": 0.5,
+        "electoral_integrity": 0.61,
+        "civil_society_space": 0.73,
+        "executive_constraints": 0.79
+      },
+      "year": 2024
+    },
+    {
+      "code": "PRK",
+      "name": "North Korea",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 1,
+      "critical_indicators": [
+        "press_freedom"
+      ],
+      "composite_score": 56.8,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.57,
+        "press_freedom": 0.43,
+        "electoral_integrity": 0.61,
+        "civil_society_space": 0.7,
+        "executive_constraints": 0.53
+      },
+      "year": 2024
+    },
+    {
+      "code": "MKD",
+      "name": "North Macedonia",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 2,
+      "critical_indicators": [
+        "press_freedom",
+        "electoral_integrity"
+      ],
+      "composite_score": 55.4,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.59,
+        "press_freedom": 0.41,
+        "electoral_integrity": 0.52,
+        "civil_society_space": 0.73,
+        "executive_constraints": 0.52
+      },
+      "year": 2024
+    },
+    {
+      "code": "NOR",
+      "name": "Norway",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 96.0,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.94,
+        "press_freedom": 0.96,
+        "electoral_integrity": 0.91,
+        "civil_society_space": 1.0,
+        "executive_constraints": 0.99
+      },
+      "year": 2024
+    },
+    {
+      "code": "PAK",
+      "name": "Pakistan",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 68.0,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.66,
+        "press_freedom": 0.58,
+        "electoral_integrity": 0.79,
+        "civil_society_space": 0.63,
+        "executive_constraints": 0.74
+      },
+      "year": 2024
+    },
+    {
+      "code": "PSE",
+      "name": "Palestine",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 75.0,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.72,
+        "press_freedom": 0.6,
+        "electoral_integrity": 0.83,
+        "civil_society_space": 0.86,
+        "executive_constraints": 0.74
+      },
+      "year": 2024
+    },
+    {
+      "code": "PAN",
+      "name": "Panama",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 3,
+      "critical_indicators": [
+        "judicial_independence",
+        "electoral_integrity",
+        "civil_society_space"
+      ],
+      "composite_score": 50.6,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.4,
+        "press_freedom": 0.73,
+        "electoral_integrity": 0.53,
+        "civil_society_space": 0.39,
+        "executive_constraints": 0.48
+      },
+      "year": 2024
+    },
+    {
+      "code": "PNG",
+      "name": "Papua New Guinea",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 2,
+      "critical_indicators": [
+        "press_freedom",
+        "civil_society_space"
+      ],
+      "composite_score": 54.0,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.59,
+        "press_freedom": 0.27,
+        "electoral_integrity": 0.62,
+        "civil_society_space": 0.58,
+        "executive_constraints": 0.64
+      },
+      "year": 2024
+    },
+    {
+      "code": "PER",
+      "name": "Peru",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 66.2,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.53,
+        "press_freedom": 0.76,
+        "electoral_integrity": 0.68,
+        "civil_society_space": 0.67,
+        "executive_constraints": 0.67
+      },
+      "year": 2024
+    },
+    {
+      "code": "PRT",
+      "name": "Portugal",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 85.8,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.82,
+        "press_freedom": 0.85,
+        "electoral_integrity": 0.92,
+        "civil_society_space": 0.87,
+        "executive_constraints": 0.83
+      },
+      "year": 2024
+    },
+    {
+      "code": "QAT",
+      "name": "Qatar",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 1,
+      "critical_indicators": [
+        "press_freedom"
+      ],
+      "composite_score": 53.2,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.52,
+        "press_freedom": 0.37,
+        "electoral_integrity": 0.66,
+        "civil_society_space": 0.64,
+        "executive_constraints": 0.47
+      },
+      "year": 2024
+    },
+    {
+      "code": "ROU",
+      "name": "Romania",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 4,
+      "critical_indicators": [
+        "judicial_independence",
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "composite_score": 44.2,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.39,
+        "press_freedom": 0.61,
+        "electoral_integrity": 0.44,
+        "civil_society_space": 0.34,
+        "executive_constraints": 0.43
+      },
+      "year": 2024
+    },
+    {
+      "code": "RWA",
+      "name": "Rwanda",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 1,
+      "critical_indicators": [
+        "civil_society_space"
+      ],
+      "composite_score": 61.2,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.63,
+        "press_freedom": 0.57,
+        "electoral_integrity": 0.74,
+        "civil_society_space": 0.56,
+        "executive_constraints": 0.56
+      },
+      "year": 2024
+    },
+    {
+      "code": "LCA",
+      "name": "Saint Lucia",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 3,
+      "critical_indicators": [
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "composite_score": 56.6,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.5,
+        "press_freedom": 0.77,
+        "electoral_integrity": 0.53,
+        "civil_society_space": 0.59,
+        "executive_constraints": 0.44
+      },
+      "year": 2024
+    },
+    {
+      "code": "VCT",
+      "name": "Saint Vincent and the Grenadines",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 4,
+      "critical_indicators": [
+        "judicial_independence",
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "composite_score": 39.8,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.33,
+        "press_freedom": 0.64,
+        "electoral_integrity": 0.34,
+        "civil_society_space": 0.32,
+        "executive_constraints": 0.36
+      },
+      "year": 2024
+    },
+    {
+      "code": "WSM",
+      "name": "Samoa",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 1,
+      "critical_indicators": [
+        "civil_society_space"
+      ],
+      "composite_score": 60.6,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.58,
+        "press_freedom": 0.55,
+        "electoral_integrity": 0.7,
+        "civil_society_space": 0.58,
+        "executive_constraints": 0.62
+      },
+      "year": 2024
+    },
+    {
+      "code": "STP",
+      "name": "Sao Tome and Principe",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 68.8,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.67,
+        "press_freedom": 0.59,
+        "electoral_integrity": 0.63,
+        "civil_society_space": 0.81,
+        "executive_constraints": 0.74
+      },
+      "year": 2024
+    },
+    {
+      "code": "SAU",
+      "name": "Saudi Arabia",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 3,
+      "critical_indicators": [
+        "judicial_independence",
+        "electoral_integrity",
+        "civil_society_space"
+      ],
+      "composite_score": 42.0,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.39,
+        "press_freedom": 0.51,
+        "electoral_integrity": 0.37,
+        "civil_society_space": 0.35,
+        "executive_constraints": 0.48
+      },
+      "year": 2024
+    },
+    {
+      "code": "SEN",
+      "name": "Senegal",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 5,
+      "critical_indicators": [
+        "judicial_independence",
+        "press_freedom",
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "composite_score": 42.0,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.44,
+        "press_freedom": 0.36,
+        "electoral_integrity": 0.4,
+        "civil_society_space": 0.47,
+        "executive_constraints": 0.43
+      },
+      "year": 2024
+    },
+    {
+      "code": "SVK",
+      "name": "Slovakia",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 2,
+      "critical_indicators": [
+        "press_freedom",
+        "electoral_integrity"
+      ],
+      "composite_score": 58.2,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.61,
+        "press_freedom": 0.46,
+        "electoral_integrity": 0.53,
+        "civil_society_space": 0.63,
+        "executive_constraints": 0.68
+      },
+      "year": 2024
+    },
+    {
+      "code": "SLB",
+      "name": "Solomon Islands",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 72.0,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.7,
+        "press_freedom": 0.76,
+        "electoral_integrity": 0.71,
+        "civil_society_space": 0.74,
+        "executive_constraints": 0.69
+      },
+      "year": 2024
+    },
+    {
+      "code": "ZAF",
+      "name": "South Africa",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 68.2,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.72,
+        "press_freedom": 0.54,
+        "electoral_integrity": 0.67,
+        "civil_society_space": 0.76,
+        "executive_constraints": 0.72
+      },
+      "year": 2024
+    },
+    {
+      "code": "KOR",
+      "name": "South Korea",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 67.4,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.65,
+        "press_freedom": 0.63,
+        "electoral_integrity": 0.79,
+        "civil_society_space": 0.73,
+        "executive_constraints": 0.57
+      },
+      "year": 2024
+    },
+    {
+      "code": "ESP",
+      "name": "Spain",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 82.4,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.8,
+        "press_freedom": 0.82,
+        "electoral_integrity": 0.84,
+        "civil_society_space": 0.93,
+        "executive_constraints": 0.73
+      },
+      "year": 2024
+    },
+    {
+      "code": "SDN",
+      "name": "Sudan",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 2,
+      "critical_indicators": [
+        "press_freedom",
+        "electoral_integrity"
+      ],
+      "composite_score": 54.8,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.6,
+        "press_freedom": 0.37,
+        "electoral_integrity": 0.52,
+        "civil_society_space": 0.68,
+        "executive_constraints": 0.57
+      },
+      "year": 2024
+    },
+    {
+      "code": "SUR",
+      "name": "Suriname",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 1,
+      "critical_indicators": [
+        "press_freedom"
+      ],
+      "composite_score": 65.0,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.66,
+        "press_freedom": 0.47,
+        "electoral_integrity": 0.69,
+        "civil_society_space": 0.72,
+        "executive_constraints": 0.71
+      },
+      "year": 2024
+    },
+    {
+      "code": "SWE",
+      "name": "Sweden",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 95.4,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.95,
+        "press_freedom": 0.98,
+        "electoral_integrity": 0.91,
+        "civil_society_space": 0.93,
+        "executive_constraints": 1.0
+      },
+      "year": 2024
+    },
+    {
+      "code": "CHE",
+      "name": "Switzerland",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 89.0,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.9,
+        "press_freedom": 0.92,
+        "electoral_integrity": 0.87,
+        "civil_society_space": 0.89,
+        "executive_constraints": 0.87
+      },
+      "year": 2024
+    },
+    {
+      "code": "SYR",
+      "name": "Syria",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 2,
+      "critical_indicators": [
+        "electoral_integrity",
+        "civil_society_space"
+      ],
+      "composite_score": 51.0,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.47,
+        "press_freedom": 0.57,
+        "electoral_integrity": 0.47,
+        "civil_society_space": 0.42,
+        "executive_constraints": 0.62
+      },
+      "year": 2024
+    },
+    {
+      "code": "TWN",
+      "name": "Taiwan",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 80.4,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.78,
+        "press_freedom": 0.72,
+        "electoral_integrity": 0.91,
+        "civil_society_space": 0.87,
+        "executive_constraints": 0.74
+      },
+      "year": 2024
+    },
+    {
+      "code": "TJK",
+      "name": "Tajikistan",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 5,
+      "critical_indicators": [
+        "judicial_independence",
+        "press_freedom",
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "composite_score": 39.2,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.38,
+        "press_freedom": 0.46,
+        "electoral_integrity": 0.33,
+        "civil_society_space": 0.38,
+        "executive_constraints": 0.41
+      },
+      "year": 2024
+    },
+    {
+      "code": "TLS",
+      "name": "Timor-Leste",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 61.4,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.61,
+        "press_freedom": 0.55,
+        "electoral_integrity": 0.55,
+        "civil_society_space": 0.65,
+        "executive_constraints": 0.71
+      },
+      "year": 2024
+    },
+    {
+      "code": "TGO",
+      "name": "Togo",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 4,
+      "critical_indicators": [
+        "judicial_independence",
+        "press_freedom",
+        "electoral_integrity",
+        "civil_society_space"
+      ],
+      "composite_score": 42.8,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.42,
+        "press_freedom": 0.42,
+        "electoral_integrity": 0.38,
+        "civil_society_space": 0.43,
+        "executive_constraints": 0.49
+      },
+      "year": 2024
+    },
+    {
+      "code": "TTO",
+      "name": "Trinidad and Tobago",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 66.2,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.62,
+        "press_freedom": 0.71,
+        "electoral_integrity": 0.63,
+        "civil_society_space": 0.65,
+        "executive_constraints": 0.7
+      },
+      "year": 2024
+    },
+    {
+      "code": "TKM",
+      "name": "Turkmenistan",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 4,
+      "critical_indicators": [
+        "judicial_independence",
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "composite_score": 46.0,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.39,
+        "press_freedom": 0.5,
+        "electoral_integrity": 0.53,
+        "civil_society_space": 0.43,
+        "executive_constraints": 0.45
+      },
+      "year": 2024
+    },
+    {
+      "code": "UGA",
+      "name": "Uganda",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 2,
+      "critical_indicators": [
+        "press_freedom",
+        "civil_society_space"
+      ],
+      "composite_score": 62.4,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.65,
+        "press_freedom": 0.35,
+        "electoral_integrity": 0.79,
+        "civil_society_space": 0.59,
+        "executive_constraints": 0.74
+      },
+      "year": 2024
+    },
+    {
+      "code": "ARE",
+      "name": "United Arab Emirates",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 1,
+      "critical_indicators": [
+        "press_freedom"
+      ],
+      "composite_score": 63.2,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.65,
+        "press_freedom": 0.33,
+        "electoral_integrity": 0.73,
+        "civil_society_space": 0.75,
+        "executive_constraints": 0.7
+      },
+      "year": 2024
+    },
+    {
+      "code": "GBR",
+      "name": "United Kingdom",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 0,
+      "critical_indicators": [],
+      "composite_score": 80.6,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.78,
+        "press_freedom": 0.75,
+        "electoral_integrity": 0.9,
+        "civil_society_space": 0.89,
+        "executive_constraints": 0.71
+      },
+      "year": 2024
+    },
+    {
+      "code": "UZB",
+      "name": "Uzbekistan",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 1,
+      "critical_indicators": [
+        "press_freedom"
+      ],
+      "composite_score": 63.0,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.69,
+        "press_freedom": 0.45,
+        "electoral_integrity": 0.74,
+        "civil_society_space": 0.64,
+        "executive_constraints": 0.63
+      },
+      "year": 2024
+    },
+    {
+      "code": "VUT",
+      "name": "Vanuatu",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 1,
+      "critical_indicators": [
+        "civil_society_space"
+      ],
+      "composite_score": 59.0,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.58,
+        "press_freedom": 0.51,
+        "electoral_integrity": 0.67,
+        "civil_society_space": 0.51,
+        "executive_constraints": 0.68
+      },
+      "year": 2024
+    },
+    {
+      "code": "VAT",
+      "name": "Vatican City",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 4,
+      "critical_indicators": [
+        "judicial_independence",
+        "electoral_integrity",
+        "civil_society_space",
+        "executive_constraints"
+      ],
+      "composite_score": 45.2,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.41,
+        "press_freedom": 0.58,
+        "electoral_integrity": 0.54,
+        "civil_society_space": 0.35,
+        "executive_constraints": 0.38
+      },
+      "year": 2024
+    },
+    {
+      "code": "YEM",
+      "name": "Yemen",
+      "trajectory": "STABLE",
+      "declining_indicators": [],
+      "alert_level": 1,
+      "critical_indicators": [
+        "civil_society_space"
+      ],
+      "composite_score": 61.0,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.57,
+        "press_freedom": 0.65,
+        "electoral_integrity": 0.67,
+        "civil_society_space": 0.47,
+        "executive_constraints": 0.69
+      },
+      "year": 2024
+    },
+    {
       "code": "ZMB",
+      "name": "Zambia",
       "trajectory": "STABLE",
+      "declining_indicators": [],
       "alert_level": 0,
-      "composite_score": 58.6
+      "critical_indicators": [],
+      "composite_score": 58.6,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.5,
+        "press_freedom": 0.65,
+        "electoral_integrity": 0.64,
+        "civil_society_space": 0.63,
+        "executive_constraints": 0.51
+      },
+      "year": 2024
     },
     {
-      "country": "Zimbabwe",
       "code": "ZWE",
+      "name": "Zimbabwe",
       "trajectory": "STABLE",
+      "declining_indicators": [],
       "alert_level": 0,
-      "composite_score": 64.2
+      "critical_indicators": [],
+      "composite_score": 64.2,
+      "latest_reading": {
+        "year": 2024,
+        "judicial_independence": 0.62,
+        "press_freedom": 0.58,
+        "electoral_integrity": 0.59,
+        "civil_society_space": 0.66,
+        "executive_constraints": 0.76
+      },
+      "year": 2024
     }
-  ],
-  "generated_at": "2026-04-26 18:18:28"
+  ]
 }

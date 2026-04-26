@@ -624,6 +624,8 @@ export default function Dashboard() {
               setHighlightIndicator(undefined);
               // Scroll up to timeline chart
               document.getElementById("timeline-chart")?.scrollIntoView({ behavior: "smooth", block: "start" });
+              // Auto-run analysis for selected country
+              setTimeout(() => runAnalysis(), 300);
             }}
             selectedCountryId={COUNTRIES.findIndex(c => c.country === selected) + 1}
           />
