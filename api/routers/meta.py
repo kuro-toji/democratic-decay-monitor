@@ -8,7 +8,7 @@ import yaml
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 
-router = APIRouter(prefix="/v1/meta", tags=["metadata", "Metadata Endpoints"])
+router = APIRouter(prefix="", tags=["metadata"])
 
 # Weights configuration
 WEIGHTS_CONFIG = {

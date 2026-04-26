@@ -210,29 +210,34 @@ app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 app.add_middleware(GZipMiddleware, minimum_size=1000)
 app.add_middleware(SecurityHeadersMiddleware)
 app.add_middleware(LogMiddleware)
+app.add_middleware(CORSMiddleware)
 
 # CORS configuration
 ALLOWED_ORIGINS = os.getenv("ALLOWED_ORIGINS", "*").split(",")
 
-@app.after_request
-async def add_cors_headers(request: Request, response: Response):
-    """Add CORS headers based on request method and origin."""
-    origin = request.headers.get("origin", "*")
+
+class CORSMiddleware(BaseHTTPMiddleware):
+    """Custom CORS middleware."""
     
-    # Allow all origins for safe methods, otherwise check whitelist
-    if request.method in ("GET", "HEAD", "OPTIONS"):
-        response.headers["Access-Control-Allow-Origin"] = origin if origin in ALLOWED_ORIGINS or "*" in ALLOWED_ORIGINS else ""
-    else:
-        # Write operations - strict origin checking
-        if "*" in ALLOWED_ORIGINS:
-            response.headers["Access-Control-Allow-Origin"] = origin
+    async def dispatch(self, request: Request, call_next):
+        origin = request.headers.get("origin", "*")
+        
+        response = await call_next(request)
+        
+        # Allow all origins for safe methods, otherwise check whitelist
+        if request.method in ("GET", "HEAD", "OPTIONS"):
+            response.headers["Access-Control-Allow-Origin"] = origin if origin in ALLOWED_ORIGINS or "*" in ALLOWED_ORIGINS else ""
         else:
-            response.headers["Access-Control-Allow-Origin"] = origin if origin in ALLOWED_ORIGINS else ""
-    
-    response.headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, DELETE, OPTIONS"
-    response.headers["Access-Control-Allow-Headers"] = "Content-Type, X-Admin-Key, X-DDM-Research-Key"
-    
-    return response
+            # Write operations - strict origin checking
+            if "*" in ALLOWED_ORIGINS:
+                response.headers["Access-Control-Allow-Origin"] = origin
+            else:
+                response.headers["Access-Control-Allow-Origin"] = origin if origin in ALLOWED_ORIGINS else ""
+        
+        response.headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, DELETE, OPTIONS"
+        response.headers["Access-Control-Allow-Headers"] = "Content-Type, X-Admin-Key, X-DDM-Research-Key"
+        
+        return response
 
 
 # Custom rate limit exceeded handler
