@@ -1,0 +1,130 @@
+{
+  "countries": [
+    {
+      "country": "Hungary",
+      "country_code": "HUN",
+      "readings": [
+        { "year": 2010, "judicial_independence": 0.74, "press_freedom": 0.72, "electoral_integrity": 0.82, "civil_society_space": 0.86, "executive_constraints": 0.68 },
+        { "year": 2011, "judicial_independence": 0.71, "press_freedom": 0.68, "electoral_integrity": 0.80, "civil_society_space": 0.82, "executive_constraints": 0.64 },
+        { "year": 2012, "judicial_independence": 0.66, "press_freedom": 0.58, "electoral_integrity": 0.77, "civil_society_space": 0.76, "executive_constraints": 0.58 },
+        { "year": 2013, "judicial_independence": 0.58, "press_freedom": 0.48, "electoral_integrity": 0.73, "civil_society_space": 0.70, "executive_constraints": 0.50 },
+        { "year": 2014, "judicial_independence": 0.52, "press_freedom": 0.42, "electoral_integrity": 0.69, "civil_society_space": 0.64, "executive_constraints": 0.44 },
+        { "year": 2015, "judicial_independence": 0.46, "press_freedom": 0.38, "electoral_integrity": 0.66, "civil_society_space": 0.58, "executive_constraints": 0.38 },
+        { "year": 2016, "judicial_independence": 0.40, "press_freedom": 0.34, "electoral_integrity": 0.63, "civil_society_space": 0.52, "executive_constraints": 0.34 },
+        { "year": 2017, "judicial_independence": 0.35, "press_freedom": 0.30, "electoral_integrity": 0.60, "civil_society_space": 0.46, "executive_constraints": 0.30 },
+        { "year": 2018, "judicial_independence": 0.30, "press_freedom": 0.27, "electoral_integrity": 0.57, "civil_society_space": 0.42, "executive_constraints": 0.27 },
+        { "year": 2019, "judicial_independence": 0.27, "press_freedom": 0.24, "electoral_integrity": 0.54, "civil_society_space": 0.38, "executive_constraints": 0.24 },
+        { "year": 2020, "judicial_independence": 0.25, "press_freedom": 0.22, "electoral_integrity": 0.51, "civil_society_space": 0.35, "executive_constraints": 0.22 },
+        { "year": 2021, "judicial_independence": 0.23, "press_freedom": 0.20, "electoral_integrity": 0.48, "civil_society_space": 0.32, "executive_constraints": 0.20 },
+        { "year": 2022, "judicial_independence": 0.22, "press_freedom": 0.19, "electoral_integrity": 0.46, "civil_society_space": 0.30, "executive_constraints": 0.19 },
+        { "year": 2023, "judicial_independence": 0.21, "press_freedom": 0.18, "electoral_integrity": 0.44, "civil_society_space": 0.28, "executive_constraints": 0.18 },
+        { "year": 2024, "judicial_independence": 0.20, "press_freedom": 0.17, "electoral_integrity": 0.43, "civil_society_space": 0.27, "executive_constraints": 0.17 }
+      ]
+    },
+    {
+      "country": "Georgia",
+      "country_code": "GEO",
+      "readings": [
+        { "year": 2010, "judicial_independence": 0.54, "press_freedom": 0.62, "electoral_integrity": 0.70, "civil_society_space": 0.74, "executive_constraints": 0.62 },
+        { "year": 2011, "judicial_independence": 0.56, "press_freedom": 0.64, "electoral_integrity": 0.72, "civil_society_space": 0.76, "executive_constraints": 0.64 },
+        { "year": 2012, "judicial_independence": 0.60, "press_freedom": 0.68, "electoral_integrity": 0.76, "civil_society_space": 0.80, "executive_constraints": 0.68 },
+        { "year": 2013, "judicial_independence": 0.62, "press_freedom": 0.70, "electoral_integrity": 0.78, "civil_society_space": 0.82, "executive_constraints": 0.70 },
+        { "year": 2014, "judicial_independence": 0.64, "press_freedom": 0.72, "electoral_integrity": 0.80, "civil_society_space": 0.84, "executive_constraints": 0.72 },
+        { "year": 2015, "judicial_independence": 0.66, "press_freedom": 0.74, "electoral_integrity": 0.82, "civil_society_space": 0.86, "executive_constraints": 0.74 },
+        { "year": 2016, "judicial_independence": 0.65, "press_freedom": 0.72, "electoral_integrity": 0.80, "civil_society_space": 0.84, "executive_constraints": 0.72 },
+        { "year": 2017, "judicial_independence": 0.63, "press_freedom": 0.70, "electoral_integrity": 0.78, "civil_society_space": 0.82, "executive_constraints": 0.70 },
+        { "year": 2018, "judicial_independence": 0.60, "press_freedom": 0.67, "electoral_integrity": 0.75, "civil_society_space": 0.79, "executive_constraints": 0.67 },
+        { "year": 2019, "judicial_independence": 0.56, "press_freedom": 0.62, "electoral_integrity": 0.71, "civil_society_space": 0.75, "executive_constraints": 0.62 },
+        { "year": 2020, "judicial_independence": 0.52, "press_freedom": 0.57, "electoral_integrity": 0.66, "civil_society_space": 0.70, "executive_constraints": 0.57 },
+        { "year": 2021, "judicial_independence": 0.47, "press_freedom": 0.51, "electoral_integrity": 0.61, "civil_society_space": 0.64, "executive_constraints": 0.51 },
+        { "year": 2022, "judicial_independence": 0.40, "press_freedom": 0.44, "electoral_integrity": 0.55, "civil_society_space": 0.58, "executive_constraints": 0.44 },
+        { "year": 2023, "judicial_independence": 0.33, "press_freedom": 0.36, "electoral_integrity": 0.48, "civil_society_space": 0.51, "executive_constraints": 0.38 },
+        { "year": 2024, "judicial_independence": 0.28, "press_freedom": 0.30, "electoral_integrity": 0.42, "civil_society_space": 0.45, "executive_constraints": 0.32 }
+      ]
+    },
+    {
+      "country": "Poland",
+      "country_code": "POL",
+      "readings": [
+        { "year": 2010, "judicial_independence": 0.80, "press_freedom": 0.84, "electoral_integrity": 0.90, "civil_society_space": 0.92, "executive_constraints": 0.86 },
+        { "year": 2011, "judicial_independence": 0.79, "press_freedom": 0.83, "electoral_integrity": 0.89, "civil_society_space": 0.91, "executive_constraints": 0.85 },
+        { "year": 2012, "judicial_independence": 0.78, "press_freedom": 0.82, "electoral_integrity": 0.88, "civil_society_space": 0.90, "executive_constraints": 0.84 },
+        { "year": 2013, "judicial_independence": 0.77, "press_freedom": 0.81, "electoral_integrity": 0.87, "civil_society_space": 0.89, "executive_constraints": 0.83 },
+        { "year": 2014, "judicial_independence": 0.76, "press_freedom": 0.80, "electoral_integrity": 0.86, "civil_society_space": 0.88, "executive_constraints": 0.82 },
+        { "year": 2015, "judicial_independence": 0.72, "press_freedom": 0.76, "electoral_integrity": 0.82, "civil_society_space": 0.84, "executive_constraints": 0.77 },
+        { "year": 2016, "judicial_independence": 0.65, "press_freedom": 0.69, "electoral_integrity": 0.76, "civil_society_space": 0.78, "executive_constraints": 0.69 },
+        { "year": 2017, "judicial_independence": 0.56, "press_freedom": 0.60, "electoral_integrity": 0.70, "civil_society_space": 0.72, "executive_constraints": 0.60 },
+        { "year": 2018, "judicial_independence": 0.48, "press_freedom": 0.52, "electoral_integrity": 0.64, "civil_society_space": 0.66, "executive_constraints": 0.52 },
+        { "year": 2019, "judicial_independence": 0.42, "press_freedom": 0.46, "electoral_integrity": 0.58, "civil_society_space": 0.60, "executive_constraints": 0.46 },
+        { "year": 2020, "judicial_independence": 0.38, "press_freedom": 0.42, "electoral_integrity": 0.54, "civil_society_space": 0.56, "executive_constraints": 0.42 },
+        { "year": 2021, "judicial_independence": 0.35, "press_freedom": 0.38, "electoral_integrity": 0.50, "civil_society_space": 0.52, "executive_constraints": 0.38 },
+        { "year": 2022, "judicial_independence": 0.34, "press_freedom": 0.37, "electoral_integrity": 0.49, "civil_society_space": 0.51, "executive_constraints": 0.37 },
+        { "year": 2023, "judicial_independence": 0.40, "press_freedom": 0.44, "electoral_integrity": 0.56, "civil_society_space": 0.58, "executive_constraints": 0.46 },
+        { "year": 2024, "judicial_independence": 0.46, "press_freedom": 0.50, "electoral_integrity": 0.62, "civil_society_space": 0.64, "executive_constraints": 0.52 }
+      ]
+    },
+    {
+      "country": "Tunisia",
+      "country_code": "TUN",
+      "readings": [
+        { "year": 2010, "judicial_independence": 0.50, "press_freedom": 0.56, "electoral_integrity": 0.62, "civil_society_space": 0.65, "executive_constraints": 0.52 },
+        { "year": 2011, "judicial_independence": 0.62, "press_freedom": 0.70, "electoral_integrity": 0.76, "civil_society_space": 0.78, "executive_constraints": 0.65 },
+        { "year": 2012, "judicial_independence": 0.68, "press_freedom": 0.76, "electoral_integrity": 0.82, "civil_society_space": 0.84, "executive_constraints": 0.72 },
+        { "year": 2013, "judicial_independence": 0.72, "press_freedom": 0.80, "electoral_integrity": 0.86, "civil_society_space": 0.88, "executive_constraints": 0.76 },
+        { "year": 2014, "judicial_independence": 0.74, "press_freedom": 0.82, "electoral_integrity": 0.88, "civil_society_space": 0.90, "executive_constraints": 0.78 },
+        { "year": 2015, "judicial_independence": 0.75, "press_freedom": 0.83, "electoral_integrity": 0.89, "civil_society_space": 0.91, "executive_constraints": 0.79 },
+        { "year": 2016, "judicial_independence": 0.76, "press_freedom": 0.84, "electoral_integrity": 0.90, "civil_society_space": 0.92, "executive_constraints": 0.80 },
+        { "year": 2017, "judicial_independence": 0.74, "press_freedom": 0.81, "electoral_integrity": 0.86, "civil_society_space": 0.88, "executive_constraints": 0.76 },
+        { "year": 2018, "judicial_independence": 0.72, "press_freedom": 0.78, "electoral_integrity": 0.82, "civil_society_space": 0.84, "executive_constraints": 0.73 },
+        { "year": 2019, "judicial_independence": 0.68, "press_freedom": 0.73, "electoral_integrity": 0.77, "civil_society_space": 0.79, "executive_constraints": 0.68 },
+        { "year": 2020, "judicial_independence": 0.64, "press_freedom": 0.68, "electoral_integrity": 0.72, "civil_society_space": 0.74, "executive_constraints": 0.63 },
+        { "year": 2021, "judicial_independence": 0.54, "press_freedom": 0.58, "electoral_integrity": 0.62, "civil_society_space": 0.64, "executive_constraints": 0.52 },
+        { "year": 2022, "judicial_independence": 0.44, "press_freedom": 0.47, "electoral_integrity": 0.50, "civil_society_space": 0.52, "executive_constraints": 0.42 },
+        { "year": 2023, "judicial_independence": 0.36, "press_freedom": 0.38, "electoral_integrity": 0.42, "civil_society_space": 0.44, "executive_constraints": 0.34 },
+        { "year": 2024, "judicial_independence": 0.28, "press_freedom": 0.30, "electoral_integrity": 0.35, "civil_society_space": 0.37, "executive_constraints": 0.27 }
+      ]
+    },
+    {
+      "country": "Kenya",
+      "country_code": "KEN",
+      "readings": [
+        { "year": 2010, "judicial_independence": 0.54, "press_freedom": 0.58, "electoral_integrity": 0.48, "civil_society_space": 0.68, "executive_constraints": 0.56 },
+        { "year": 2011, "judicial_independence": 0.55, "press_freedom": 0.59, "electoral_integrity": 0.50, "civil_society_space": 0.69, "executive_constraints": 0.57 },
+        { "year": 2012, "judicial_independence": 0.56, "press_freedom": 0.60, "electoral_integrity": 0.52, "civil_society_space": 0.70, "executive_constraints": 0.58 },
+        { "year": 2013, "judicial_independence": 0.62, "press_freedom": 0.66, "electoral_integrity": 0.70, "civil_society_space": 0.74, "executive_constraints": 0.66 },
+        { "year": 2014, "judicial_independence": 0.64, "press_freedom": 0.68, "electoral_integrity": 0.72, "civil_society_space": 0.76, "executive_constraints": 0.68 },
+        { "year": 2015, "judicial_independence": 0.66, "press_freedom": 0.70, "electoral_integrity": 0.74, "civil_society_space": 0.78, "executive_constraints": 0.70 },
+        { "year": 2016, "judicial_independence": 0.68, "press_freedom": 0.72, "electoral_integrity": 0.76, "civil_society_space": 0.80, "executive_constraints": 0.72 },
+        { "year": 2017, "judicial_independence": 0.58, "press_freedom": 0.62, "electoral_integrity": 0.52, "civil_society_space": 0.72, "executive_constraints": 0.60 },
+        { "year": 2018, "judicial_independence": 0.62, "press_freedom": 0.66, "electoral_integrity": 0.68, "civil_society_space": 0.76, "executive_constraints": 0.66 },
+        { "year": 2019, "judicial_independence": 0.66, "press_freedom": 0.70, "electoral_integrity": 0.72, "civil_society_space": 0.80, "executive_constraints": 0.70 },
+        { "year": 2020, "judicial_independence": 0.68, "press_freedom": 0.72, "electoral_integrity": 0.74, "civil_society_space": 0.82, "executive_constraints": 0.72 },
+        { "year": 2021, "judicial_independence": 0.70, "press_freedom": 0.74, "electoral_integrity": 0.76, "civil_society_space": 0.84, "executive_constraints": 0.74 },
+        { "year": 2022, "judicial_independence": 0.72, "press_freedom": 0.76, "electoral_integrity": 0.78, "civil_society_space": 0.86, "executive_constraints": 0.76 },
+        { "year": 2023, "judicial_independence": 0.72, "press_freedom": 0.76, "electoral_integrity": 0.78, "civil_society_space": 0.86, "executive_constraints": 0.76 },
+        { "year": 2024, "judicial_independence": 0.72, "press_freedom": 0.76, "electoral_integrity": 0.78, "civil_society_space": 0.86, "executive_constraints": 0.76 }
+      ]
+    },
+    {
+      "country": "Serbia",
+      "country_code": "SRB",
+      "readings": [
+        { "year": 2010, "judicial_independence": 0.62, "press_freedom": 0.64, "electoral_integrity": 0.68, "civil_society_space": 0.74, "executive_constraints": 0.64 },
+        { "year": 2011, "judicial_independence": 0.63, "press_freedom": 0.65, "electoral_integrity": 0.69, "civil_society_space": 0.75, "executive_constraints": 0.65 },
+        { "year": 2012, "judicial_independence": 0.64, "press_freedom": 0.64, "electoral_integrity": 0.70, "civil_society_space": 0.76, "executive_constraints": 0.64 },
+        { "year": 2013, "judicial_independence": 0.62, "press_freedom": 0.61, "electoral_integrity": 0.68, "civil_society_space": 0.74, "executive_constraints": 0.61 },
+        { "year": 2014, "judicial_independence": 0.60, "press_freedom": 0.58, "electoral_integrity": 0.66, "civil_society_space": 0.72, "executive_constraints": 0.58 },
+        { "year": 2015, "judicial_independence": 0.58, "press_freedom": 0.55, "electoral_integrity": 0.64, "civil_society_space": 0.70, "executive_constraints": 0.56 },
+        { "year": 2016, "judicial_independence": 0.56, "press_freedom": 0.52, "electoral_integrity": 0.62, "civil_society_space": 0.68, "executive_constraints": 0.54 },
+        { "year": 2017, "judicial_independence": 0.54, "press_freedom": 0.48, "electoral_integrity": 0.59, "civil_society_space": 0.65, "executive_constraints": 0.51 },
+        { "year": 2018, "judicial_independence": 0.52, "press_freedom": 0.44, "electoral_integrity": 0.57, "civil_society_space": 0.62, "executive_constraints": 0.48 },
+        { "year": 2019, "judicial_independence": 0.50, "press_freedom": 0.41, "electoral_integrity": 0.54, "civil_society_space": 0.58, "executive_constraints": 0.45 },
+        { "year": 2020, "judicial_independence": 0.48, "press_freedom": 0.38, "electoral_integrity": 0.52, "civil_society_space": 0.55, "executive_constraints": 0.43 },
+        { "year": 2021, "judicial_independence": 0.46, "press_freedom": 0.36, "electoral_integrity": 0.50, "civil_society_space": 0.52, "executive_constraints": 0.41 },
+        { "year": 2022, "judicial_independence": 0.45, "press_freedom": 0.34, "electoral_integrity": 0.48, "civil_society_space": 0.50, "executive_constraints": 0.39 },
+        { "year": 2023, "judicial_independence": 0.44, "press_freedom": 0.33, "electoral_integrity": 0.46, "civil_society_space": 0.48, "executive_constraints": 0.38 },
+        { "year": 2024, "judicial_independence": 0.42, "press_freedom": 0.31, "electoral_integrity": 0.44, "civil_society_space": 0.46, "executive_constraints": 0.36 }
+      ]
+    }
+  ]
+}

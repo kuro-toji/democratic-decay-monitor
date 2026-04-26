@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { CountryData, IndicatorKey } from "../data";
-import { baselinesData } from "../data";
+import { indicatorsData, baselinesData } from "../data";
 
 // ============================================================================
 // Types
@@ -209,12 +209,25 @@ export default function CountryGrid({ onCountrySelect, selectedCountryId }: Coun
   const [regionFilter, setRegionFilter] = useState<string>("ALL");
 
   // Get all countries from the local data
-  const countriesData = (baselinesData as any).countries ?? [];
+  const countriesData = indicatorsData.countries ?? [];
 
-  // Region mapping
-  const regionMap: Record<string, string> = {
-    HUN: "Europe", GEO: "Asia", POL: "Europe", TUN: "Africa", KEN: "Africa", SRB: "Europe",
-  };
+  // Region mapping - get from indicators data
+  const regionMap: Record<string, string> = {};
+  for (const c of countriesData) {
+    // Infer region from common knowledge
+    const european = ["ALB", "AND", "AUT", "BLR", "BEL", "BIH", "BGR", "HRV", "CYP", "CZE", "DNK", "EST", "FIN", "FRA", "DEU", "GRC", "HUN", "ISL", "IRL", "ITA", "XKX", "LVA", "LIE", "LTU", "LUX", "MKD", "MLT", "MDA", "MCO", "MNE", "NLD", "NOR", "POL", "PRT", "ROU", "RUS", "SMR", "SRB", "SVK", "SVN", "ESP", "SWE", "CHE", "UKR", "GBR", "VAT"];
+    const asian = ["AFG", "ARM", "AZE", "BHR", "BGD", "BRN", "KHM", "CHN", "GEO", "IND", "IDN", "IRN", "IRQ", "ISR", "JPN", "JOR", "KAZ", "KWT", "KGZ", "LAO", "LBN", "MYS", "MDV", "MNG", "MMR", "NPL", "PRK", "PAK", "PSE", "PHL", "QAT", "SAU", "SGP", "KOR", "LKA", "SYR", "TWN", "TJK", "THA", "TLS", "TUR", "TKM", "ARE", "UZB", "VNM", "YEM"];
+    const african = ["DZA", "AGO", "BEN", "BWA", "BFA", "BDI", "CPV", "CMR", "CAF", "TCD", "COM", "COG", "COD", "CIV", "DJI", "EGY", "GNQ", "ERI", "ETH", "GAB", "GMB", "GHA", "GIN", "GNB", "KEN", "LSO", "LBR", "LBY", "MDG", "MWI", "MLI", "MRT", "MUS", "MAR", "MOZ", "NAM", "NER", "NGA", "RWA", "STP", "SEN", "SYC", "SLE", "SOM", "ZAF", "SSD", "SDN", "TZA", "TGO", "TUN", "UGA", "ZMB", "ZWE"];
+    const americas = ["ATG", "ARG", "BHS", "BRB", "BLZ", "BOL", "BRA", "CAN", "CHL", "COL", "CRI", "CUB", "DMA", "DOM", "ECU", "SLV", "GRD", "GTM", "GUY", "HTI", "HND", "JAM", "MEX", "NIC", "PAN", "PRY", "PER", "KNA", "LCA", "VCT", "SUR", "TTO", "USA", "URY", "VEN"];
+    const oceania = ["AUS", "FJI", "KIR", "MHL", "FSM", "NRU", "NZL", "PLW", "PNG", "WSM", "SLB", "TON", "TUV", "VUT"];
+    
+    if (european.includes(c.country_code)) regionMap[c.country_code] = "Europe";
+    else if (asian.includes(c.country_code)) regionMap[c.country_code] = "Asia";
+    else if (african.includes(c.country_code)) regionMap[c.country_code] = "Africa";
+    else if (americas.includes(c.country_code)) regionMap[c.country_code] = "Americas";
+    else if (oceania.includes(c.country_code)) regionMap[c.country_code] = "Oceania";
+    else regionMap[c.country_code] = "Other";
+  }
 
   // Get unique regions
   const regionSet = new Set<string>();
