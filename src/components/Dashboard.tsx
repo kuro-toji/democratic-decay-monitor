@@ -486,6 +486,12 @@ export default function Dashboard() {
       )
     : undefined;
 
+  // Trajectory for summary display
+  const trajectory = useMemo(
+    () => classifyTrajectory(selectedCountry.readings, BASELINES as IndicatorBaseline[]),
+    [selectedCountry]
+  );
+
   const runAnalysis = useCallback(async () => {
     setIsRunningAIP(true);
     setAipResult(null);
