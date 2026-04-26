@@ -292,10 +292,9 @@ interface TimelineChartProps {
   alertYear: number | null;
   showOverlay: boolean;
   highlightIndicator?: string;
-  demoMode: boolean;
 }
 
-function TimelineChart({ timelineData, recoveryTimelineData, alertYear, showOverlay, highlightIndicator, demoMode }: TimelineChartProps) {
+function TimelineChart({ timelineData, recoveryTimelineData, alertYear, showOverlay, highlightIndicator }: TimelineChartProps) {
   const combinedData = showOverlay && recoveryTimelineData
     ? [...timelineData, ...recoveryTimelineData]
     : timelineData;
@@ -343,10 +342,10 @@ function TimelineChart({ timelineData, recoveryTimelineData, alertYear, showOver
               dataKey={INDICATOR_LABELS[key]}
               stroke={CHART_COLORS[i]}
               strokeWidth={key === highlightIndicator ? 2.5 : 1.5}
-              strokeDasharray={key === highlightIndicator && demoMode ? "4 2" : undefined}
+              strokeDasharray={key === highlightIndicator ? "4 2" : undefined}
               dot={false}
               activeDot={{ r: key === highlightIndicator ? 5 : 3 }}
-              className={key === highlightIndicator && demoMode ? "pulse-line" : undefined}
+              className={key === highlightIndicator ? "pulse-line" : undefined}
             />
           ))}
           {showOverlay && recoveryTimelineData && (
@@ -390,6 +389,18 @@ function MethodologyModal({ onClose }: MethodologyModalProps) {
         </div>
         <div className="modal-body">
           <section className="method-section">
+            <h3 className="method-heading">WHAT THE INDICATORS MEAN</h3>
+            <ul className="method-list">
+              <li><strong>Judicial Independence</strong> — Are courts able to rule against the executive? Higher = more independent.</li>
+              <li><strong>Press Freedom</strong> — Is there free and diverse media? Higher = more free.</li>
+              <li><strong>Electoral Integrity</strong> — Are elections fair and competitive? Higher = more fair.</li>
+              <li><strong>Civil Society Space</strong> — Can NGOs and civic groups operate freely? Higher = more space.</li>
+              <li><strong>Executive Constraints</strong> — Is the executive.power limited by other institutions? Higher = more limited.</li>
+            </ul>
+            <p className="method-note"><strong>Red flags</strong> appear when any indicator falls below its 1-standard-deviation threshold — meaning it's significantly worse than the global average.</p>
+          </section>
+
+          <section className="method-section">
             <h3 className="method-heading">DATA SOURCES</h3>
             <ul className="method-list">
               <li><strong>V-Dem (Varieties of Democracy)</strong> — provides judicial independence, civil society space, and executive constraints indices. Scaled 0–1.</li>
@@ -424,38 +435,14 @@ function MethodologyModal({ onClose }: MethodologyModalProps) {
           </section>
 
           <section className="method-section">
-            <h3 className="method-heading">AIP LAYER vs. DETERMINISTIC LAYER</h3>
-            <table className="method-table">
-              <thead>
-                <tr>
-                  <th>Deterministic Layer</th>
-                  <th>AIP Layer</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Rule-based, reproducible</td>
-                  <td>LLM-assisted inference</td>
-                </tr>
-                <tr>
-                  <td>Trajectory classification (STABLE/STRESS/DEGRADING)</td>
-                  <td>Narrative synthesis, risk framing</td>
-                </tr>
-                <tr>
-                  <td>Threshold-based flags (CRITICAL/WARNING)</td>
-                  <td>Intervention recommendations with historical SR</td>
-                </tr>
-                <tr>
-                  <td>Cosine similarity on degradation vectors</td>
-                  <td>Qualitative analogue reasoning</td>
-                </tr>
-                <tr>
-                  <td>No contextual judgment</td>
-                  <td>Context-aware assessment of current situation</td>
-                </tr>
-              </tbody>
-            </table>
-            <p className="method-note">The AIP layer does not override the deterministic layer — it extends it. If the two layers conflict, the deterministic classification takes precedence for alerts.</p>
+            <h3 className="method-heading">DAILY ANALYSIS</h3>
+            <p>Each day, the system analyzes all 196 countries using:</p>
+            <ul className="method-list">
+              <li><strong>Deterministic Layer</strong> — automated trajectory classification based on indicator thresholds</li>
+              <li><strong>AIP Layer</strong> — MiniMax API generates narrative analysis, risk factors, and intervention recommendations</li>
+              <li><strong>Analogue Matching</strong> — finds historical cases with similar degradation patterns</li>
+            </ul>
+            <p>Results are stored and surfaced via the realtime alert system. Countries with declining trajectories trigger alerts automatically.</p>
           </section>
         </div>
       </div>
@@ -468,7 +455,7 @@ export default function Dashboard() {
   const [isRunningAIP, setIsRunningAIP] = useState(false);
   const [aipResult, setAipResult] = useState<AIPResult | null>(null);
   const [streamingText, setStreamingText] = useState("");
-  const [showOverlay, setShowOverlay] = useState(false);
+  const [showOverlay, setShowOverlay] = useState(false); // Show recovery overlay when AIP result available
   const [demoMode, setDemoMode] = useState(false);
   const [showMethodology, setShowMethodology] = useState(false);
   const [calloutBanner, setCalloutBanner] = useState<string | null>(null);
@@ -648,7 +635,6 @@ export default function Dashboard() {
             alertYear={alertYear}
             showOverlay={showOverlay}
             highlightIndicator={highlightIndicator}
-            demoMode={demoMode}
           />
           {showOverlay && aipResult && (
             <div className="overlay-legend">
